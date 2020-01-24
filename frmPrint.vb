@@ -331,8 +331,6 @@ Public Class frmPrint
             chkVAT = "V"
             'chkVAT = Microsoft.VisualBasic.Left(strTrhNo, 1)
         End If
-
-
         calVAT = ds.Tables("prnTrh").Rows(c).Item("trh_bill")
         'strTrhDate = CStr(Format((DateInterval.Year, -543, ds.Tables("prnTrh").Rows(c).Item("trh_date")), "dd/MM/yyyy")) 'วันที่บิล
         strTrhDate = CStr(Format(((DateAndTime.Day(ds.Tables("prnTrh").Rows(c).Item("trh_date")) & "/" & Month(ds.Tables("prnTrh").Rows(c).Item("trh_date")) & "/" & Year(ds.Tables("prnTrh").Rows(c).Item("trh_date")) - 543)))) 'วันที่บิล
@@ -356,7 +354,6 @@ Public Class frmPrint
         If Dvat = "N" Or Dvat = "n" Or Dvat = "M" Or Dvat = "X" Or Dvat = "Z" Then
             strArTaxID = ""
         Else
-
             If IsDBNull(ds.Tables("prnTrh").Rows(c).Item("Ar_Tax_Code")) Then
                 strArTaxID = ""
             ElseIf Trim(ds.Tables("prnTrh").Rows(c).Item("Ar_Tax_Code")) = "" Then
