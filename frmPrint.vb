@@ -163,7 +163,7 @@ Public Class frmPrint
         txtSQL = txtSQL & "ArFile.Ar_Type, ARFILE.AR_CUS_ID,ArFile.Ar_Tax_Code,ARFILE.AR_NAME,ArFile.Ar_update,"
         txtSQL = txtSQL & "Arfile.AR_CUS_ID AS Cus_Code,Ar_Acct, "
         txtSQL = txtSQL & "Arfile.ar_shp_va,Arfile.ar_shp_va1,Arfile.ar_shp_va2, Arfile.AR_NAME, "
-        txtSQL = txtSQL & "Arfile.ar_addr, Arfile.ar_addr_1, Arfile.ar_addr_2, Arfile.ar_sales,SalesMan.SL_Name, Arfile.ar_term "
+        txtSQL = txtSQL & "Arfile.ar_addr, Arfile.ar_addr_1, Arfile.ar_addr_2,ArFile.Ar_Map_Code, Arfile.ar_sales,SalesMan.SL_Name, Arfile.ar_term "
 
         txtSQL = txtSQL & "From TranDataH left Join Arfile "
         txtSQL = txtSQL & "On TranDataH.Trh_Cus=ArFile.Ar_Cus_ID "
@@ -214,7 +214,7 @@ Public Class frmPrint
         Dim strTrhCus As String = ""    'เก็บรหัสลูกค้าปิ่นเกล้า
         Dim strArName As String = ""
         Dim strArTaxID As String = ""
-        Dim strArAcct As String = ""
+        Dim strArMapCode As String = ""
         Dim strTrhDepoRef As String = ""
 
         Dim strArAddr As String = ""
@@ -340,15 +340,17 @@ Public Class frmPrint
         strArAddr1 = CStr(ds.Tables("prnTrh").Rows(c).Item("ar_addr_1")) 'ที่อยู่
         strArAddr2 = CStr(ds.Tables("prnTrh").Rows(c).Item("ar_addr_2")) 'ที่อยู่
         strArTerm = CStr(ds.Tables("prnTrh").Rows(c).Item("trh_term")) 'เครดิตเทอม
-        strArAcct = CStr(ds.Tables("prnTrh").Rows(c).Item("Ar_Acct")) 'เครดิตเทอม
+        strArMapCode = CStr(ds.Tables("prnTrh").Rows(c).Item("Ar_Map_Code")) 'เครดิตเทอม
 
-        If strArAcct = "112010" Then
-            setDigiCal = 2
-            FMsetDigiCal = "#,##0.00"
-        Else
-            setDigiCal = 3 '  3-08-60  แก้ไข จาก 4  เป็น 3  
+        If strArMapcode = "I01" Then
+            setDigiCal = 4 '  3-08-60  แก้ไข จาก 4  เป็น 3  
             FMsetDigiCal2 = "#,##0.0000"
             FMsetDigiCal = "#,##0.0000"
+
+        Else
+            setDigiCal = 2
+            FMsetDigiCal2 = "#,##0.00"
+            FMsetDigiCal = "#,##0.00"
         End If
 
         If Dvat = "N" Or Dvat = "n" Or Dvat = "M" Or Dvat = "X" Or Dvat = "Z" Then
@@ -862,13 +864,8 @@ Public Class frmPrint
         End If
 
         If chkVAT = "V" Or chkVAT = "v" Then
-            If strArAcct = "112010" Then
-                AnyString2(e.Graphics, strTrhTotal1, (730 + 65), 860, True)   ' ยอดเงินหลังหลักส่วนลด และ หักมัดจำ
-                AnyString2(e.Graphics, StrTrhVat, (730 + 65), 880, True)     'ภาษี
-                AnyString2(e.Graphics, StrTrhFullAmt, (730 + 65), 905, True) 'ยอดเงินรวม
 
-                '=================================================================
-            Else
+            If strArMapCode = "I01" Then
 
                 'ทศนิยม 4 ตำแหน่ง
                 AnyString2(e.Graphics, strTrhTotal1, (730 + 65), 860, True)   ' ยอดเงินหลังหลักส่วนลด และ หักมัดจำ
@@ -878,6 +875,12 @@ Public Class frmPrint
                 'AnyString2(e.Graphics, StrTrhAmt, (730 + 65), 860, True)   ' ยอดเงินหลังหลักส่วนลด และ หักมัดจำ
                 'AnyString2(e.Graphics, "0", (730 + 65), 880, True)     'ภาษี
                 'AnyString2(e.Graphics, StrTrhAmt, (730 + 65), 905, True)   'ยอดเงินรวม
+                '=================================================================
+            Else
+                AnyString2(e.Graphics, strTrhTotal1, (730 + 65), 860, True)   ' ยอดเงินหลังหลักส่วนลด และ หักมัดจำ
+                AnyString2(e.Graphics, StrTrhVat, (730 + 65), 880, True)     'ภาษี
+                AnyString2(e.Graphics, StrTrhFullAmt, (730 + 65), 905, True) 'ยอดเงินรวม
+
                 '=================================================================
             End If
 

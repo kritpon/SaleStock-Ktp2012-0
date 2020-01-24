@@ -2861,10 +2861,11 @@ Public Class frmSale
 
                     Pr_Cost = getCostByStk(stkCode, dtp01.Value, "", 0)
                     i5 = .Item("stk_name_1")
-                    If lbArAcct.Text = "112010" Then
-                        setDigiCAL = "#,##0.00"
-                    Else
+                    If lbMapCode.Text = "I01" Then
                         setDigiCAL = "#,##0.0000"
+                    Else
+                        setDigiCAL = "#,##0.00"
+
                     End If
                     '==========================================================
                     i6 = Format(.Item("dtl_num"), setDigiCAL)  '  ¨Ó¹Ç¹ÊÔ¹¤éÒ
@@ -2872,12 +2873,12 @@ Public Class frmSale
 
                     If Microsoft.VisualBasic.Right(.Item("dtl_t_disc"), 1) = "b" Or Microsoft.VisualBasic.Right(.Item("dtl_t_disc"), 1) = "B" Then
 
-                        prDisc = Format(CDbl(Microsoft.VisualBasic.Left(.Item("dtl_t_disc"), Len(.Item("dtl_t_disc")) - 1)), "#,###.00")
+                        prDisc = Format(CDbl(Microsoft.VisualBasic.Left(.Item("dtl_t_disc"), Len(.Item("dtl_t_disc")) - 1)), setDigiCAL)
 
 
                     ElseIf Microsoft.VisualBasic.Right(.Item("dtl_t_disc"), 1) = "%" Then
 
-                        prDisc = Format(CDbl(Microsoft.VisualBasic.Left(.Item("dtl_t_disc"), Len(.Item("dtl_t_disc")) - 1)), "#,###.00")
+                        prDisc = Format(CDbl(Microsoft.VisualBasic.Left(.Item("dtl_t_disc"), Len(.Item("dtl_t_disc")) - 1)), setDigiCAL)
                         prDisc = ((.Item("dtl_price") * prDisc) / 100)
 
                     ElseIf .Item("dtl_t_disc") = 0 Or .Item("dtl_t_disc") = "" Then
@@ -2912,26 +2913,26 @@ Public Class frmSale
                     'End If
 
                     ' ÇÔà¤ÃÒÐËìì                              
-                    i12 = Format(.Item("stk_factor") * .Item("dtl_num"), "#,###.00")   '  ¹éÓË¹Ñ¡
+                    i12 = Format(.Item("stk_factor") * .Item("dtl_num"), setDigiCAL)   '  ¹éÓË¹Ñ¡
 
                     stkQty = .Item("dtl_num")
                     stkWeight = .Item("stk_factor") * .Item("dtl_num")
 
                     If DBtools.getCostType(stkCode) = 0 Then
 
-                        i10 = Format(stkWeight * Pr_Cost, "#,###.00")    ' µé¹·Ø¹
-                        i11 = Format(i9 - i10, "#,###.00")     ' ¡ÓäÃ
+                        i10 = Format(stkWeight * Pr_Cost, setDigiCAL)    ' µé¹·Ø¹
+                        i11 = Format(i9 - i10, setDigiCAL)     ' ¡ÓäÃ
 
                     ElseIf DBtools.getCostType(stkCode) = 1 Then
 
-                        i10 = Format(stkQty * Pr_Cost, "#,###.00")    ' µé¹·Ø¹
-                        i11 = Format(i9 - i10, "#,###.00")     ' ¡ÓäÃ
+                        i10 = Format(stkQty * Pr_Cost, setDigiCAL)    ' µé¹·Ø¹
+                        i11 = Format(i9 - i10, setDigiCAL)     ' ¡ÓäÃ
 
                     Else
 
 
-                        i10 = Format(stkWeight * Pr_Cost, "#,###.00")    ' µé¹·Ø¹
-                        i11 = Format(i9 - i10, "#,###.00")     ' ¡ÓäÃ
+                        i10 = Format(stkWeight * Pr_Cost, setDigiCAL)    ' µé¹·Ø¹
+                        i11 = Format(i9 - i10, setDigiCAL)     ' ¡ÓäÃ
 
                     End If
                     '==========================================================
@@ -2949,8 +2950,8 @@ Public Class frmSale
                     '            i18 = .Item("dtl_cuta_code")
                     i18 = .Item("dtl_same_code")
                     i19 = "0"
-                    i20 = Format(.Item("dtl_num"), "#,###.00")
-                    i21 = Format(.Item("stk_factor") * .Item("dtl_num"), "#,###.00")
+                    i20 = Format(.Item("dtl_num"), setDigiCAL)
+                    i21 = Format(.Item("stk_factor") * .Item("dtl_num"), setDigiCAL)
 
                     anydata = New String() {i0, i1, i2, i3, i4, i5, i6, i7, strDisc, i8, i9, i10, i11, i12, i13, i14, i15, i16, i18, i19, i20, i21, "", strTypeT, strTypeP, strCondition}
                     'lvi = New ListViewItem(anydata)
@@ -2983,13 +2984,13 @@ Public Class frmSale
 
         lbCount.Text = DS.Tables("Detail").Rows.Count
 
-        lbSumary.Text = Format(DS.Tables("DataH").Rows(0).Item("Trh_Amt"), "#,##0.00")
+        lbSumary.Text = Format(DS.Tables("DataH").Rows(0).Item("Trh_Amt"), setDigiCAL)
 
         'If ((DS.Tables("DataH").Rows(0).Item("Trh_noType") = "V" Or DS.Tables("DataH").Rows(0).Item("Trh_noType") = "P") And (DS.Tables("DataH").Rows(0).Item("Trh_Bill") = "0")) Then
         If ((DS.Tables("DataH").Rows(0).Item("Trh_noType") = "V" Or DS.Tables("DataH").Rows(0).Item("Trh_noType") = "P")) Then
 
-            lbVat.Text = Format((DS.Tables("DataH").Rows(0).Item("Trh_Amt") * DS.Tables("DataH").Rows(0).Item("Trh_Bill")) / 100, "#,##0.00")
-            lbTotal2.Text = Format(CDbl(lbSumary.Text) + CDbl(lbVat.Text), "#,##0.00")
+            lbVat.Text = Format((DS.Tables("DataH").Rows(0).Item("Trh_Amt") * DS.Tables("DataH").Rows(0).Item("Trh_Bill")) / 100, setDigiCAL)
+            lbTotal2.Text = Format(CDbl(lbSumary.Text) + CDbl(lbVat.Text), setDigiCAL)
 
             'ElseIf ((DS.Tables("DataH").Rows(0).Item("Trh_noType") = "V" Or DS.Tables("DataH").Rows(0).Item("Trh_noType") = "P") And (DS.Tables("DataH").Rows(0).Item("Trh_Bill") > "0")) Then
 
@@ -2999,7 +3000,7 @@ Public Class frmSale
         Else
 
             lbVat.Text = 0
-            lbTotal2.Text = Format(DS.Tables("DataH").Rows(0).Item("Trh_Amt"), "#,##0.00")
+            lbTotal2.Text = Format(DS.Tables("DataH").Rows(0).Item("Trh_Amt"), setDigiCAL)
 
         End If
 
@@ -3723,8 +3724,31 @@ Public Class frmSale
 
         '====================================  àÃÔèÁ¤Ó¹Ç¹  =======================
         If chkVATtype(lbCusID.Text) = 0 Then
+            If lbMapCode.Text = "I01" Then
+                If Microsoft.VisualBasic.Right(txtDepoSit.Text, 1) = "b" Then
+                    TrhDePosit = Microsoft.VisualBasic.Left(txtDepoSit.Text, Len(txtDepoSit.Text) - 1)
+                ElseIf Microsoft.VisualBasic.Right(txtDepoSit.Text, 1) = "%" Then
+                    TrhDePosit = (Microsoft.VisualBasic.Left(txtDepoSit.Text, Len(txtDepoSit.Text) - 1))
+                    TrhDePosit = (tmpSummary * TrhDePosit) / 100
+                ElseIf IsNumeric(Microsoft.VisualBasic.Right(txtDepoSit.Text, 1)) Then
+                    TrhDePosit = txtDepoSit.Text
+                Else
+                    TrhDePosit = 0
+                End If
 
-            lbSumary.Text = tempTotal.ToString("#,##0.0000")  '3
+                'tmpSummary = (tmpSummary - TrhDePosit)
+
+                lbSumary.Text = Format(tempTotal, "#,##0.0000").ToString  '3
+                lbDisc.Text = Format(trhDisc, "#,##0.0000").ToString  '3
+                lbDeposit.Text = Format(TrhDePosit, "#,##0.0000").ToString '3
+
+                TrhTotal = (tempTotal - trhDisc - TrhDePosit)
+                'lbSumary.Text = tempTotal.ToString("#,##0.0000")  '3
+                lbVat.Text = "0.00"
+                lbTotal2.Text = tempTotal.ToString("#,##0.0000")
+            Else
+
+                lbSumary.Text = tempTotal.ToString("#,##0.0000")  '3
             TrhAmt = CDbl(lbSumary.Text)
             '   ÊèÇ¹Å´ 
             If Microsoft.VisualBasic.Right(txtCusDisc.Text, 1) = "b" Then  '  ¶éÒªèÍ§ÊèÇ¹Å´ÁÕ  "b" µèÍ·éÒÂËÁÒÂ¶Ö§Å´à»ç¹ºÒ·
@@ -3768,6 +3792,7 @@ Public Class frmSale
                 lbVat.Text = Format(0, "#,##0.0000") '3
             End If
 
+            End If
 
         ElseIf chkVATtype(lbCusID.Text) = 1 Then
 

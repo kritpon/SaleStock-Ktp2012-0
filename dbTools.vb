@@ -329,7 +329,7 @@ Module DBtools
         txtSQL = txtSQL & "history_user,history_Status,history_date,history_time,History_head,History_SQL"
         txtSQL = txtSQL & ")"
         txtSQL = txtSQL & "Values("
-        txtSQL = txtSQL & "'" & GetUserName() & "','ºÑ¹·Ö¡àÍ¡ÊÒÃ-" & txtNo & "-','"
+        txtSQL = txtSQL & "'" & GetUserName() & "','บันทึกเอกสารเลขที่-" & txtNo & "-','"
         'txtSQL = txtSQL & (Format(DateAdd(DateInterval.Year, -543, Now), "MM/dd/yyyy")) & "','"
         'txtSQL = txtSQL & (Format(DateAdd(DateInterval.Year, -543, Now), "HH:mm:ss")) & "','"
 
