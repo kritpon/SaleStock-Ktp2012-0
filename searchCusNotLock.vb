@@ -63,9 +63,9 @@ Public Class searchCusNotLock
         Me.dbCusGrid.CaptionBackColor = System.Drawing.Color.SlateGray
         Me.dbCusGrid.DataMember = ""
         Me.dbCusGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText
-        Me.dbCusGrid.Location = New System.Drawing.Point(16, 0)
+        Me.dbCusGrid.Location = New System.Drawing.Point(8, 0)
         Me.dbCusGrid.Name = "dbCusGrid"
-        Me.dbCusGrid.Size = New System.Drawing.Size(1184, 458)
+        Me.dbCusGrid.Size = New System.Drawing.Size(592, 248)
         Me.dbCusGrid.TabIndex = 0
         '
         'GroupBox1
@@ -74,9 +74,9 @@ Public Class searchCusNotLock
         Me.GroupBox1.Controls.Add(Me.lbCusName)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.cmbOK)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 517)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 280)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1184, 89)
+        Me.GroupBox1.Size = New System.Drawing.Size(592, 48)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
@@ -85,9 +85,9 @@ Public Class searchCusNotLock
         Me.lbCusID.BackColor = System.Drawing.Color.Turquoise
         Me.lbCusID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbCusID.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lbCusID.Location = New System.Drawing.Point(192, 30)
+        Me.lbCusID.Location = New System.Drawing.Point(96, 16)
         Me.lbCusID.Name = "lbCusID"
-        Me.lbCusID.Size = New System.Drawing.Size(130, 38)
+        Me.lbCusID.Size = New System.Drawing.Size(65, 21)
         Me.lbCusID.TabIndex = 10
         '
         'lbCusName
@@ -96,19 +96,19 @@ Public Class searchCusNotLock
         Me.lbCusName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbCusName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbCusName.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lbCusName.Location = New System.Drawing.Point(320, 30)
+        Me.lbCusName.Location = New System.Drawing.Point(160, 16)
         Me.lbCusName.MaxLength = 60
         Me.lbCusName.Name = "lbCusName"
-        Me.lbCusName.Size = New System.Drawing.Size(688, 35)
+        Me.lbCusName.Size = New System.Drawing.Size(344, 21)
         Me.lbCusName.TabIndex = 8
         '
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.LightSkyBlue
-        Me.Label2.Location = New System.Drawing.Point(32, 30)
+        Me.Label2.Location = New System.Drawing.Point(16, 16)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(144, 29)
+        Me.Label2.Size = New System.Drawing.Size(72, 16)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "ชื่อลูกค้าที่เลือก"
         '
@@ -116,9 +116,9 @@ Public Class searchCusNotLock
         '
         Me.cmbOK.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbOK.ForeColor = System.Drawing.Color.LightSkyBlue
-        Me.cmbOK.Location = New System.Drawing.Point(1024, 30)
+        Me.cmbOK.Location = New System.Drawing.Point(512, 16)
         Me.cmbOK.Name = "cmbOK"
-        Me.cmbOK.Size = New System.Drawing.Size(144, 38)
+        Me.cmbOK.Size = New System.Drawing.Size(72, 21)
         Me.cmbOK.TabIndex = 2
         Me.cmbOK.Text = "เลือก"
         '
@@ -126,9 +126,9 @@ Public Class searchCusNotLock
         '
         Me.cmbSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbSearch.ForeColor = System.Drawing.Color.LightSkyBlue
-        Me.cmbSearch.Location = New System.Drawing.Point(848, 473)
+        Me.cmbSearch.Location = New System.Drawing.Point(424, 256)
         Me.cmbSearch.Name = "cmbSearch"
-        Me.cmbSearch.Size = New System.Drawing.Size(144, 38)
+        Me.cmbSearch.Size = New System.Drawing.Size(72, 21)
         Me.cmbSearch.TabIndex = 9
         Me.cmbSearch.Text = "ค้นหา"
         '
@@ -138,19 +138,19 @@ Public Class searchCusNotLock
         Me.txtCusName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCusName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtCusName.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtCusName.Location = New System.Drawing.Point(176, 473)
+        Me.txtCusName.Location = New System.Drawing.Point(88, 256)
         Me.txtCusName.MaxLength = 60
         Me.txtCusName.Name = "txtCusName"
-        Me.txtCusName.Size = New System.Drawing.Size(656, 35)
+        Me.txtCusName.Size = New System.Drawing.Size(328, 21)
         Me.txtCusName.TabIndex = 6
         '
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.LightSkyBlue
-        Me.Label1.Location = New System.Drawing.Point(32, 473)
+        Me.Label1.Location = New System.Drawing.Point(16, 256)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(128, 29)
+        Me.Label1.Size = New System.Drawing.Size(64, 16)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "ชื่อที่ต้องการ"
         '
@@ -158,17 +158,17 @@ Public Class searchCusNotLock
         '
         Me.cmbExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbExit.ForeColor = System.Drawing.Color.LightSkyBlue
-        Me.cmbExit.Location = New System.Drawing.Point(1040, 620)
+        Me.cmbExit.Location = New System.Drawing.Point(520, 336)
         Me.cmbExit.Name = "cmbExit"
-        Me.cmbExit.Size = New System.Drawing.Size(144, 45)
+        Me.cmbExit.Size = New System.Drawing.Size(72, 24)
         Me.cmbExit.TabIndex = 4
         Me.cmbExit.Text = "Exit"
         '
         'cboType
         '
-        Me.cboType.Location = New System.Drawing.Point(1024, 473)
+        Me.cboType.Location = New System.Drawing.Point(512, 256)
         Me.cboType.Name = "cboType"
-        Me.cboType.Size = New System.Drawing.Size(176, 33)
+        Me.cboType.Size = New System.Drawing.Size(88, 21)
         Me.cboType.TabIndex = 5
         Me.cboType.Text = "ComboBox1"
         '
@@ -177,17 +177,17 @@ Public Class searchCusNotLock
         Me.chkCusType.Enabled = False
         Me.chkCusType.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.chkCusType.ForeColor = System.Drawing.Color.LightSkyBlue
-        Me.chkCusType.Location = New System.Drawing.Point(16, 620)
+        Me.chkCusType.Location = New System.Drawing.Point(8, 336)
         Me.chkCusType.Name = "chkCusType"
-        Me.chkCusType.Size = New System.Drawing.Size(112, 45)
+        Me.chkCusType.Size = New System.Drawing.Size(56, 24)
         Me.chkCusType.TabIndex = 6
         Me.chkCusType.Text = "ไม่ระบุ"
         '
         'searchCusNotLock
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
         Me.BackColor = System.Drawing.Color.DimGray
-        Me.ClientSize = New System.Drawing.Size(1245, 698)
+        Me.ClientSize = New System.Drawing.Size(623, 385)
         Me.Controls.Add(Me.chkCusType)
         Me.Controls.Add(Me.cboType)
         Me.Controls.Add(Me.cmbExit)

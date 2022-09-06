@@ -20,6 +20,7 @@
             Exit Sub
 
         End If
+        '(((DateAndTime.Day(Now) & Month(Now) & Year(Now) - 543))).ToString 
         txtSQL = "Insert Into userHistoryUpdate "
         txtSQL = txtSQL & "Values('" & Format(DateAdd(DateInterval.Year, -543, Now), "MM/dd/yyyy HH:mm:ss") & "','S','" & EditNo & "','" & lbUser.Text & "','" & txtDetail.Text & "')"
         DBtools.dbSaveDATA(txtSQL, "")

@@ -95,6 +95,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <Private>True</Private>
     </COMReference>
+    <Reference Include="Setting">
+      <HintPath>..\..\..\0 PC\0.0 New_แผนผลิต\appUpdatePL\appUpdatePL\bin\Debug\Setting.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -141,6 +144,7 @@
     <Compile Include="AssemblyInfo.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="config.vb" />
     <Compile Include="DBConnString.vb" />
     <Compile Include="dbTools.vb">
       <SubType>Code</SubType>
@@ -149,12 +153,6 @@
       <DependentUpon>frmConnectDB.vb</DependentUpon>
     </Compile>
     <Compile Include="frmConnectDB.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmK_Pim.Designer.vb">
-      <DependentUpon>frmK_Pim.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmK_Pim.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAnswers.Designer.vb">
@@ -214,6 +212,12 @@
     <Compile Include="frmSearchAmphoe.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmSelectDep.Designer.vb">
+      <DependentUpon>frmSelectDep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectDep.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSelVet.Designer.vb">
       <DependentUpon>frmSelVet.vb</DependentUpon>
     </Compile>
@@ -261,9 +265,6 @@
     <EmbeddedResource Include="frmConnectDB.resx">
       <DependentUpon>frmConnectDB.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmK_Pim.resx">
-      <DependentUpon>frmK_Pim.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAnswers.resx">
       <DependentUpon>frmAnswers.vb</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchAmphoe.resx">
       <DependentUpon>frmSearchAmphoe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectDep.resx">
+      <DependentUpon>frmSelectDep.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelVet.resx">
       <DependentUpon>frmSelVet.vb</DependentUpon>

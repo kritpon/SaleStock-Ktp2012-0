@@ -14,7 +14,7 @@ Public NotInheritable Class DBConnString
     Public Shared strConn2 As String = "Data Source=EDP01\SQLEXPRESS;Initial Catalog=db2012;User ID=sa;Password=$y$05000"
     Public Shared strConn3 As String = "Data Source=58.97.96.57\SQLEXPRESS;Initial Catalog=newZone;User ID=sa;Password=$y$05000"
     Public Shared strConn4 As String = "Data Source=192.168.1.3\SQLEXPRESS;Initial Catalog=newZone;User ID=sa;Password=$y$05000"
-    Public Shared strConn5 As String = "Data Source=192.168.1.3\SQLEXPRESS;Initial Catalog=newZone;User ID=sa;Password=$y$05000"
+    Public Shared strConn5 As String = "Data Source=192.168.1.5\SQLEXPRESS;Initial Catalog=db2012;User ID=sa;Password=$y$05000"
 
     'Public Shared strConn As String = "Data Source=EDP01\SQLEXPRESS;Initial Catalog=newZone;User ID=sa;Password=$y$05000"
     'Public Shared strConn2 As String = "Data Source=COM-PC\SQLEXPRESS;Initial Catalog=db2012; User ID=sa;Password=$y$05000"

@@ -593,9 +593,9 @@
         Me.chkPaper1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPaper1.Location = New System.Drawing.Point(809, 47)
         Me.chkPaper1.Name = "chkPaper1"
-        Me.chkPaper1.Size = New System.Drawing.Size(75, 21)
+        Me.chkPaper1.Size = New System.Drawing.Size(73, 21)
         Me.chkPaper1.TabIndex = 76
-        Me.chkPaper1.Text = "¡ÃÐ´ÒÉ"
+        Me.chkPaper1.Text = "กระดาษ"
         Me.chkPaper1.UseVisualStyleBackColor = True
         '
         'lbGrade
@@ -668,9 +668,9 @@
         Me.chkGrade1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkGrade1.Location = New System.Drawing.Point(933, 47)
         Me.chkGrade1.Name = "chkGrade1"
-        Me.chkGrade1.Size = New System.Drawing.Size(54, 21)
+        Me.chkGrade1.Size = New System.Drawing.Size(55, 21)
         Me.chkGrade1.TabIndex = 77
-        Me.chkGrade1.Text = "à¡Ã´"
+        Me.chkGrade1.Text = "เกรด"
         Me.chkGrade1.UseVisualStyleBackColor = True
         '
         'chkSize1
@@ -680,9 +680,9 @@
         Me.chkSize1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkSize1.Location = New System.Drawing.Point(701, 47)
         Me.chkSize1.Name = "chkSize1"
-        Me.chkSize1.Size = New System.Drawing.Size(60, 21)
+        Me.chkSize1.Size = New System.Drawing.Size(73, 21)
         Me.chkSize1.TabIndex = 75
-        Me.chkSize1.Text = "¢¹Ò´"
+        Me.chkSize1.Text = "กระดาษ"
         Me.chkSize1.UseVisualStyleBackColor = True
         '
         'chkTh1
@@ -694,7 +694,7 @@
         Me.chkTh1.Name = "chkTh1"
         Me.chkTh1.Size = New System.Drawing.Size(52, 21)
         Me.chkTh1.TabIndex = 74
-        Me.chkTh1.Text = "Ë¹Ò"
+        Me.chkTh1.Text = "หนา"
         Me.chkTh1.UseVisualStyleBackColor = True
         '
         'chkColor1
@@ -704,9 +704,9 @@
         Me.chkColor1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkColor1.Location = New System.Drawing.Point(415, 50)
         Me.chkColor1.Name = "chkColor1"
-        Me.chkColor1.Size = New System.Drawing.Size(45, 21)
+        Me.chkColor1.Size = New System.Drawing.Size(36, 21)
         Me.chkColor1.TabIndex = 73
-        Me.chkColor1.Text = "ÊÕ"
+        Me.chkColor1.Text = "สี"
         Me.chkColor1.UseVisualStyleBackColor = True
         '
         'chkGrp1
@@ -716,9 +716,9 @@
         Me.chkGrp1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkGrp1.Location = New System.Drawing.Point(267, 47)
         Me.chkGrp1.Name = "chkGrp1"
-        Me.chkGrp1.Size = New System.Drawing.Size(64, 21)
+        Me.chkGrp1.Size = New System.Drawing.Size(72, 21)
         Me.chkGrp1.TabIndex = 72
-        Me.chkGrp1.Text = "¡ÅØèÁ"
+        Me.chkGrp1.Text = "ประเภท"
         Me.chkGrp1.UseVisualStyleBackColor = True
         '
         'chkType1
@@ -728,9 +728,9 @@
         Me.chkType1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkType1.Location = New System.Drawing.Point(82, 47)
         Me.chkType1.Name = "chkType1"
-        Me.chkType1.Size = New System.Drawing.Size(73, 21)
+        Me.chkType1.Size = New System.Drawing.Size(52, 21)
         Me.chkType1.TabIndex = 71
-        Me.chkType1.Text = "»ÃÐàÀ·"
+        Me.chkType1.Text = "กลุ่ม"
         Me.chkType1.UseVisualStyleBackColor = True
         '
         'cboType
@@ -894,7 +894,7 @@
         Me.cmbSearch.Name = "cmbSearch"
         Me.cmbSearch.Size = New System.Drawing.Size(88, 68)
         Me.cmbSearch.TabIndex = 123
-        Me.cmbSearch.Text = "¤é¹ËÒ"
+        Me.cmbSearch.Text = "ค้นหา"
         '
         'GroupBox4
         '
@@ -1010,7 +1010,7 @@
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage3.Size = New System.Drawing.Size(1099, 92)
         Me.TabPage3.TabIndex = 0
-        Me.TabPage3.Text = "ËÒµÒÁª×èÍ"
+        Me.TabPage3.Text = "ค้นหาตามชื่อ"
         '
         'cmbFindStrStk
         '
@@ -1033,7 +1033,7 @@
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage4.Size = New System.Drawing.Size(1099, 92)
         Me.TabPage4.TabIndex = 1
-        Me.TabPage4.Text = "ËÒµÒÁ Factor"
+        Me.TabPage4.Text = "ค้นหาตาม Factor"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'TabControl1
@@ -1075,7 +1075,7 @@
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1131, 518)
+        Me.ClientSize = New System.Drawing.Size(1163, 534)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox5)

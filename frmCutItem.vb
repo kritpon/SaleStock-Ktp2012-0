@@ -72,9 +72,9 @@ Public Class frmCutItem
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.ListOrder)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 15)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 8)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1312, 591)
+        Me.GroupBox1.Size = New System.Drawing.Size(656, 320)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -82,9 +82,10 @@ Public Class frmCutItem
         '
         Me.ListOrder.FullRowSelect = True
         Me.ListOrder.GridLines = True
-        Me.ListOrder.Location = New System.Drawing.Point(16, 30)
+        Me.ListOrder.HideSelection = False
+        Me.ListOrder.Location = New System.Drawing.Point(8, 16)
         Me.ListOrder.Name = "ListOrder"
-        Me.ListOrder.Size = New System.Drawing.Size(1280, 546)
+        Me.ListOrder.Size = New System.Drawing.Size(640, 296)
         Me.ListOrder.TabIndex = 0
         Me.ListOrder.UseCompatibleStateImageBehavior = False
         '
@@ -95,9 +96,9 @@ Public Class frmCutItem
         Me.cmbCut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbCut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbCut.ForeColor = System.Drawing.Color.Yellow
-        Me.cmbCut.Location = New System.Drawing.Point(832, 30)
+        Me.cmbCut.Location = New System.Drawing.Point(416, 16)
         Me.cmbCut.Name = "cmbCut"
-        Me.cmbCut.Size = New System.Drawing.Size(176, 73)
+        Me.cmbCut.Size = New System.Drawing.Size(88, 40)
         Me.cmbCut.TabIndex = 10
         Me.cmbCut.Text = "µ—¥Item„πOrder"
         Me.cmbCut.UseVisualStyleBackColor = False
@@ -109,9 +110,9 @@ Public Class frmCutItem
         Me.exitFrm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.exitFrm.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.exitFrm.ForeColor = System.Drawing.Color.Yellow
-        Me.exitFrm.Location = New System.Drawing.Point(1088, 30)
+        Me.exitFrm.Location = New System.Drawing.Point(544, 16)
         Me.exitFrm.Name = "exitFrm"
-        Me.exitFrm.Size = New System.Drawing.Size(176, 73)
+        Me.exitFrm.Size = New System.Drawing.Size(88, 40)
         Me.exitFrm.TabIndex = 11
         Me.exitFrm.Text = "®∫°“√∑”ß“π"
         Me.exitFrm.UseVisualStyleBackColor = False
@@ -121,9 +122,9 @@ Public Class frmCutItem
         Me.GroupBox2.AutoSize = True
         Me.GroupBox2.Controls.Add(Me.cmbCut)
         Me.GroupBox2.Controls.Add(Me.exitFrm)
-        Me.GroupBox2.Location = New System.Drawing.Point(32, 679)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 368)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1296, 119)
+        Me.GroupBox2.Size = New System.Drawing.Size(648, 75)
         Me.GroupBox2.TabIndex = 12
         Me.GroupBox2.TabStop = False
         '
@@ -131,44 +132,44 @@ Public Class frmCutItem
         '
         Me.cboType.BackColor = System.Drawing.Color.DodgerBlue
         Me.cboType.ForeColor = System.Drawing.Color.Yellow
-        Me.cboType.Location = New System.Drawing.Point(32, 635)
+        Me.cboType.Location = New System.Drawing.Point(16, 344)
         Me.cboType.Name = "cboType"
-        Me.cboType.Size = New System.Drawing.Size(320, 33)
+        Me.cboType.Size = New System.Drawing.Size(160, 21)
         Me.cboType.TabIndex = 70
         '
         'cboSize
         '
         Me.cboSize.BackColor = System.Drawing.Color.Yellow
         Me.cboSize.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.cboSize.Location = New System.Drawing.Point(1008, 635)
+        Me.cboSize.Location = New System.Drawing.Point(504, 344)
         Me.cboSize.Name = "cboSize"
-        Me.cboSize.Size = New System.Drawing.Size(304, 33)
+        Me.cboSize.Size = New System.Drawing.Size(152, 21)
         Me.cboSize.TabIndex = 69
         '
         'cboTh
         '
         Me.cboTh.BackColor = System.Drawing.Color.Yellow
         Me.cboTh.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.cboTh.Location = New System.Drawing.Point(784, 635)
+        Me.cboTh.Location = New System.Drawing.Point(392, 344)
         Me.cboTh.Name = "cboTh"
         Me.cboTh.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cboTh.Size = New System.Drawing.Size(176, 33)
+        Me.cboTh.Size = New System.Drawing.Size(88, 21)
         Me.cboTh.TabIndex = 68
         '
         'cboColor
         '
         Me.cboColor.BackColor = System.Drawing.Color.Yellow
         Me.cboColor.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.cboColor.Location = New System.Drawing.Point(384, 635)
+        Me.cboColor.Location = New System.Drawing.Point(192, 344)
         Me.cboColor.Name = "cboColor"
-        Me.cboColor.Size = New System.Drawing.Size(336, 33)
+        Me.cboColor.Size = New System.Drawing.Size(168, 21)
         Me.cboColor.TabIndex = 67
         '
         'frmCutItem
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1354, 826)
+        Me.ClientSize = New System.Drawing.Size(686, 474)
         Me.Controls.Add(Me.cboType)
         Me.Controls.Add(Me.cboSize)
         Me.Controls.Add(Me.cboTh)

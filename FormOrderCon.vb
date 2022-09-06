@@ -59,9 +59,10 @@ Public Class FormOrderCon
         Me.lsvShow.ForeColor = System.Drawing.Color.Blue
         Me.lsvShow.FullRowSelect = True
         Me.lsvShow.GridLines = True
-        Me.lsvShow.Location = New System.Drawing.Point(32, 15)
+        Me.lsvShow.HideSelection = False
+        Me.lsvShow.Location = New System.Drawing.Point(16, 8)
         Me.lsvShow.Name = "lsvShow"
-        Me.lsvShow.Size = New System.Drawing.Size(1344, 576)
+        Me.lsvShow.Size = New System.Drawing.Size(672, 312)
         Me.lsvShow.TabIndex = 2
         Me.lsvShow.UseCompatibleStateImageBehavior = False
         '
@@ -69,46 +70,46 @@ Public Class FormOrderCon
         '
         Me.cboType.BackColor = System.Drawing.Color.DodgerBlue
         Me.cboType.ForeColor = System.Drawing.Color.Yellow
-        Me.cboType.Location = New System.Drawing.Point(32, 620)
+        Me.cboType.Location = New System.Drawing.Point(16, 336)
         Me.cboType.Name = "cboType"
-        Me.cboType.Size = New System.Drawing.Size(320, 33)
+        Me.cboType.Size = New System.Drawing.Size(160, 21)
         Me.cboType.TabIndex = 66
         '
         'cboSize
         '
         Me.cboSize.BackColor = System.Drawing.Color.Yellow
         Me.cboSize.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.cboSize.Location = New System.Drawing.Point(864, 620)
+        Me.cboSize.Location = New System.Drawing.Point(432, 336)
         Me.cboSize.Name = "cboSize"
-        Me.cboSize.Size = New System.Drawing.Size(304, 33)
+        Me.cboSize.Size = New System.Drawing.Size(152, 21)
         Me.cboSize.TabIndex = 65
         '
         'cboTh
         '
         Me.cboTh.BackColor = System.Drawing.Color.Yellow
         Me.cboTh.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.cboTh.Location = New System.Drawing.Point(688, 620)
+        Me.cboTh.Location = New System.Drawing.Point(344, 336)
         Me.cboTh.Name = "cboTh"
         Me.cboTh.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cboTh.Size = New System.Drawing.Size(176, 33)
+        Me.cboTh.Size = New System.Drawing.Size(88, 21)
         Me.cboTh.TabIndex = 64
         '
         'cboColor
         '
         Me.cboColor.BackColor = System.Drawing.Color.Yellow
         Me.cboColor.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.cboColor.Location = New System.Drawing.Point(352, 620)
+        Me.cboColor.Location = New System.Drawing.Point(176, 336)
         Me.cboColor.Name = "cboColor"
-        Me.cboColor.Size = New System.Drawing.Size(336, 33)
+        Me.cboColor.Size = New System.Drawing.Size(168, 21)
         Me.cboColor.TabIndex = 63
         '
         'Label50
         '
         Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label50.ForeColor = System.Drawing.Color.Blue
-        Me.Label50.Location = New System.Drawing.Point(240, 665)
+        Me.Label50.Location = New System.Drawing.Point(120, 360)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(96, 29)
+        Me.Label50.Size = New System.Drawing.Size(48, 16)
         Me.Label50.TabIndex = 67
         Me.Label50.Text = "ประเภท"
         Me.Label50.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -117,9 +118,9 @@ Public Class FormOrderCon
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(592, 665)
+        Me.Label1.Location = New System.Drawing.Point(296, 360)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 29)
+        Me.Label1.Size = New System.Drawing.Size(48, 16)
         Me.Label1.TabIndex = 68
         Me.Label1.Text = "สี"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -128,9 +129,9 @@ Public Class FormOrderCon
         '
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Blue
-        Me.Label2.Location = New System.Drawing.Point(768, 665)
+        Me.Label2.Location = New System.Drawing.Point(384, 360)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 29)
+        Me.Label2.Size = New System.Drawing.Size(48, 16)
         Me.Label2.TabIndex = 69
         Me.Label2.Text = "ความหนา"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -139,9 +140,9 @@ Public Class FormOrderCon
         '
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Blue
-        Me.Label3.Location = New System.Drawing.Point(1072, 665)
+        Me.Label3.Location = New System.Drawing.Point(536, 360)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(96, 29)
+        Me.Label3.Size = New System.Drawing.Size(48, 16)
         Me.Label3.TabIndex = 70
         Me.Label3.Text = "ขนาด"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -151,18 +152,18 @@ Public Class FormOrderCon
         Me.cmbEnd.BackColor = System.Drawing.Color.DimGray
         Me.cmbEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbEnd.ForeColor = System.Drawing.Color.Yellow
-        Me.cmbEnd.Location = New System.Drawing.Point(1200, 620)
+        Me.cmbEnd.Location = New System.Drawing.Point(600, 336)
         Me.cmbEnd.Name = "cmbEnd"
-        Me.cmbEnd.Size = New System.Drawing.Size(150, 43)
+        Me.cmbEnd.Size = New System.Drawing.Size(75, 23)
         Me.cmbEnd.TabIndex = 71
         Me.cmbEnd.Text = "ออก"
         Me.cmbEnd.UseVisualStyleBackColor = False
         '
         'FormOrderCon
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1432, 727)
+        Me.ClientSize = New System.Drawing.Size(712, 391)
         Me.ControlBox = False
         Me.Controls.Add(Me.cmbEnd)
         Me.Controls.Add(Me.Label3)

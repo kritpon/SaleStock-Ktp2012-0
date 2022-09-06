@@ -81,7 +81,7 @@
         Me.dbCusGrid.Font = New System.Drawing.Font("Tahoma", 11.0!)
         Me.dbCusGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText
         Me.dbCusGrid.Location = New System.Drawing.Point(9, 4)
-        Me.dbCusGrid.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dbCusGrid.Margin = New System.Windows.Forms.Padding(2)
         Me.dbCusGrid.Name = "dbCusGrid"
         Me.dbCusGrid.ReadOnly = True
         Me.dbCusGrid.Size = New System.Drawing.Size(794, 229)
@@ -98,9 +98,9 @@
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.cmbOK)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 231)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(795, 119)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
@@ -112,7 +112,7 @@
         Me.lbCusTel.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.lbCusTel.ForeColor = System.Drawing.Color.White
         Me.lbCusTel.Location = New System.Drawing.Point(401, 76)
-        Me.lbCusTel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lbCusTel.Margin = New System.Windows.Forms.Padding(2)
         Me.lbCusTel.MaxLength = 60
         Me.lbCusTel.Name = "lbCusTel"
         Me.lbCusTel.Size = New System.Drawing.Size(209, 27)
@@ -136,7 +136,7 @@
         Me.lbCusAddr2.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.lbCusAddr2.ForeColor = System.Drawing.Color.White
         Me.lbCusAddr2.Location = New System.Drawing.Point(130, 76)
-        Me.lbCusAddr2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lbCusAddr2.Margin = New System.Windows.Forms.Padding(2)
         Me.lbCusAddr2.MaxLength = 60
         Me.lbCusAddr2.Name = "lbCusAddr2"
         Me.lbCusAddr2.Size = New System.Drawing.Size(209, 27)
@@ -149,7 +149,7 @@
         Me.lbCusAddr.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.lbCusAddr.ForeColor = System.Drawing.Color.White
         Me.lbCusAddr.Location = New System.Drawing.Point(130, 45)
-        Me.lbCusAddr.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lbCusAddr.Margin = New System.Windows.Forms.Padding(2)
         Me.lbCusAddr.MaxLength = 60
         Me.lbCusAddr.Name = "lbCusAddr"
         Me.lbCusAddr.Size = New System.Drawing.Size(480, 27)
@@ -162,7 +162,7 @@
         Me.lbCusID.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.lbCusID.ForeColor = System.Drawing.Color.White
         Me.lbCusID.Location = New System.Drawing.Point(9, 45)
-        Me.lbCusID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lbCusID.Margin = New System.Windows.Forms.Padding(2)
         Me.lbCusID.Name = "lbCusID"
         Me.lbCusID.Size = New System.Drawing.Size(112, 27)
         Me.lbCusID.TabIndex = 10
@@ -174,7 +174,7 @@
         Me.lbCusName.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.lbCusName.ForeColor = System.Drawing.Color.White
         Me.lbCusName.Location = New System.Drawing.Point(130, 15)
-        Me.lbCusName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lbCusName.Margin = New System.Windows.Forms.Padding(2)
         Me.lbCusName.MaxLength = 60
         Me.lbCusName.Name = "lbCusName"
         Me.lbCusName.Size = New System.Drawing.Size(480, 27)
@@ -197,7 +197,7 @@
         Me.cmbOK.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbOK.ForeColor = System.Drawing.Color.White
         Me.cmbOK.Location = New System.Drawing.Point(615, 14)
-        Me.cmbOK.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbOK.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbOK.Name = "cmbOK"
         Me.cmbOK.Size = New System.Drawing.Size(173, 86)
         Me.cmbOK.TabIndex = 2
@@ -210,7 +210,7 @@
         Me.cmbSearch.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbSearch.ForeColor = System.Drawing.Color.Black
         Me.cmbSearch.Location = New System.Drawing.Point(547, 16)
-        Me.cmbSearch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbSearch.Name = "cmbSearch"
         Me.cmbSearch.Size = New System.Drawing.Size(240, 63)
         Me.cmbSearch.TabIndex = 9
@@ -224,18 +224,18 @@
         Me.txtCusName.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtCusName.ForeColor = System.Drawing.Color.White
         Me.txtCusName.Location = New System.Drawing.Point(127, 16)
-        Me.txtCusName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCusName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCusName.MaxLength = 60
         Me.txtCusName.Name = "txtCusName"
         Me.txtCusName.Size = New System.Drawing.Size(308, 27)
-        Me.txtCusName.TabIndex = 2
+        Me.txtCusName.TabIndex = 1
         '
         'cmbExit
         '
         Me.cmbExit.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbExit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmbExit.Location = New System.Drawing.Point(679, 441)
-        Me.cmbExit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbExit.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbExit.Name = "cmbExit"
         Me.cmbExit.Size = New System.Drawing.Size(124, 32)
         Me.cmbExit.TabIndex = 4
@@ -245,7 +245,7 @@
         '
         Me.cboType.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cboType.Location = New System.Drawing.Point(440, 20)
-        Me.cboType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboType.Margin = New System.Windows.Forms.Padding(2)
         Me.cboType.Name = "cboType"
         Me.cboType.Size = New System.Drawing.Size(90, 24)
         Me.cboType.TabIndex = 5
@@ -257,7 +257,7 @@
         Me.chkCusType.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.chkCusType.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.chkCusType.Location = New System.Drawing.Point(8, 450)
-        Me.chkCusType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.chkCusType.Margin = New System.Windows.Forms.Padding(2)
         Me.chkCusType.Name = "chkCusType"
         Me.chkCusType.Size = New System.Drawing.Size(88, 22)
         Me.chkCusType.TabIndex = 6
@@ -271,7 +271,7 @@
         Me.txtCusAdd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtCusAdd.ForeColor = System.Drawing.SystemColors.Window
         Me.txtCusAdd.Location = New System.Drawing.Point(127, 48)
-        Me.txtCusAdd.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCusAdd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCusAdd.Name = "txtCusAdd"
         Me.txtCusAdd.Size = New System.Drawing.Size(307, 27)
         Me.txtCusAdd.TabIndex = 11
@@ -285,9 +285,9 @@
         Me.GroupBox2.Controls.Add(Me.cmbSearch)
         Me.GroupBox2.Controls.Add(Me.cboType)
         Me.GroupBox2.Location = New System.Drawing.Point(9, 347)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(794, 86)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
@@ -298,7 +298,7 @@
         Me.optCusAddr.AutoSize = True
         Me.optCusAddr.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.optCusAddr.Location = New System.Drawing.Point(8, 52)
-        Me.optCusAddr.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.optCusAddr.Margin = New System.Windows.Forms.Padding(2)
         Me.optCusAddr.Name = "optCusAddr"
         Me.optCusAddr.Size = New System.Drawing.Size(123, 23)
         Me.optCusAddr.TabIndex = 13
@@ -312,7 +312,7 @@
         Me.optFindCusName.Checked = True
         Me.optFindCusName.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.optFindCusName.Location = New System.Drawing.Point(8, 24)
-        Me.optFindCusName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.optFindCusName.Margin = New System.Windows.Forms.Padding(2)
         Me.optFindCusName.Name = "optFindCusName"
         Me.optFindCusName.Size = New System.Drawing.Size(104, 22)
         Me.optFindCusName.TabIndex = 12
@@ -333,7 +333,7 @@
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dbCusGrid)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "searchCus"
         Me.Text = "ค้นหาลูกค้า"
         CType(Me.dbCusGrid, System.ComponentModel.ISupportInitialize).EndInit()

@@ -335,7 +335,16 @@ Public Class frmPrint
         'strTrhDate = CStr(Format((DateInterval.Year, -543, ds.Tables("prnTrh").Rows(c).Item("trh_date")), "dd/MM/yyyy")) 'วันที่บิล
         strTrhDate = CStr(Format(((DateAndTime.Day(ds.Tables("prnTrh").Rows(c).Item("trh_date")) & "/" & Month(ds.Tables("prnTrh").Rows(c).Item("trh_date")) & "/" & Year(ds.Tables("prnTrh").Rows(c).Item("trh_date")) - 543)))) 'วันที่บิล
         strTrhCus = CStr(ds.Tables("prnTrh").Rows(c).Item("trh_cus")) 'รหัสลูกค้า
-        strArName = CStr(ds.Tables("prnTrh").Rows(c).Item("Ar_Name")) 'ชื่อร้าน
+        If strTrhCus = "116014" Then
+
+            strArName = selCusName
+
+        Else
+
+            strArName = CStr(ds.Tables("prnTrh").Rows(c).Item("Ar_Name")) 'ชื่อร้าน
+
+        End If
+
         strArAddr = CStr(ds.Tables("prnTrh").Rows(c).Item("ar_addr")) 'ที่อยู่
         strArAddr1 = CStr(ds.Tables("prnTrh").Rows(c).Item("ar_addr_1")) 'ที่อยู่
         strArAddr2 = CStr(ds.Tables("prnTrh").Rows(c).Item("ar_addr_2")) 'ที่อยู่
@@ -436,6 +445,7 @@ Public Class frmPrint
 
             dblTrhDisc = CDbl(Microsoft.VisualBasic.Left(ds.Tables("prnTrh").Rows(c).Item("trh_disc"), (Len(ds.Tables("prnTrh").Rows(c).Item("trh_disc")) - 1)))
             dblTrhDisc = Math.Round((dblTrhDisc * ds.Tables("prnTrh").Rows(c).Item("trh_amt")) / 100, 2)
+
             strTrhDisc = Format(Math.Round(dblTrhDisc, 2), "#,##0.00")
             strTrhDiscPrn = ds.Tables("prnTrh").Rows(c).Item("trh_disc")
 
@@ -453,22 +463,23 @@ Public Class frmPrint
             dblTrhDePoSit = 0
             strTrhDeposit = "0.00"
 
-        ElseIf Microsoft.VisualBasic.Right(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), 1) = "%" Then
-            dblTrhDePoSit = CDbl(Microsoft.VisualBasic.Left(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), (Len(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit")) - 1)))
-            dblTrhDePoSit = (dblTrhAmt * dblTrhDePoSit) / 100
-            strTrhDeposit = Format(dblTrhDePoSit, "#,##0.00")
+            'ElseIf Microsoft.VisualBasic.Right(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), 1) = "%" Then
+            '    dblTrhDePoSit = CDbl(Microsoft.VisualBasic.Left(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), (Len(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit")) - 1)))
+            '    dblTrhDePoSit = (dblTrhAmt * dblTrhDePoSit) / 100
+            '    strTrhDeposit = Format(dblTrhDePoSit, "#,##0.00")
 
-        ElseIf Microsoft.VisualBasic.Right(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), 1) = "b" Then
+            'ElseIf Microsoft.VisualBasic.Right(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), 1) = "b" Then
 
-            dblTrhDePoSit = CDbl(Microsoft.VisualBasic.Left(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), (Len(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit")) - 1)))
-            strTrhDeposit = Format(dblTrhDePoSit, "#,##0.00")
+            '    dblTrhDePoSit = CDbl(Microsoft.VisualBasic.Left(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), (Len(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit")) - 1)))
+            '    strTrhDeposit = Format(dblTrhDePoSit, "#,##0.00")
 
-        ElseIf Microsoft.VisualBasic.Right(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), 1) = "B" Then
+            'ElseIf Microsoft.VisualBasic.Right(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), 1) = "B" Then
 
-            dblTrhDePoSit = CDbl(Microsoft.VisualBasic.Left(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), (Len(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit")) - 1)))
-            strTrhDeposit = Format(dblTrhDePoSit, "#,##0.00")
+            '    dblTrhDePoSit = CDbl(Microsoft.VisualBasic.Left(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), (Len(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit")) - 1)))
+            '    strTrhDeposit = Format(dblTrhDePoSit, "#,##0.00")
 
-        ElseIf IsNumeric(Microsoft.VisualBasic.Right(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), 1)) Then
+            'ElseIf IsNumeric(Microsoft.VisualBasic.Right(ds.Tables("prnTrh").Rows(c).Item("trh_Deposit"), 1)) Then
+        Else
 
             dblTrhDePoSit = CDbl(ds.Tables("prnTrh").Rows(c).Item("trh_DePosit"))
             strTrhDeposit = Format(dblTrhDePoSit, "#,##0.00")
@@ -494,7 +505,8 @@ Public Class frmPrint
         End If
 
         ThaiBaht01 = StrTrhFullAmt  'ยอดเงินรวม
-        stringTotal = DBtools.NumberToThaiWord(ThaiBaht01)
+        stringTotal = DBtools.ThaiBaht(ThaiBaht01)
+        'stringTotal = DBtools.NumberToThaiWord(ThaiBaht01)
         strTrhDetail = CStr(ds.Tables("prnTrh").Rows(c).Item("trh_detail"))   'หมายเหตุหลัก  ส่วนท้ายบิล
 
         '=========เริ่มส่วนของการ Print   รายละเอียดสินค้า  =================================================================
@@ -528,14 +540,14 @@ Public Class frmPrint
                         strStkName = CStr((ds.Tables("prnDtl").Rows(c).Item("stk_name_1"))) 'ชื่อสินค้า Sale
                     End If
 
-                    strQty = CSng(Format(ds.Tables("prnDtl").Rows(c).Item("dtl_num"), "#,##0.00")) 'จำนวน
+                    strQty = CSng(Format(ds.Tables("prnDtl").Rows(c).Item("dtl_num"), FMsetDigiCal)) 'จำนวน
                     strPrice = Format(CDbl(ds.Tables("prnDtl").Rows(c).Item("Dtl_price")), FMsetDigiCal) 'ราคา/แผ่น
                     strDisc = 0
                     strPriceDisc = ""
                     If (ds.Tables("prnDtl").Rows(c).Item("Dtl_t_disc")) = "0" Then
 
                         'str13 = Format(CDbl(DS.Tables("Print").Rows(c).Item("Dtl_sum")), "#,##0.00") 'ราคารวม
-                        strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 4), "#,##0.00")
+                        strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 4), FMsetDigiCal)
                         strStkName = CStr(ds.Tables("prnDtl").Rows(c).Item("stk_name_1")) 'ชื่อสินค้า
 
                     Else
@@ -564,23 +576,23 @@ Public Class frmPrint
                         If Microsoft.VisualBasic.Right(strDisc, 1) = "b" Or Microsoft.VisualBasic.Right(strDisc, 1) = "B" Then
                             '  ลดราคาเป็น บาท  "b"  
                             tempDisc = CDbl(Microsoft.VisualBasic.Left(strDisc, Len(strDisc) - 1))
-                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), "#,##0.00")
+                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), FMsetDigiCal)
 
-                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 3), "#,##0.00")
+                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 3), FMsetDigiCal)
 
                         ElseIf Microsoft.VisualBasic.Right(strDisc, 1) = "%" Then
 
                             tempDisc = CDbl(Microsoft.VisualBasic.Left(strDisc, Len(strDisc) - 1))
                             tempDisc = (CDbl(ds.Tables("prnDtl").Rows(c).Item("Dtl_price")) * CDbl(tempDisc)) / 100
 
-                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), "#,##0.00")
-                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 3), "#,##0.00")
+                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), FMsetDigiCal)
+                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 3), FMsetDigiCal)
 
                         ElseIf IsNumeric(strDisc) Then
 
                             tempDisc = CDbl(strDisc)
-                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), "#,##0.00")
-                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 3), "#,##0.00")
+                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), FMsetDigiCal)
+                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 3), FMsetDigiCal)
 
                         End If
 
@@ -676,7 +688,7 @@ Public Class frmPrint
                         strStkName = CStr((ds.Tables("prnDtl").Rows(c).Item("stk_name_1"))) 'ชื่อสินค้า Sale
                     End If
 
-                    strQty = CSng(Format(ds.Tables("prnDtl").Rows(c).Item("dtl_num"), "#,##0.00")) 'จำนวน
+                    strQty = CSng(Format(ds.Tables("prnDtl").Rows(c).Item("dtl_num"), FMsetDigiCal)) 'จำนวน
                     strPrice = Format(CDbl(ds.Tables("prnDtl").Rows(c).Item("Dtl_price")), FMsetDigiCal) 'ราคา/แผ่น
                     strDisc = ""
                     tempDisc = 0
@@ -685,7 +697,7 @@ Public Class frmPrint
 
                     If (ds.Tables("prnDtl").Rows(c).Item("Dtl_t_disc")) = "0" Then
                         'str13 = Format(CDbl(DS.Tables("Print").Rows(c).Item("Dtl_sum")), "#,##0.00") 'ราคารวม
-                        strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 3), FMsetDigiCal)
+                        strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 4), FMsetDigiCal)
                         strStkName = CStr(ds.Tables("prnDtl").Rows(c).Item("stk_name_1")) 'ชื่อสินค้า
 
                     Else
@@ -699,23 +711,23 @@ Public Class frmPrint
                         If Microsoft.VisualBasic.Right(strDisc, 1) = "b" Or Microsoft.VisualBasic.Right(strDisc, 1) = "B" Then
                             '  ลดราคาเป็น บาท  "b"  
                             tempDisc = CDbl(Microsoft.VisualBasic.Left(strDisc, Len(strDisc) - 1))
-                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), "#,##0.00")
+                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), FMsetDigiCal)
 
-                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 3), FMsetDigiCal)
+                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 4), FMsetDigiCal)
 
                         ElseIf Microsoft.VisualBasic.Right(strDisc, 1) = "%" Then
 
                             tempDisc = CDbl(Microsoft.VisualBasic.Left(strDisc, Len(strDisc) - 1))
                             tempDisc = (CDbl(ds.Tables("prnDtl").Rows(c).Item("Dtl_price")) * CDbl(tempDisc)) / 100
 
-                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), "#,##0.00")
-                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 3), FMsetDigiCal)
+                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), FMsetDigiCal)
+                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 4), FMsetDigiCal)
 
                         ElseIf IsNumeric(strDisc) Then
 
                             tempDisc = CDbl(strDisc)
-                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), "#,##0.00")
-                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 3), FMsetDigiCal)
+                            strPriceDisc = Format(Math.Round(strPrice - tempDisc, 4), FMsetDigiCal)
+                            strSum = Format(Math.Round(ds.Tables("prnDtl").Rows(c).Item("Dtl_sum"), 4), FMsetDigiCal)
 
                         End If
 
@@ -811,17 +823,18 @@ Public Class frmPrint
         End If
 
         If chkVAT = "N" Then
+            Dim userCS As String = DBtools.getCSName(strTrhCus)
             ' MsgBox("Dvat=" & Dvat)
             AnyString1(e.Graphics, Dvat & "-ตัดสต๊อกคลังสินค้า " & " (" & "01" & ") ", 630, 920, False)  '  ปรับจาก 950 เดิมขึ้นอีก 30
             e.Graphics.DrawImage(newImage, 760, 60, width, height)
-            AnyString1(e.Graphics, "PR" & strTime & "[" & GetUserName & "]", 630, 935, False)  '  ปรับจาก 950 เดิมขึ้นอีก 30
+            AnyString1(e.Graphics, "PR" & strTime & "[" & userCS & "]", 630, 935, False)  '  ปรับจาก 950 เดิมขึ้นอีก 30
 
         Else
             'MsgBox("Dvat=" & Dvat)
-
+            Dim userCS As String = DBtools.getCSName(strTrhCus)
             AnyString1(e.Graphics, Dvat & "-FM-FA-01 Rev.00 11/06/04  " & " (" & "01" & ") ", 600, 930 + offSetY, False)
             e.Graphics.DrawImage(newImage, 620, 20 + offSetY, width, height)
-            AnyString1(e.Graphics, "PR" & strTime & "[" & GetUserName() & "]", 600, 945 + offSetY, False)  '  ปรับจาก 950 เดิมขึ้นอีก 30
+            AnyString1(e.Graphics, "PR" & strTime & "[" & userCS & "]", 600, 945 + offSetY, False)  '  ปรับจาก 950 เดิมขึ้นอีก 30
 
         End If
 
@@ -854,23 +867,25 @@ Public Class frmPrint
         If Len(strTrhDetail) > 0 Then
             AnyString1(e.Graphics, "หมายเหตุ :" & strTrhDetail, 135, 810, False)  '  ปรับจาก  840 -->  810
         End If
-        If chkVATtype(strTrhCus) = 0 Then
-            AnyString2(e.Graphics, stringTotal, 135, 860 + 20, False) 'thaibaht  ตัวอักษรจำนวน ภาษาไทย  ปรับขึ้นอีก  30 จาก  880 เป็น   850
+        'If chkVATtype(strTrhCus) = 0 Then
+        '    AnyString2(e.Graphics, stringTotal, 135, 860 + 20, False) 'thaibaht  ตัวอักษรจำนวน ภาษาไทย  ปรับขึ้นอีก  30 จาก  880 เป็น   850
 
-        Else
-            AnyString2(e.Graphics, "หมายเหตุ : คิดภาษีแบบรวมใน ", 135, 860, False)
-            AnyString2(e.Graphics, stringTotal, 135, 860 + 20, False) 'thaibaht  ตัวอักษรจำนวน ภาษาไทย  ปรับขึ้นอีก  30 จาก  880 เป็น   850
+        'Else
+        '    ' AnyString2(e.Graphics, "หมายเหตุ : คิดภาษีแบบรวมใน ", 135, 860, False)
+        '    AnyString1(e.Graphics, "หมายเหตุ :" & strTrhDetail, 135, 810, False)
+        '    AnyString2(e.Graphics, stringTotal, 135, 860 + 20, False) 'thaibaht  ตัวอักษรจำนวน ภาษาไทย  ปรับขึ้นอีก  30 จาก  880 เป็น   850
 
-        End If
+        'End If
+        AnyString2(e.Graphics, stringTotal, 135, 860 + 20, False) 'thaibaht  ตัวอักษรจำนวน ภาษาไทย  ปรับขึ้นอีก  30 จาก  880 เป็น   850
 
         If chkVAT = "V" Or chkVAT = "v" Then
 
             If strArMapCode = "I01" Then
 
                 'ทศนิยม 4 ตำแหน่ง
-                AnyString2(e.Graphics, strTrhTotal1, (730 + 65), 860, True)   ' ยอดเงินหลังหลักส่วนลด และ หักมัดจำ
+                AnyString2(e.Graphics, strTrhTotal1, (730 + 95), 860, True)   ' ยอดเงินหลังหลักส่วนลด และ หักมัดจำ
                 'AnyString2(e.Graphics, "0", (730 + 65), 880, True)     'ภาษี
-                AnyString2(e.Graphics, strTrhTotal1, (730 + 65), 905, True)   'ยอดเงินรวม
+                AnyString2(e.Graphics, strTrhTotal1, (730 + 95), 905, True)   'ยอดเงินรวม
                 '=================================================================
                 'AnyString2(e.Graphics, StrTrhAmt, (730 + 65), 860, True)   ' ยอดเงินหลังหลักส่วนลด และ หักมัดจำ
                 'AnyString2(e.Graphics, "0", (730 + 65), 880, True)     'ภาษี
@@ -903,6 +918,11 @@ Public Class frmPrint
             AnyString1(e.Graphics, "หักเงินส่วนลด" & " " & strTrhDiscPrn, 550, totalYY, False)
             AnyString2(e.Graphics, strTrhDisc, (730 + 65), totalYY, True)
             totalYY = totalYY - 20
+        ElseIf dblTrhDisc < 0 Then
+
+            AnyString1(e.Graphics, "เงินส่วนเพิ่ม", 550, totalYY, False)
+            AnyString2(e.Graphics, (strTrhDisc * -1).ToString("#,##0.00"), (730 + 65), totalYY, True)
+            totalYY = totalYY - 20
 
         End If
 
@@ -911,7 +931,10 @@ Public Class frmPrint
             AnyString1(e.Graphics, "ยอดรวม", 550, totalYY, False)  '815 
             AnyString2(e.Graphics, StrTrhAmt, (730 + 65), totalYY, True)  '815 
             totalYY = totalYY - 20
-
+        ElseIf dblTrhDisc < 0 Then
+            AnyString1(e.Graphics, "ยอดรวม", 550, totalYY, False)  '815 
+            AnyString2(e.Graphics, StrTrhAmt, (730 + 65), totalYY, True)  '815 
+            totalYY = totalYY - 20
         End If
 
     

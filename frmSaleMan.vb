@@ -43,19 +43,19 @@ Public Class frmSaleMan
     Friend WithEvents cmbSelect As System.Windows.Forms.Button
     Friend WithEvents cmbgrp As System.Windows.Forms.ComboBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.cmbSelect = New System.Windows.Forms.Button
-        Me.txtSaleID = New System.Windows.Forms.TextBox
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.txtSaleName = New System.Windows.Forms.TextBox
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.cmbgrp = New System.Windows.Forms.ComboBox
-        Me.grdSaleMan = New System.Windows.Forms.DataGrid
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.cmbExit = New System.Windows.Forms.Button
-        Me.cmbDel = New System.Windows.Forms.Button
-        Me.cmbSave = New System.Windows.Forms.Button
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cmbSelect = New System.Windows.Forms.Button()
+        Me.txtSaleID = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtSaleName = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cmbgrp = New System.Windows.Forms.ComboBox()
+        Me.grdSaleMan = New System.Windows.Forms.DataGrid()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.cmbExit = New System.Windows.Forms.Button()
+        Me.cmbDel = New System.Windows.Forms.Button()
+        Me.cmbSave = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdSaleMan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -212,7 +212,7 @@ Public Class frmSaleMan
         'frmSaleMan
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(512, 295)
+        Me.ClientSize = New System.Drawing.Size(524, 322)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.grdSaleMan)

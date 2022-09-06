@@ -97,6 +97,30 @@ Public Class frmSale
     Friend WithEvents opt2D As RadioButton
     Friend WithEvents lbMapCode As Label
     Friend WithEvents lbMapName As Label
+    Friend WithEvents txtTotalBath As TextBox
+    Friend WithEvents txtCusName As TextBox
+    Friend WithEvents TabControl3 As TabControl
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents lbDepBalance As Label
+    Friend WithEvents lbDepAmt As Label
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Label37 As Label
+    Friend WithEvents Label36 As Label
+    Friend WithEvents dtpDocDate As DateTimePicker
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents lbDocDepno As Label
+    Friend WithEvents btnSelDep As Button
+    Friend WithEvents ListDep As ListView
+    Friend WithEvents txtUseDep As TextBox
+    Friend WithEvents GroupBox11 As GroupBox
+    Friend WithEvents btnDepOK As Button
+    Friend WithEvents lbSumDep As Label
+    Friend WithEvents Label39 As Label
+    Friend WithEvents Label41 As Label
+    Friend WithEvents txtPercentDep As TextBox
+    Friend WithEvents btnCleartxt As Button
     Friend WithEvents cmbDel As System.Windows.Forms.Button
 
 
@@ -143,7 +167,6 @@ Public Class frmSale
     Friend WithEvents cmbExit As System.Windows.Forms.Button
     Friend WithEvents lbOrder As System.Windows.Forms.Label
     Friend WithEvents cmbSearch As System.Windows.Forms.Button
-    Friend WithEvents lbCusName As System.Windows.Forms.Label
     Friend WithEvents lbCusID As System.Windows.Forms.Label
     Friend WithEvents txtSaleQty As System.Windows.Forms.TextBox
     Friend WithEvents txtDisc As System.Windows.Forms.TextBox
@@ -212,8 +235,31 @@ Public Class frmSale
         Me.txtCusVat = New System.Windows.Forms.TextBox()
         Me.Label46 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.lbStatus = New System.Windows.Forms.Label()
+        Me.TabControl3 = New System.Windows.Forms.TabControl()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.ListEdit = New System.Windows.Forms.ListView()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.lbSumDep = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.btnCleartxt = New System.Windows.Forms.Button()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.txtPercentDep = New System.Windows.Forms.TextBox()
+        Me.btnDepOK = New System.Windows.Forms.Button()
+        Me.btnSelDep = New System.Windows.Forms.Button()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.dtpDocDate = New System.Windows.Forms.DateTimePicker()
+        Me.lbDepAmt = New System.Windows.Forms.Label()
+        Me.lbDepBalance = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lbDocDepno = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.txtUseDep = New System.Windows.Forms.TextBox()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.ListDep = New System.Windows.Forms.ListView()
+        Me.lbOldCode = New System.Windows.Forms.Label()
+        Me.lbStatus = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.opt4D = New System.Windows.Forms.RadioButton()
         Me.opt2D = New System.Windows.Forms.RadioButton()
@@ -242,7 +288,6 @@ Public Class frmSale
         Me.lbDicPage1 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.lbOldCode = New System.Windows.Forms.Label()
         Me.lbStkCode = New System.Windows.Forms.Label()
         Me.cmbDel = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -282,8 +327,8 @@ Public Class frmSale
         Me.cmbPrint2 = New System.Windows.Forms.Button()
         Me.lbCusID = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.txtCusName = New System.Windows.Forms.TextBox()
         Me.cmbSearch = New System.Windows.Forms.Button()
-        Me.lbCusName = New System.Windows.Forms.Label()
         Me.lbCreLimit = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtTermDtl = New System.Windows.Forms.TextBox()
@@ -323,33 +368,38 @@ Public Class frmSale
         Me.lbArAcct = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox7.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox9.SuspendLayout()
-        Me.TabControl2.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
-        Me.GroupBox10.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        Me.TabPage5.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
-        Me.SuspendLayout()
+        Me.txtTotalBath = New System.Windows.Forms.TextBox()
+        Me.GroupBox1.SuspendLayout
+        Me.GroupBox3.SuspendLayout
+        Me.GroupBox2.SuspendLayout
+        Me.TabControl3.SuspendLayout
+        Me.TabPage4.SuspendLayout
+        Me.TabPage6.SuspendLayout
+        Me.GroupBox11.SuspendLayout
+        Me.GroupBox7.SuspendLayout
+        Me.GroupBox4.SuspendLayout
+        Me.GroupBox5.SuspendLayout
+        Me.GroupBox9.SuspendLayout
+        Me.TabControl2.SuspendLayout
+        Me.TabPage1.SuspendLayout
+        Me.TabPage3.SuspendLayout
+        Me.GroupBox8.SuspendLayout
+        Me.GroupBox10.SuspendLayout
+        Me.TabControl1.SuspendLayout
+        Me.TabPage2.SuspendLayout
+        Me.TabPage5.SuspendLayout
+        Me.GroupBox6.SuspendLayout
+        Me.SuspendLayout
         '
         'lbWHcode
         '
         Me.lbWHcode.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.lbWHcode.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbWHcode.ForeColor = System.Drawing.Color.White
-        Me.lbWHcode.Location = New System.Drawing.Point(130, 19)
-        Me.lbWHcode.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbWHcode.Location = New System.Drawing.Point(65, 10)
+        Me.lbWHcode.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbWHcode.Name = "lbWHcode"
-        Me.lbWHcode.Size = New System.Drawing.Size(106, 46)
+        Me.lbWHcode.Size = New System.Drawing.Size(53, 24)
         Me.lbWHcode.TabIndex = 1
         Me.lbWHcode.Text = "Label9"
         Me.lbWHcode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -360,10 +410,10 @@ Public Class frmSale
         Me.lbWhName.BackColor = System.Drawing.Color.Yellow
         Me.lbWhName.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbWhName.ForeColor = System.Drawing.Color.Black
-        Me.lbWhName.Location = New System.Drawing.Point(248, 19)
-        Me.lbWhName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbWhName.Location = New System.Drawing.Point(124, 10)
+        Me.lbWhName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbWhName.Name = "lbWhName"
-        Me.lbWhName.Size = New System.Drawing.Size(274, 46)
+        Me.lbWhName.Size = New System.Drawing.Size(137, 24)
         Me.lbWhName.TabIndex = 0
         Me.lbWhName.Text = "Label7"
         Me.lbWhName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -379,11 +429,11 @@ Public Class frmSale
         Me.GroupBox1.Controls.Add(Me.lbWHcode)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.lbWhName)
-        Me.GroupBox1.Location = New System.Drawing.Point(2110, 146)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(1055, 76)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(476, 160)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(238, 83)
         Me.GroupBox1.TabIndex = 78
         Me.GroupBox1.TabStop = False
         '
@@ -392,10 +442,10 @@ Public Class frmSale
         Me.txtUserName.BackColor = System.Drawing.Color.Black
         Me.txtUserName.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtUserName.ForeColor = System.Drawing.Color.Yellow
-        Me.txtUserName.Location = New System.Drawing.Point(96, 94)
-        Me.txtUserName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.txtUserName.Location = New System.Drawing.Point(48, 49)
+        Me.txtUserName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtUserName.Name = "txtUserName"
-        Me.txtUserName.Size = New System.Drawing.Size(370, 50)
+        Me.txtUserName.Size = New System.Drawing.Size(185, 26)
         Me.txtUserName.TabIndex = 98
         Me.txtUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -403,10 +453,10 @@ Public Class frmSale
         '
         Me.Label32.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label32.ForeColor = System.Drawing.Color.Blue
-        Me.Label32.Location = New System.Drawing.Point(16, 110)
-        Me.Label32.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label32.Location = New System.Drawing.Point(8, 57)
+        Me.Label32.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(102, 29)
+        Me.Label32.Size = New System.Drawing.Size(51, 15)
         Me.Label32.TabIndex = 97
         Me.Label32.Text = "User :"
         Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -414,20 +464,20 @@ Public Class frmSale
         'dtp01
         '
         Me.dtp01.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.dtp01.Location = New System.Drawing.Point(78, 21)
-        Me.dtp01.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtp01.Location = New System.Drawing.Point(39, 11)
+        Me.dtp01.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dtp01.Name = "dtp01"
-        Me.dtp01.Size = New System.Drawing.Size(390, 46)
+        Me.dtp01.Size = New System.Drawing.Size(197, 27)
         Me.dtp01.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Maroon
-        Me.Label1.Location = New System.Drawing.Point(14, 27)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(7, 14)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 42)
+        Me.Label1.Size = New System.Drawing.Size(31, 22)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "วันที่"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -436,10 +486,10 @@ Public Class frmSale
         '
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Blue
-        Me.Label12.Location = New System.Drawing.Point(8, 31)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Location = New System.Drawing.Point(4, 16)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(144, 40)
+        Me.Label12.Size = New System.Drawing.Size(72, 21)
         Me.Label12.TabIndex = 83
         Me.Label12.Text = "¤ÅÑ§ÊÔ¹¤éÒ"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -449,12 +499,12 @@ Public Class frmSale
         Me.txtSaleMan.BackColor = System.Drawing.Color.AliceBlue
         Me.txtSaleMan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSaleMan.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtSaleMan.Location = New System.Drawing.Point(128, 94)
-        Me.txtSaleMan.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSaleMan.Location = New System.Drawing.Point(64, 49)
+        Me.txtSaleMan.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtSaleMan.MaxLength = 60
         Me.txtSaleMan.Name = "txtSaleMan"
         Me.txtSaleMan.ReadOnly = True
-        Me.txtSaleMan.Size = New System.Drawing.Size(96, 35)
+        Me.txtSaleMan.Size = New System.Drawing.Size(49, 21)
         Me.txtSaleMan.TabIndex = 65
         Me.txtSaleMan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -464,11 +514,11 @@ Public Class frmSale
         Me.cboTypeDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cboTypeDoc.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cboTypeDoc.ForeColor = System.Drawing.Color.Blue
-        Me.cboTypeDoc.ItemHeight = 39
-        Me.cboTypeDoc.Location = New System.Drawing.Point(30, 21)
-        Me.cboTypeDoc.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboTypeDoc.ItemHeight = 19
+        Me.cboTypeDoc.Location = New System.Drawing.Point(15, 11)
+        Me.cboTypeDoc.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cboTypeDoc.Name = "cboTypeDoc"
-        Me.cboTypeDoc.Size = New System.Drawing.Size(414, 47)
+        Me.cboTypeDoc.Size = New System.Drawing.Size(209, 27)
         Me.cboTypeDoc.TabIndex = 73
         '
         'lbOrder
@@ -477,10 +527,10 @@ Public Class frmSale
         Me.lbOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbOrder.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbOrder.ForeColor = System.Drawing.Color.White
-        Me.lbOrder.Location = New System.Drawing.Point(500, 146)
-        Me.lbOrder.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbOrder.Location = New System.Drawing.Point(250, 76)
+        Me.lbOrder.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbOrder.Name = "lbOrder"
-        Me.lbOrder.Size = New System.Drawing.Size(206, 50)
+        Me.lbOrder.Size = New System.Drawing.Size(104, 27)
         Me.lbOrder.TabIndex = 14
         Me.lbOrder.Text = "Order"
         Me.lbOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -488,10 +538,10 @@ Public Class frmSale
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 87)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(12, 45)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 42)
+        Me.Label2.Size = New System.Drawing.Size(45, 22)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "เลขที่"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -502,10 +552,10 @@ Public Class frmSale
         Me.txtNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNo.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtNo.ForeColor = System.Drawing.Color.Yellow
-        Me.txtNo.Location = New System.Drawing.Point(124, 83)
-        Me.txtNo.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNo.Location = New System.Drawing.Point(62, 43)
+        Me.txtNo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtNo.Name = "txtNo"
-        Me.txtNo.Size = New System.Drawing.Size(286, 44)
+        Me.txtNo.Size = New System.Drawing.Size(144, 26)
         Me.txtNo.TabIndex = 3
         Me.txtNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -517,11 +567,11 @@ Public Class frmSale
         Me.GroupBox3.Controls.Add(Me.txtDepoSit)
         Me.GroupBox3.Controls.Add(Me.txtCusDisc)
         Me.GroupBox3.Controls.Add(Me.Label45)
-        Me.GroupBox3.Location = New System.Drawing.Point(1000, 494)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox3.Location = New System.Drawing.Point(500, 257)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox3.Size = New System.Drawing.Size(594, 196)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox3.Size = New System.Drawing.Size(297, 102)
         Me.GroupBox3.TabIndex = 77
         Me.GroupBox3.TabStop = False
         '
@@ -530,37 +580,40 @@ Public Class frmSale
         Me.txtRefNo.BackColor = System.Drawing.Color.Yellow
         Me.txtRefNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRefNo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtRefNo.Location = New System.Drawing.Point(140, 133)
-        Me.txtRefNo.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtRefNo.Location = New System.Drawing.Point(135, 69)
+        Me.txtRefNo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtRefNo.MaxLength = 50
         Me.txtRefNo.Name = "txtRefNo"
-        Me.txtRefNo.Size = New System.Drawing.Size(442, 39)
+        Me.txtRefNo.Size = New System.Drawing.Size(157, 23)
         Me.txtRefNo.TabIndex = 80
+        Me.txtRefNo.Visible = False
         '
         'Label9
         '
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Blue
-        Me.Label9.Location = New System.Drawing.Point(24, 79)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(44, 39)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(174, 40)
+        Me.Label9.Size = New System.Drawing.Size(87, 21)
         Me.Label9.TabIndex = 82
         Me.Label9.Text = "หักเงินมัดจำ"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label9.Visible = False
         '
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.RadioButton3.Location = New System.Drawing.Point(40, 140)
-        Me.RadioButton3.Margin = New System.Windows.Forms.Padding(4)
+        Me.RadioButton3.Location = New System.Drawing.Point(47, 71)
+        Me.RadioButton3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(102, 35)
+        Me.RadioButton3.Size = New System.Drawing.Size(53, 20)
         Me.RadioButton3.TabIndex = 81
         Me.RadioButton3.TabStop = True
         Me.RadioButton3.Text = "Ref#"
         Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.RadioButton3.Visible = False
         '
         'txtDepoSit
         '
@@ -568,13 +621,14 @@ Public Class frmSale
         Me.txtDepoSit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDepoSit.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtDepoSit.ForeColor = System.Drawing.Color.White
-        Me.txtDepoSit.Location = New System.Drawing.Point(204, 79)
-        Me.txtDepoSit.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDepoSit.Location = New System.Drawing.Point(135, 41)
+        Me.txtDepoSit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtDepoSit.Name = "txtDepoSit"
-        Me.txtDepoSit.Size = New System.Drawing.Size(378, 43)
+        Me.txtDepoSit.Size = New System.Drawing.Size(155, 25)
         Me.txtDepoSit.TabIndex = 66
         Me.txtDepoSit.Text = "0"
         Me.txtDepoSit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtDepoSit.Visible = False
         '
         'txtCusDisc
         '
@@ -582,10 +636,10 @@ Public Class frmSale
         Me.txtCusDisc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCusDisc.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtCusDisc.ForeColor = System.Drawing.Color.White
-        Me.txtCusDisc.Location = New System.Drawing.Point(202, 23)
-        Me.txtCusDisc.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCusDisc.Location = New System.Drawing.Point(101, 12)
+        Me.txtCusDisc.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtCusDisc.Name = "txtCusDisc"
-        Me.txtCusDisc.Size = New System.Drawing.Size(380, 43)
+        Me.txtCusDisc.Size = New System.Drawing.Size(191, 25)
         Me.txtCusDisc.TabIndex = 65
         Me.txtCusDisc.Text = "0"
         Me.txtCusDisc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -594,10 +648,10 @@ Public Class frmSale
         '
         Me.Label45.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label45.ForeColor = System.Drawing.Color.Blue
-        Me.Label45.Location = New System.Drawing.Point(16, 31)
-        Me.Label45.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label45.Location = New System.Drawing.Point(8, 16)
+        Me.Label45.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(174, 40)
+        Me.Label45.Size = New System.Drawing.Size(87, 21)
         Me.Label45.TabIndex = 66
         Me.Label45.Text = "ส่วนลดหน้าบิล"
         Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -606,10 +660,10 @@ Public Class frmSale
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.RadioButton1.Location = New System.Drawing.Point(14, 504)
-        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(4)
+        Me.RadioButton1.Location = New System.Drawing.Point(7, 262)
+        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(148, 35)
+        Me.RadioButton1.Size = New System.Drawing.Size(75, 20)
         Me.RadioButton1.TabIndex = 78
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "หมายเหตุ"
@@ -621,19 +675,19 @@ Public Class frmSale
         Me.txtDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDetail.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtDetail.ForeColor = System.Drawing.Color.White
-        Me.txtDetail.Location = New System.Drawing.Point(168, 500)
-        Me.txtDetail.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDetail.Location = New System.Drawing.Point(84, 260)
+        Me.txtDetail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtDetail.Name = "txtDetail"
-        Me.txtDetail.Size = New System.Drawing.Size(818, 43)
+        Me.txtDetail.Size = New System.Drawing.Size(410, 25)
         Me.txtDetail.TabIndex = 77
         '
         'Label6
         '
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label6.Location = New System.Drawing.Point(14, 100)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(7, 52)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(64, 31)
+        Me.Label6.Size = New System.Drawing.Size(32, 16)
         Me.Label6.TabIndex = 80
         Me.Label6.Text = "Sale"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -644,10 +698,10 @@ Public Class frmSale
         Me.lbSelSale.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbSelSale.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbSelSale.ForeColor = System.Drawing.Color.White
-        Me.lbSelSale.Location = New System.Drawing.Point(528, 83)
-        Me.lbSelSale.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbSelSale.Location = New System.Drawing.Point(325, 42)
+        Me.lbSelSale.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbSelSale.Name = "lbSelSale"
-        Me.lbSelSale.Size = New System.Drawing.Size(62, 50)
+        Me.lbSelSale.Size = New System.Drawing.Size(31, 26)
         Me.lbSelSale.TabIndex = 79
         Me.lbSelSale.Text = "..."
         Me.lbSelSale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -659,10 +713,10 @@ Public Class frmSale
         Me.lbSaleName.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.lbSaleName.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbSaleName.ForeColor = System.Drawing.Color.White
-        Me.lbSaleName.Location = New System.Drawing.Point(86, 83)
-        Me.lbSaleName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbSaleName.Location = New System.Drawing.Point(44, 42)
+        Me.lbSaleName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbSaleName.Name = "lbSaleName"
-        Me.lbSaleName.Size = New System.Drawing.Size(440, 50)
+        Me.lbSaleName.Size = New System.Drawing.Size(281, 27)
         Me.lbSaleName.TabIndex = 78
         Me.lbSaleName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -672,10 +726,10 @@ Public Class frmSale
         Me.txtCusVat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCusVat.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtCusVat.ForeColor = System.Drawing.Color.Red
-        Me.txtCusVat.Location = New System.Drawing.Point(712, 88)
-        Me.txtCusVat.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCusVat.Location = New System.Drawing.Point(423, 44)
+        Me.txtCusVat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtCusVat.Name = "txtCusVat"
-        Me.txtCusVat.Size = New System.Drawing.Size(122, 44)
+        Me.txtCusVat.Size = New System.Drawing.Size(62, 26)
         Me.txtCusVat.TabIndex = 69
         Me.txtCusVat.Text = "0"
         Me.txtCusVat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -684,18 +738,19 @@ Public Class frmSale
         '
         Me.Label46.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label46.ForeColor = System.Drawing.Color.Blue
-        Me.Label46.Location = New System.Drawing.Point(608, 100)
-        Me.Label46.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label46.Location = New System.Drawing.Point(364, 45)
+        Me.Label46.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(106, 35)
+        Me.Label46.Size = New System.Drawing.Size(53, 18)
         Me.Label46.TabIndex = 70
         Me.Label46.Text = "VAT %"
         Me.Label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.TabControl3)
+        Me.GroupBox2.Controls.Add(Me.lbOldCode)
         Me.GroupBox2.Controls.Add(Me.lbStatus)
-        Me.GroupBox2.Controls.Add(Me.ListEdit)
         Me.GroupBox2.Controls.Add(Me.txtDetail)
         Me.GroupBox2.Controls.Add(Me.GroupBox7)
         Me.GroupBox2.Controls.Add(Me.lbSumary)
@@ -710,13 +765,320 @@ Public Class frmSale
         Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.RadioButton1)
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 496)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 258)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(2080, 833)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Size = New System.Drawing.Size(1040, 433)
         Me.GroupBox2.TabIndex = 9
         Me.GroupBox2.TabStop = False
+        '
+        'TabControl3
+        '
+        Me.TabControl3.Controls.Add(Me.TabPage4)
+        Me.TabControl3.Controls.Add(Me.TabPage6)
+        Me.TabControl3.Location = New System.Drawing.Point(7, 15)
+        Me.TabControl3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabControl3.Name = "TabControl3"
+        Me.TabControl3.SelectedIndex = 0
+        Me.TabControl3.Size = New System.Drawing.Size(1022, 238)
+        Me.TabControl3.TabIndex = 103
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.ListEdit)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage4.Size = New System.Drawing.Size(1014, 212)
+        Me.TabPage4.TabIndex = 0
+        Me.TabPage4.Text = "รายการ"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'ListEdit
+        '
+        Me.ListEdit.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.ListEdit.FullRowSelect = True
+        Me.ListEdit.HideSelection = False
+        Me.ListEdit.Location = New System.Drawing.Point(4, 6)
+        Me.ListEdit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListEdit.Name = "ListEdit"
+        Me.ListEdit.Size = New System.Drawing.Size(1000, 208)
+        Me.ListEdit.TabIndex = 6
+        Me.ListEdit.UseCompatibleStateImageBehavior = False
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.lbSumDep)
+        Me.TabPage6.Controls.Add(Me.Label39)
+        Me.TabPage6.Controls.Add(Me.GroupBox11)
+        Me.TabPage6.Controls.Add(Me.ListDep)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage6.Size = New System.Drawing.Size(1014, 212)
+        Me.TabPage6.TabIndex = 1
+        Me.TabPage6.Text = "เงินมัดจำ"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'lbSumDep
+        '
+        Me.lbSumDep.BackColor = System.Drawing.Color.SteelBlue
+        Me.lbSumDep.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lbSumDep.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.lbSumDep.Font = New System.Drawing.Font("Cordia New", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbSumDep.ForeColor = System.Drawing.Color.White
+        Me.lbSumDep.Location = New System.Drawing.Point(864, 184)
+        Me.lbSumDep.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbSumDep.Name = "lbSumDep"
+        Me.lbSumDep.Size = New System.Drawing.Size(136, 24)
+        Me.lbSumDep.TabIndex = 47
+        Me.lbSumDep.Text = "0"
+        Me.lbSumDep.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Font = New System.Drawing.Font("Cordia New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.Location = New System.Drawing.Point(803, 187)
+        Me.Label39.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(46, 20)
+        Me.Label39.TabIndex = 105
+        Me.Label39.Text = "รวมเงิน"
+        '
+        'GroupBox11
+        '
+        Me.GroupBox11.Controls.Add(Me.btnCleartxt)
+        Me.GroupBox11.Controls.Add(Me.Label41)
+        Me.GroupBox11.Controls.Add(Me.txtPercentDep)
+        Me.GroupBox11.Controls.Add(Me.btnDepOK)
+        Me.GroupBox11.Controls.Add(Me.btnSelDep)
+        Me.GroupBox11.Controls.Add(Me.Label35)
+        Me.GroupBox11.Controls.Add(Me.dtpDocDate)
+        Me.GroupBox11.Controls.Add(Me.lbDepAmt)
+        Me.GroupBox11.Controls.Add(Me.lbDepBalance)
+        Me.GroupBox11.Controls.Add(Me.Label8)
+        Me.GroupBox11.Controls.Add(Me.lbDocDepno)
+        Me.GroupBox11.Controls.Add(Me.Label36)
+        Me.GroupBox11.Controls.Add(Me.txtUseDep)
+        Me.GroupBox11.Controls.Add(Me.Label38)
+        Me.GroupBox11.Controls.Add(Me.Label37)
+        Me.GroupBox11.Location = New System.Drawing.Point(11, 8)
+        Me.GroupBox11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox11.Size = New System.Drawing.Size(992, 70)
+        Me.GroupBox11.TabIndex = 104
+        Me.GroupBox11.TabStop = False
+        '
+        'btnCleartxt
+        '
+        Me.btnCleartxt.BackColor = System.Drawing.Color.Brown
+        Me.btnCleartxt.Font = New System.Drawing.Font("Cordia New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCleartxt.ForeColor = System.Drawing.Color.White
+        Me.btnCleartxt.Location = New System.Drawing.Point(943, 27)
+        Me.btnCleartxt.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCleartxt.Name = "btnCleartxt"
+        Me.btnCleartxt.Size = New System.Drawing.Size(45, 29)
+        Me.btnCleartxt.TabIndex = 49
+        Me.btnCleartxt.Text = "ล้าง"
+        Me.btnCleartxt.UseVisualStyleBackColor = False
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Cordia New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.Location = New System.Drawing.Point(690, 10)
+        Me.Label41.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(46, 20)
+        Me.Label41.TabIndex = 48
+        Me.Label41.Text = "%มัดจำ"
+        '
+        'txtPercentDep
+        '
+        Me.txtPercentDep.BackColor = System.Drawing.Color.SteelBlue
+        Me.txtPercentDep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPercentDep.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtPercentDep.ForeColor = System.Drawing.Color.White
+        Me.txtPercentDep.Location = New System.Drawing.Point(689, 32)
+        Me.txtPercentDep.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPercentDep.Name = "txtPercentDep"
+        Me.txtPercentDep.Size = New System.Drawing.Size(50, 27)
+        Me.txtPercentDep.TabIndex = 47
+        Me.txtPercentDep.Text = "0"
+        Me.txtPercentDep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnDepOK
+        '
+        Me.btnDepOK.BackColor = System.Drawing.Color.DarkSeaGreen
+        Me.btnDepOK.Font = New System.Drawing.Font("Cordia New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDepOK.ForeColor = System.Drawing.Color.White
+        Me.btnDepOK.Location = New System.Drawing.Point(882, 27)
+        Me.btnDepOK.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnDepOK.Name = "btnDepOK"
+        Me.btnDepOK.Size = New System.Drawing.Size(45, 29)
+        Me.btnDepOK.TabIndex = 46
+        Me.btnDepOK.Text = "ตกลง"
+        Me.btnDepOK.UseVisualStyleBackColor = False
+        '
+        'btnSelDep
+        '
+        Me.btnSelDep.BackColor = System.Drawing.Color.HotPink
+        Me.btnSelDep.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.btnSelDep.ForeColor = System.Drawing.Color.White
+        Me.btnSelDep.Location = New System.Drawing.Point(15, 22)
+        Me.btnSelDep.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSelDep.Name = "btnSelDep"
+        Me.btnSelDep.Size = New System.Drawing.Size(90, 33)
+        Me.btnSelDep.TabIndex = 7
+        Me.btnSelDep.Text = "เลือกเงินมัดจำ"
+        Me.btnSelDep.UseVisualStyleBackColor = False
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Cordia New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Location = New System.Drawing.Point(124, 11)
+        Me.Label35.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(68, 20)
+        Me.Label35.TabIndex = 24
+        Me.Label35.Text = "วันที่เอกสาร"
+        '
+        'dtpDocDate
+        '
+        Me.dtpDocDate.Enabled = False
+        Me.dtpDocDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDocDate.Location = New System.Drawing.Point(117, 32)
+        Me.dtpDocDate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpDocDate.Name = "dtpDocDate"
+        Me.dtpDocDate.Size = New System.Drawing.Size(140, 23)
+        Me.dtpDocDate.TabIndex = 25
+        '
+        'lbDepAmt
+        '
+        Me.lbDepAmt.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.lbDepAmt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lbDepAmt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.lbDepAmt.Font = New System.Drawing.Font("Cordia New", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbDepAmt.Location = New System.Drawing.Point(405, 32)
+        Me.lbDepAmt.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbDepAmt.Name = "lbDepAmt"
+        Me.lbDepAmt.Size = New System.Drawing.Size(103, 24)
+        Me.lbDepAmt.TabIndex = 29
+        Me.lbDepAmt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbDepBalance
+        '
+        Me.lbDepBalance.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.lbDepBalance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lbDepBalance.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.lbDepBalance.Font = New System.Drawing.Font("Cordia New", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbDepBalance.Location = New System.Drawing.Point(515, 32)
+        Me.lbDepBalance.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbDepBalance.Name = "lbDepBalance"
+        Me.lbDepBalance.Size = New System.Drawing.Size(101, 24)
+        Me.lbDepBalance.TabIndex = 30
+        Me.lbDepBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Cordia New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(278, 10)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(63, 20)
+        Me.Label8.TabIndex = 23
+        Me.Label8.Text = "เลขที่มัดจำ"
+        '
+        'lbDocDepno
+        '
+        Me.lbDocDepno.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.lbDocDepno.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lbDocDepno.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.lbDocDepno.Font = New System.Drawing.Font("Cordia New", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbDocDepno.Location = New System.Drawing.Point(275, 32)
+        Me.lbDocDepno.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbDocDepno.Name = "lbDocDepno"
+        Me.lbDocDepno.Size = New System.Drawing.Size(121, 24)
+        Me.lbDocDepno.TabIndex = 22
+        Me.lbDocDepno.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Cordia New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.Location = New System.Drawing.Point(402, 11)
+        Me.Label36.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(61, 20)
+        Me.Label36.TabIndex = 26
+        Me.Label36.Text = "จำนวนเงิน"
+        '
+        'txtUseDep
+        '
+        Me.txtUseDep.BackColor = System.Drawing.Color.SteelBlue
+        Me.txtUseDep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUseDep.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtUseDep.ForeColor = System.Drawing.Color.White
+        Me.txtUseDep.Location = New System.Drawing.Point(754, 32)
+        Me.txtUseDep.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtUseDep.Name = "txtUseDep"
+        Me.txtUseDep.Size = New System.Drawing.Size(107, 27)
+        Me.txtUseDep.TabIndex = 31
+        Me.txtUseDep.Text = "0"
+        Me.txtUseDep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("Cordia New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.Location = New System.Drawing.Point(769, 11)
+        Me.Label38.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(69, 20)
+        Me.Label38.TabIndex = 28
+        Me.Label38.Text = "หักเงินมัดจำ"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Font = New System.Drawing.Font("Cordia New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label37.Location = New System.Drawing.Point(513, 10)
+        Me.Label37.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(47, 20)
+        Me.Label37.TabIndex = 27
+        Me.Label37.Text = "คงเหลือ"
+        '
+        'ListDep
+        '
+        Me.ListDep.FullRowSelect = True
+        Me.ListDep.HideSelection = False
+        Me.ListDep.Location = New System.Drawing.Point(10, 86)
+        Me.ListDep.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListDep.Name = "ListDep"
+        Me.ListDep.Size = New System.Drawing.Size(993, 94)
+        Me.ListDep.TabIndex = 0
+        Me.ListDep.UseCompatibleStateImageBehavior = False
+        '
+        'lbOldCode
+        '
+        Me.lbOldCode.BackColor = System.Drawing.Color.Black
+        Me.lbOldCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lbOldCode.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.lbOldCode.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lbOldCode.Location = New System.Drawing.Point(-5, 41)
+        Me.lbOldCode.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbOldCode.Name = "lbOldCode"
+        Me.lbOldCode.Size = New System.Drawing.Size(290, 26)
+        Me.lbOldCode.TabIndex = 99
+        Me.lbOldCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lbStatus
         '
@@ -724,24 +1086,12 @@ Public Class frmSale
         Me.lbStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lbStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbStatus.ForeColor = System.Drawing.Color.Chartreuse
-        Me.lbStatus.Location = New System.Drawing.Point(1000, 702)
-        Me.lbStatus.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbStatus.Location = New System.Drawing.Point(500, 365)
+        Me.lbStatus.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbStatus.Name = "lbStatus"
-        Me.lbStatus.Size = New System.Drawing.Size(594, 108)
+        Me.lbStatus.Size = New System.Drawing.Size(297, 56)
         Me.lbStatus.TabIndex = 8
         Me.lbStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'ListEdit
-        '
-        Me.ListEdit.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ListEdit.FullRowSelect = True
-        Me.ListEdit.HideSelection = False
-        Me.ListEdit.Location = New System.Drawing.Point(8, 17)
-        Me.ListEdit.Margin = New System.Windows.Forms.Padding(4)
-        Me.ListEdit.Name = "ListEdit"
-        Me.ListEdit.Size = New System.Drawing.Size(2050, 473)
-        Me.ListEdit.TabIndex = 6
-        Me.ListEdit.UseCompatibleStateImageBehavior = False
         '
         'GroupBox7
         '
@@ -762,11 +1112,11 @@ Public Class frmSale
         Me.GroupBox7.Controls.Add(Me.lbTotaliTemDisc)
         Me.GroupBox7.Controls.Add(Me.Label10)
         Me.GroupBox7.Controls.Add(Me.Label28)
-        Me.GroupBox7.Location = New System.Drawing.Point(16, 538)
-        Me.GroupBox7.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox7.Location = New System.Drawing.Point(8, 280)
+        Me.GroupBox7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox7.Size = New System.Drawing.Size(976, 265)
+        Me.GroupBox7.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox7.Size = New System.Drawing.Size(488, 138)
         Me.GroupBox7.TabIndex = 102
         Me.GroupBox7.TabStop = False
         '
@@ -774,10 +1124,10 @@ Public Class frmSale
         '
         Me.opt4D.AutoSize = True
         Me.opt4D.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.opt4D.Location = New System.Drawing.Point(716, 163)
-        Me.opt4D.Margin = New System.Windows.Forms.Padding(4)
+        Me.opt4D.Location = New System.Drawing.Point(358, 85)
+        Me.opt4D.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.opt4D.Name = "opt4D"
-        Me.opt4D.Size = New System.Drawing.Size(120, 35)
+        Me.opt4D.Size = New System.Drawing.Size(61, 20)
         Me.opt4D.TabIndex = 106
         Me.opt4D.TabStop = True
         Me.opt4D.Text = "4 Digit"
@@ -787,10 +1137,10 @@ Public Class frmSale
         '
         Me.opt2D.AutoSize = True
         Me.opt2D.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.opt2D.Location = New System.Drawing.Point(716, 96)
-        Me.opt2D.Margin = New System.Windows.Forms.Padding(4)
+        Me.opt2D.Location = New System.Drawing.Point(358, 50)
+        Me.opt2D.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.opt2D.Name = "opt2D"
-        Me.opt2D.Size = New System.Drawing.Size(120, 35)
+        Me.opt2D.Size = New System.Drawing.Size(61, 20)
         Me.opt2D.TabIndex = 105
         Me.opt2D.TabStop = True
         Me.opt2D.Text = "2 Digit"
@@ -802,10 +1152,10 @@ Public Class frmSale
         Me.lbAvgCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbAvgCost.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbAvgCost.ForeColor = System.Drawing.Color.Lime
-        Me.lbAvgCost.Location = New System.Drawing.Point(528, 162)
-        Me.lbAvgCost.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbAvgCost.Location = New System.Drawing.Point(264, 84)
+        Me.lbAvgCost.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbAvgCost.Name = "lbAvgCost"
-        Me.lbAvgCost.Size = New System.Drawing.Size(132, 42)
+        Me.lbAvgCost.Size = New System.Drawing.Size(67, 23)
         Me.lbAvgCost.TabIndex = 104
         Me.lbAvgCost.Text = "0 %"
         Me.lbAvgCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -816,10 +1166,10 @@ Public Class frmSale
         Me.lbAvgPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbAvgPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbAvgPrice.ForeColor = System.Drawing.Color.Lime
-        Me.lbAvgPrice.Location = New System.Drawing.Point(528, 27)
-        Me.lbAvgPrice.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbAvgPrice.Location = New System.Drawing.Point(264, 14)
+        Me.lbAvgPrice.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbAvgPrice.Name = "lbAvgPrice"
-        Me.lbAvgPrice.Size = New System.Drawing.Size(132, 42)
+        Me.lbAvgPrice.Size = New System.Drawing.Size(67, 23)
         Me.lbAvgPrice.TabIndex = 103
         Me.lbAvgPrice.Text = "0 %"
         Me.lbAvgPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -830,10 +1180,10 @@ Public Class frmSale
         Me.lbProFitretio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbProFitretio.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbProFitretio.ForeColor = System.Drawing.Color.Lime
-        Me.lbProFitretio.Location = New System.Drawing.Point(528, 208)
-        Me.lbProFitretio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbProFitretio.Location = New System.Drawing.Point(264, 108)
+        Me.lbProFitretio.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbProFitretio.Name = "lbProFitretio"
-        Me.lbProFitretio.Size = New System.Drawing.Size(132, 42)
+        Me.lbProFitretio.Size = New System.Drawing.Size(67, 23)
         Me.lbProFitretio.TabIndex = 102
         Me.lbProFitretio.Text = "0 %"
         Me.lbProFitretio.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -844,10 +1194,10 @@ Public Class frmSale
         Me.lbTotalWeight.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lbTotalWeight.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbTotalWeight.ForeColor = System.Drawing.Color.Yellow
-        Me.lbTotalWeight.Location = New System.Drawing.Point(812, 19)
-        Me.lbTotalWeight.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbTotalWeight.Location = New System.Drawing.Point(406, 10)
+        Me.lbTotalWeight.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbTotalWeight.Name = "lbTotalWeight"
-        Me.lbTotalWeight.Size = New System.Drawing.Size(158, 48)
+        Me.lbTotalWeight.Size = New System.Drawing.Size(79, 25)
         Me.lbTotalWeight.TabIndex = 28
         Me.lbTotalWeight.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -857,10 +1207,10 @@ Public Class frmSale
         Me.lbTotaliTemAmt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbTotaliTemAmt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbTotaliTemAmt.ForeColor = System.Drawing.Color.Yellow
-        Me.lbTotaliTemAmt.Location = New System.Drawing.Point(208, 27)
-        Me.lbTotaliTemAmt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbTotaliTemAmt.Location = New System.Drawing.Point(104, 14)
+        Me.lbTotaliTemAmt.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbTotaliTemAmt.Name = "lbTotaliTemAmt"
-        Me.lbTotaliTemAmt.Size = New System.Drawing.Size(306, 42)
+        Me.lbTotaliTemAmt.Size = New System.Drawing.Size(154, 23)
         Me.lbTotaliTemAmt.TabIndex = 98
         Me.lbTotaliTemAmt.Text = "0"
         Me.lbTotaliTemAmt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -871,10 +1221,10 @@ Public Class frmSale
         Me.lbTotalHDisc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbTotalHDisc.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbTotalHDisc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lbTotalHDisc.Location = New System.Drawing.Point(208, 117)
-        Me.lbTotalHDisc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbTotalHDisc.Location = New System.Drawing.Point(104, 61)
+        Me.lbTotalHDisc.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbTotalHDisc.Name = "lbTotalHDisc"
-        Me.lbTotalHDisc.Size = New System.Drawing.Size(306, 42)
+        Me.lbTotalHDisc.Size = New System.Drawing.Size(154, 23)
         Me.lbTotalHDisc.TabIndex = 101
         Me.lbTotalHDisc.Text = "0"
         Me.lbTotalHDisc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -882,10 +1232,10 @@ Public Class frmSale
         'lbNProfit
         '
         Me.lbNProfit.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lbNProfit.Location = New System.Drawing.Point(24, 213)
-        Me.lbNProfit.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbNProfit.Location = New System.Drawing.Point(12, 111)
+        Me.lbNProfit.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbNProfit.Name = "lbNProfit"
-        Me.lbNProfit.Size = New System.Drawing.Size(178, 29)
+        Me.lbNProfit.Size = New System.Drawing.Size(89, 15)
         Me.lbNProfit.TabIndex = 87
         Me.lbNProfit.Text = "กำไร รวม :"
         Me.lbNProfit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -893,10 +1243,10 @@ Public Class frmSale
         'Label34
         '
         Me.Label34.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label34.Location = New System.Drawing.Point(24, 123)
-        Me.Label34.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label34.Location = New System.Drawing.Point(12, 64)
+        Me.Label34.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(178, 31)
+        Me.Label34.Size = New System.Drawing.Size(89, 16)
         Me.Label34.TabIndex = 100
         Me.Label34.Text = "ลดหน้าบิล :"
         Me.Label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -907,10 +1257,10 @@ Public Class frmSale
         Me.lbTotalProfit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbTotalProfit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbTotalProfit.ForeColor = System.Drawing.Color.Lime
-        Me.lbTotalProfit.Location = New System.Drawing.Point(208, 208)
-        Me.lbTotalProfit.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbTotalProfit.Location = New System.Drawing.Point(104, 108)
+        Me.lbTotalProfit.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbTotalProfit.Name = "lbTotalProfit"
-        Me.lbTotalProfit.Size = New System.Drawing.Size(306, 42)
+        Me.lbTotalProfit.Size = New System.Drawing.Size(154, 23)
         Me.lbTotalProfit.TabIndex = 88
         Me.lbTotalProfit.Text = "0"
         Me.lbTotalProfit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -918,10 +1268,10 @@ Public Class frmSale
         'Label15
         '
         Me.Label15.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label15.Location = New System.Drawing.Point(24, 167)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Location = New System.Drawing.Point(12, 87)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(178, 31)
+        Me.Label15.Size = New System.Drawing.Size(89, 16)
         Me.Label15.TabIndex = 89
         Me.Label15.Text = "ต้นทุน :"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -929,10 +1279,10 @@ Public Class frmSale
         'Label20
         '
         Me.Label20.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.Label20.Location = New System.Drawing.Point(20, 29)
-        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label20.Location = New System.Drawing.Point(10, 15)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(178, 38)
+        Me.Label20.Size = New System.Drawing.Size(89, 20)
         Me.Label20.TabIndex = 99
         Me.Label20.Text = "รวม :"
         Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -943,10 +1293,10 @@ Public Class frmSale
         Me.lbTotalCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbTotalCost.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbTotalCost.ForeColor = System.Drawing.Color.Ivory
-        Me.lbTotalCost.Location = New System.Drawing.Point(208, 162)
-        Me.lbTotalCost.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbTotalCost.Location = New System.Drawing.Point(104, 84)
+        Me.lbTotalCost.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbTotalCost.Name = "lbTotalCost"
-        Me.lbTotalCost.Size = New System.Drawing.Size(306, 42)
+        Me.lbTotalCost.Size = New System.Drawing.Size(154, 23)
         Me.lbTotalCost.TabIndex = 90
         Me.lbTotalCost.Text = "0"
         Me.lbTotalCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -957,10 +1307,10 @@ Public Class frmSale
         Me.lbTotaliTemDisc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbTotaliTemDisc.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbTotaliTemDisc.ForeColor = System.Drawing.Color.Red
-        Me.lbTotaliTemDisc.Location = New System.Drawing.Point(208, 71)
-        Me.lbTotaliTemDisc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbTotaliTemDisc.Location = New System.Drawing.Point(104, 37)
+        Me.lbTotaliTemDisc.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbTotaliTemDisc.Name = "lbTotaliTemDisc"
-        Me.lbTotaliTemDisc.Size = New System.Drawing.Size(306, 42)
+        Me.lbTotaliTemDisc.Size = New System.Drawing.Size(154, 23)
         Me.lbTotaliTemDisc.TabIndex = 96
         Me.lbTotaliTemDisc.Text = "0"
         Me.lbTotaliTemDisc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -968,10 +1318,10 @@ Public Class frmSale
         'Label10
         '
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.Label10.Location = New System.Drawing.Point(20, 73)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Location = New System.Drawing.Point(10, 38)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(178, 38)
+        Me.Label10.Size = New System.Drawing.Size(89, 20)
         Me.Label10.TabIndex = 97
         Me.Label10.Text = "ส่วนลด item :"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -980,10 +1330,10 @@ Public Class frmSale
         '
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label28.ForeColor = System.Drawing.Color.Blue
-        Me.Label28.Location = New System.Drawing.Point(656, 37)
-        Me.Label28.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label28.Location = New System.Drawing.Point(328, 19)
+        Me.Label28.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(160, 31)
+        Me.Label28.Size = New System.Drawing.Size(80, 16)
         Me.Label28.TabIndex = 29
         Me.Label28.Text = "น้ำหนัก (Kg)"
         Me.Label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -994,10 +1344,10 @@ Public Class frmSale
         Me.lbSumary.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lbSumary.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbSumary.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lbSumary.Location = New System.Drawing.Point(1754, 504)
-        Me.lbSumary.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbSumary.Location = New System.Drawing.Point(877, 262)
+        Me.lbSumary.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbSumary.Name = "lbSumary"
-        Me.lbSumary.Size = New System.Drawing.Size(304, 46)
+        Me.lbSumary.Size = New System.Drawing.Size(152, 23)
         Me.lbSumary.TabIndex = 95
         Me.lbSumary.Text = "0"
         Me.lbSumary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1008,10 +1358,10 @@ Public Class frmSale
         Me.lbTotal2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lbTotal2.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbTotal2.ForeColor = System.Drawing.Color.Cyan
-        Me.lbTotal2.Location = New System.Drawing.Point(1758, 704)
-        Me.lbTotal2.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbTotal2.Location = New System.Drawing.Point(879, 366)
+        Me.lbTotal2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbTotal2.Name = "lbTotal2"
-        Me.lbTotal2.Size = New System.Drawing.Size(302, 46)
+        Me.lbTotal2.Size = New System.Drawing.Size(151, 23)
         Me.lbTotal2.TabIndex = 94
         Me.lbTotal2.Text = "0"
         Me.lbTotal2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1022,10 +1372,10 @@ Public Class frmSale
         Me.lbVat.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lbVat.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbVat.ForeColor = System.Drawing.Color.Yellow
-        Me.lbVat.Location = New System.Drawing.Point(1758, 654)
-        Me.lbVat.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbVat.Location = New System.Drawing.Point(879, 340)
+        Me.lbVat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lbVat.Name = "lbVat"
-        Me.lbVat.Size = New System.Drawing.Size(302, 46)
+        Me.lbVat.Size = New System.Drawing.Size(151, 23)
         Me.lbVat.TabIndex = 93
         Me.lbVat.Text = "0"
         Me.lbVat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1033,10 +1383,10 @@ Public Class frmSale
         'Label19
         '
         Me.Label19.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label19.Location = New System.Drawing.Point(1622, 706)
-        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label19.Location = New System.Drawing.Point(811, 367)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(142, 42)
+        Me.Label19.Size = New System.Drawing.Size(71, 22)
         Me.Label19.TabIndex = 92
         Me.Label19.Text = "ยอดสุทธิ"
         Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1047,10 +1397,10 @@ Public Class frmSale
         Me.lbDeposit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbDeposit.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbDeposit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lbDeposit.Location = New System.Drawing.Point(1756, 602)
-        Me.lbDeposit.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbDeposit.Location = New System.Drawing.Point(878, 313)
+        Me.lbDeposit.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbDeposit.Name = "lbDeposit"
-        Me.lbDeposit.Size = New System.Drawing.Size(306, 42)
+        Me.lbDeposit.Size = New System.Drawing.Size(154, 23)
         Me.lbDeposit.TabIndex = 83
         Me.lbDeposit.Text = "0"
         Me.lbDeposit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1058,10 +1408,10 @@ Public Class frmSale
         'Label18
         '
         Me.Label18.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.Label18.Location = New System.Drawing.Point(1580, 615)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label18.Location = New System.Drawing.Point(790, 320)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(178, 29)
+        Me.Label18.Size = New System.Drawing.Size(89, 15)
         Me.Label18.TabIndex = 84
         Me.Label18.Text = "เงินมัดจำ :"
         Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1070,12 +1420,12 @@ Public Class frmSale
         '
         Me.lbDisc.BackColor = System.Drawing.SystemColors.ControlText
         Me.lbDisc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbDisc.Font = New System.Drawing.Font("Tahoma", 14.0!)
+        Me.lbDisc.Font = New System.Drawing.Font("Tahoma", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbDisc.ForeColor = System.Drawing.Color.Red
-        Me.lbDisc.Location = New System.Drawing.Point(1754, 552)
-        Me.lbDisc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbDisc.Location = New System.Drawing.Point(877, 287)
+        Me.lbDisc.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbDisc.Name = "lbDisc"
-        Me.lbDisc.Size = New System.Drawing.Size(306, 42)
+        Me.lbDisc.Size = New System.Drawing.Size(154, 23)
         Me.lbDisc.TabIndex = 85
         Me.lbDisc.Text = "0"
         Me.lbDisc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1083,10 +1433,10 @@ Public Class frmSale
         'lbDicPage1
         '
         Me.lbDicPage1.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.lbDicPage1.Location = New System.Drawing.Point(1598, 563)
-        Me.lbDicPage1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbDicPage1.Location = New System.Drawing.Point(799, 293)
+        Me.lbDicPage1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbDicPage1.Name = "lbDicPage1"
-        Me.lbDicPage1.Size = New System.Drawing.Size(160, 29)
+        Me.lbDicPage1.Size = New System.Drawing.Size(80, 15)
         Me.lbDicPage1.TabIndex = 86
         Me.lbDicPage1.Text = "ส่วนลด :"
         Me.lbDicPage1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1094,10 +1444,10 @@ Public Class frmSale
         'Label16
         '
         Me.Label16.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.Label16.Location = New System.Drawing.Point(1632, 517)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label16.Location = New System.Drawing.Point(816, 269)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(142, 29)
+        Me.Label16.Size = New System.Drawing.Size(71, 15)
         Me.Label16.TabIndex = 81
         Me.Label16.Text = "ยอดรวม :"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1105,26 +1455,13 @@ Public Class frmSale
         'Label13
         '
         Me.Label13.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label13.Location = New System.Drawing.Point(1634, 662)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Location = New System.Drawing.Point(817, 344)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(138, 29)
+        Me.Label13.Size = New System.Drawing.Size(69, 15)
         Me.Label13.TabIndex = 79
         Me.Label13.Text = "Vat 7% :"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lbOldCode
-        '
-        Me.lbOldCode.BackColor = System.Drawing.Color.Black
-        Me.lbOldCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbOldCode.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lbOldCode.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lbOldCode.Location = New System.Drawing.Point(6, 590)
-        Me.lbOldCode.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbOldCode.Name = "lbOldCode"
-        Me.lbOldCode.Size = New System.Drawing.Size(578, 48)
-        Me.lbOldCode.TabIndex = 99
-        Me.lbOldCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lbStkCode
         '
@@ -1132,10 +1469,10 @@ Public Class frmSale
         Me.lbStkCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbStkCode.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbStkCode.ForeColor = System.Drawing.Color.Black
-        Me.lbStkCode.Location = New System.Drawing.Point(6, 525)
-        Me.lbStkCode.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbStkCode.Location = New System.Drawing.Point(5, 273)
+        Me.lbStkCode.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbStkCode.Name = "lbStkCode"
-        Me.lbStkCode.Size = New System.Drawing.Size(578, 50)
+        Me.lbStkCode.Size = New System.Drawing.Size(290, 27)
         Me.lbStkCode.TabIndex = 25
         Me.lbStkCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -1144,10 +1481,10 @@ Public Class frmSale
         Me.cmbDel.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmbDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbDel.ForeColor = System.Drawing.Color.White
-        Me.cmbDel.Location = New System.Drawing.Point(1832, 88)
-        Me.cmbDel.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbDel.Location = New System.Drawing.Point(916, 46)
+        Me.cmbDel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbDel.Name = "cmbDel"
-        Me.cmbDel.Size = New System.Drawing.Size(232, 58)
+        Me.cmbDel.Size = New System.Drawing.Size(116, 30)
         Me.cmbDel.TabIndex = 65
         Me.cmbDel.Text = "ลบรายการ"
         Me.cmbDel.UseVisualStyleBackColor = False
@@ -1183,11 +1520,11 @@ Public Class frmSale
         Me.GroupBox4.Controls.Add(Me.Label27)
         Me.GroupBox4.Controls.Add(Me.llbAdd)
         Me.GroupBox4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 277)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 144)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox4.Size = New System.Drawing.Size(2080, 219)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Size = New System.Drawing.Size(1040, 114)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
         '
@@ -1197,20 +1534,20 @@ Public Class frmSale
         Me.txtTypeP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTypeP.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtTypeP.ForeColor = System.Drawing.SystemColors.Info
-        Me.txtTypeP.Location = New System.Drawing.Point(786, 148)
-        Me.txtTypeP.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTypeP.Location = New System.Drawing.Point(393, 77)
+        Me.txtTypeP.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtTypeP.MaxLength = 50
         Me.txtTypeP.Name = "txtTypeP"
-        Me.txtTypeP.Size = New System.Drawing.Size(264, 46)
+        Me.txtTypeP.Size = New System.Drawing.Size(133, 27)
         Me.txtTypeP.TabIndex = 93
         '
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(718, 158)
-        Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label33.Location = New System.Drawing.Point(359, 82)
+        Me.Label33.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(70, 27)
+        Me.Label33.Size = New System.Drawing.Size(37, 13)
         Me.Label33.TabIndex = 83
         Me.Label33.Text = "ใบเบิก"
         '
@@ -1220,20 +1557,20 @@ Public Class frmSale
         Me.txtCondition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCondition.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtCondition.ForeColor = System.Drawing.SystemColors.Info
-        Me.txtCondition.Location = New System.Drawing.Point(1364, 148)
-        Me.txtCondition.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCondition.Location = New System.Drawing.Point(682, 77)
+        Me.txtCondition.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtCondition.MaxLength = 50
         Me.txtCondition.Name = "txtCondition"
-        Me.txtCondition.Size = New System.Drawing.Size(700, 46)
+        Me.txtCondition.Size = New System.Drawing.Size(351, 27)
         Me.txtCondition.TabIndex = 90
         '
         'Label31
         '
         Me.Label31.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(1254, 150)
-        Me.Label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label31.Location = New System.Drawing.Point(627, 78)
+        Me.Label31.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(116, 42)
+        Me.Label31.Size = New System.Drawing.Size(58, 22)
         Me.Label31.TabIndex = 89
         Me.Label31.Text = "conditon"
         Me.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1242,20 +1579,20 @@ Public Class frmSale
         '
         Me.lbPONo.BackColor = System.Drawing.Color.White
         Me.lbPONo.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lbPONo.Location = New System.Drawing.Point(134, 144)
-        Me.lbPONo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbPONo.Location = New System.Drawing.Point(67, 75)
+        Me.lbPONo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbPONo.Name = "lbPONo"
-        Me.lbPONo.Size = New System.Drawing.Size(260, 54)
+        Me.lbPONo.Size = New System.Drawing.Size(130, 28)
         Me.lbPONo.TabIndex = 83
         Me.lbPONo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label30
         '
         Me.Label30.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(20, 150)
-        Me.Label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label30.Location = New System.Drawing.Point(10, 78)
+        Me.Label30.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(152, 42)
+        Me.Label30.Size = New System.Drawing.Size(76, 22)
         Me.Label30.TabIndex = 88
         Me.Label30.Text = "PO"
         Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1263,10 +1600,10 @@ Public Class frmSale
         'Label29
         '
         Me.Label29.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(406, 150)
-        Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label29.Location = New System.Drawing.Point(203, 78)
+        Me.Label29.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(116, 42)
+        Me.Label29.Size = New System.Drawing.Size(58, 22)
         Me.Label29.TabIndex = 87
         Me.Label29.Text = "Order :"
         Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1276,10 +1613,10 @@ Public Class frmSale
         Me.TextBox1.BackColor = System.Drawing.Color.Yellow
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(1652, 96)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Location = New System.Drawing.Point(826, 50)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(168, 46)
+        Me.TextBox1.Size = New System.Drawing.Size(85, 27)
         Me.TextBox1.TabIndex = 85
         Me.TextBox1.Text = "0"
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1287,10 +1624,10 @@ Public Class frmSale
         'Label21
         '
         Me.Label21.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label21.Location = New System.Drawing.Point(1584, 110)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label21.Location = New System.Drawing.Point(792, 57)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(82, 42)
+        Me.Label21.Size = New System.Drawing.Size(41, 22)
         Me.Label21.TabIndex = 86
         Me.Label21.Text = "รวม"
         Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1301,10 +1638,10 @@ Public Class frmSale
         Me.lbProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbProductName.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbProductName.ForeColor = System.Drawing.Color.Black
-        Me.lbProductName.Location = New System.Drawing.Point(72, 27)
-        Me.lbProductName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbProductName.Location = New System.Drawing.Point(36, 14)
+        Me.lbProductName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbProductName.Name = "lbProductName"
-        Me.lbProductName.Size = New System.Drawing.Size(888, 50)
+        Me.lbProductName.Size = New System.Drawing.Size(445, 27)
         Me.lbProductName.TabIndex = 23
         Me.lbProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -1312,10 +1649,10 @@ Public Class frmSale
         '
         Me.cmbPrList.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmbPrList.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmbPrList.Location = New System.Drawing.Point(1512, 31)
-        Me.cmbPrList.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbPrList.Location = New System.Drawing.Point(756, 16)
+        Me.cmbPrList.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbPrList.Name = "cmbPrList"
-        Me.cmbPrList.Size = New System.Drawing.Size(64, 52)
+        Me.cmbPrList.Size = New System.Drawing.Size(32, 27)
         Me.cmbPrList.TabIndex = 84
         Me.cmbPrList.Text = "..."
         Me.cmbPrList.UseVisualStyleBackColor = False
@@ -1325,10 +1662,10 @@ Public Class frmSale
         Me.txtTotal.BackColor = System.Drawing.Color.Yellow
         Me.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTotal.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtTotal.Location = New System.Drawing.Point(1652, 29)
-        Me.txtTotal.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTotal.Location = New System.Drawing.Point(826, 15)
+        Me.txtTotal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.Size = New System.Drawing.Size(168, 46)
+        Me.txtTotal.Size = New System.Drawing.Size(85, 27)
         Me.txtTotal.TabIndex = 68
         Me.txtTotal.Text = "0"
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1336,22 +1673,22 @@ Public Class frmSale
         'Label17
         '
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label17.Location = New System.Drawing.Point(1584, 37)
-        Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label17.Location = New System.Drawing.Point(792, 19)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(82, 42)
+        Me.Label17.Size = New System.Drawing.Size(41, 22)
         Me.Label17.TabIndex = 67
-        Me.Label17.Text = "รวมง"
+        Me.Label17.Text = "รวม"
         Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'cmbFindStk
         '
         Me.cmbFindStk.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cmbFindStk.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmbFindStk.Location = New System.Drawing.Point(960, 27)
-        Me.cmbFindStk.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbFindStk.Location = New System.Drawing.Point(480, 14)
+        Me.cmbFindStk.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbFindStk.Name = "cmbFindStk"
-        Me.cmbFindStk.Size = New System.Drawing.Size(90, 52)
+        Me.cmbFindStk.Size = New System.Drawing.Size(45, 27)
         Me.cmbFindStk.TabIndex = 66
         Me.cmbFindStk.Text = "..."
         Me.cmbFindStk.UseVisualStyleBackColor = False
@@ -1362,20 +1699,20 @@ Public Class frmSale
         Me.lbStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbStock.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbStock.ForeColor = System.Drawing.Color.Yellow
-        Me.lbStock.Location = New System.Drawing.Point(1150, 92)
-        Me.lbStock.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbStock.Location = New System.Drawing.Point(575, 48)
+        Me.lbStock.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbStock.Name = "lbStock"
-        Me.lbStock.Size = New System.Drawing.Size(124, 52)
+        Me.lbStock.Size = New System.Drawing.Size(63, 28)
         Me.lbStock.TabIndex = 30
         Me.lbStock.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label11
         '
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label11.Location = New System.Drawing.Point(1066, 104)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Location = New System.Drawing.Point(533, 54)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(80, 42)
+        Me.Label11.Size = New System.Drawing.Size(40, 22)
         Me.Label11.TabIndex = 29
         Me.Label11.Text = "Stock"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1386,10 +1723,10 @@ Public Class frmSale
         Me.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPrice.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtPrice.ForeColor = System.Drawing.SystemColors.Info
-        Me.txtPrice.Location = New System.Drawing.Point(1364, 31)
-        Me.txtPrice.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPrice.Location = New System.Drawing.Point(682, 16)
+        Me.txtPrice.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtPrice.Name = "txtPrice"
-        Me.txtPrice.Size = New System.Drawing.Size(146, 46)
+        Me.txtPrice.Size = New System.Drawing.Size(74, 27)
         Me.txtPrice.TabIndex = 16
         Me.txtPrice.Text = "0"
         Me.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1399,10 +1736,10 @@ Public Class frmSale
         Me.txtDisc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDisc.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtDisc.ForeColor = System.Drawing.Color.Red
-        Me.txtDisc.Location = New System.Drawing.Point(1364, 96)
-        Me.txtDisc.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDisc.Location = New System.Drawing.Point(682, 50)
+        Me.txtDisc.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtDisc.Name = "txtDisc"
-        Me.txtDisc.Size = New System.Drawing.Size(212, 46)
+        Me.txtDisc.Size = New System.Drawing.Size(107, 27)
         Me.txtDisc.TabIndex = 15
         Me.txtDisc.Text = "0"
         Me.txtDisc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1411,10 +1748,10 @@ Public Class frmSale
         '
         Me.txtSaleQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSaleQty.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtSaleQty.Location = New System.Drawing.Point(1152, 35)
-        Me.txtSaleQty.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSaleQty.Location = New System.Drawing.Point(576, 18)
+        Me.txtSaleQty.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtSaleQty.Name = "txtSaleQty"
-        Me.txtSaleQty.Size = New System.Drawing.Size(122, 46)
+        Me.txtSaleQty.Size = New System.Drawing.Size(62, 27)
         Me.txtSaleQty.TabIndex = 14
         Me.txtSaleQty.Text = "0"
         Me.txtSaleQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1422,10 +1759,10 @@ Public Class frmSale
         'Label26
         '
         Me.Label26.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label26.Location = New System.Drawing.Point(1264, 106)
-        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label26.Location = New System.Drawing.Point(632, 55)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(116, 42)
+        Me.Label26.Size = New System.Drawing.Size(58, 22)
         Me.Label26.TabIndex = 13
         Me.Label26.Text = "ส่วนลด"
         Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1433,10 +1770,10 @@ Public Class frmSale
         'Label25
         '
         Me.Label25.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label25.Location = New System.Drawing.Point(1288, 42)
-        Me.Label25.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label25.Location = New System.Drawing.Point(644, 22)
+        Me.Label25.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(82, 42)
+        Me.Label25.Size = New System.Drawing.Size(41, 22)
         Me.Label25.TabIndex = 12
         Me.Label25.Text = "ราคา"
         Me.Label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1444,10 +1781,10 @@ Public Class frmSale
         'Label24
         '
         Me.Label24.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label24.Location = New System.Drawing.Point(1058, 42)
-        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label24.Location = New System.Drawing.Point(529, 22)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(112, 42)
+        Me.Label24.Size = New System.Drawing.Size(56, 22)
         Me.Label24.TabIndex = 11
         Me.Label24.Text = "จำนวน"
         Me.Label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1456,10 +1793,10 @@ Public Class frmSale
         '
         Me.Label23.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.Blue
-        Me.Label23.Location = New System.Drawing.Point(6, 48)
-        Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label23.Location = New System.Drawing.Point(3, 25)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(54, 31)
+        Me.Label23.Size = New System.Drawing.Size(27, 16)
         Me.Label23.TabIndex = 22
         Me.Label23.Text = "ขื่อ"
         '
@@ -1469,20 +1806,20 @@ Public Class frmSale
         Me.txtDetail2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDetail2.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtDetail2.ForeColor = System.Drawing.SystemColors.Info
-        Me.txtDetail2.Location = New System.Drawing.Point(130, 88)
-        Me.txtDetail2.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDetail2.Location = New System.Drawing.Point(65, 46)
+        Me.txtDetail2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtDetail2.MaxLength = 50
         Me.txtDetail2.Name = "txtDetail2"
-        Me.txtDetail2.Size = New System.Drawing.Size(920, 44)
+        Me.txtDetail2.Size = New System.Drawing.Size(461, 26)
         Me.txtDetail2.TabIndex = 18
         '
         'Label27
         '
         Me.Label27.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(12, 100)
-        Me.Label27.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label27.Location = New System.Drawing.Point(6, 52)
+        Me.Label27.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(116, 42)
+        Me.Label27.Size = New System.Drawing.Size(58, 22)
         Me.Label27.TabIndex = 17
         Me.Label27.Text = "หมายเหตุ"
         Me.Label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1495,10 +1832,10 @@ Public Class frmSale
         Me.llbAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.llbAdd.ForeColor = System.Drawing.Color.Yellow
         Me.llbAdd.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.llbAdd.Location = New System.Drawing.Point(1832, 19)
-        Me.llbAdd.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.llbAdd.Location = New System.Drawing.Point(916, 10)
+        Me.llbAdd.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.llbAdd.Name = "llbAdd"
-        Me.llbAdd.Size = New System.Drawing.Size(232, 60)
+        Me.llbAdd.Size = New System.Drawing.Size(117, 32)
         Me.llbAdd.TabIndex = 19
         Me.llbAdd.TabStop = True
         Me.llbAdd.Text = "เพิ่มรายการ"
@@ -1510,10 +1847,10 @@ Public Class frmSale
         Me.cmbOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbOrder.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbOrder.ForeColor = System.Drawing.Color.White
-        Me.cmbOrder.Location = New System.Drawing.Point(26, 23)
-        Me.cmbOrder.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbOrder.Location = New System.Drawing.Point(13, 12)
+        Me.cmbOrder.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbOrder.Name = "cmbOrder"
-        Me.cmbOrder.Size = New System.Drawing.Size(364, 90)
+        Me.cmbOrder.Size = New System.Drawing.Size(182, 47)
         Me.cmbOrder.TabIndex = 64
         Me.cmbOrder.Text = "เลือก Order"
         Me.cmbOrder.UseVisualStyleBackColor = False
@@ -1521,10 +1858,10 @@ Public Class frmSale
         'Label7
         '
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label7.Location = New System.Drawing.Point(44, 113)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(22, 59)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(110, 42)
+        Me.Label7.Size = New System.Drawing.Size(55, 22)
         Me.Label7.TabIndex = 73
         Me.Label7.Text = "ãºàºÔ¡ #"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1535,10 +1872,10 @@ Public Class frmSale
         Me.lbCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lbCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbCount.ForeColor = System.Drawing.Color.Yellow
-        Me.lbCount.Location = New System.Drawing.Point(46, 40)
-        Me.lbCount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCount.Location = New System.Drawing.Point(23, 21)
+        Me.lbCount.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbCount.Name = "lbCount"
-        Me.lbCount.Size = New System.Drawing.Size(380, 60)
+        Me.lbCount.Size = New System.Drawing.Size(190, 31)
         Me.lbCount.TabIndex = 4
         Me.lbCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -1549,10 +1886,10 @@ Public Class frmSale
         Me.cmbSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbSave.Font = New System.Drawing.Font("Tahoma", 11.0!)
         Me.cmbSave.ForeColor = System.Drawing.Color.Yellow
-        Me.cmbSave.Location = New System.Drawing.Point(24, 590)
-        Me.cmbSave.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbSave.Location = New System.Drawing.Point(12, 307)
+        Me.cmbSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbSave.Name = "cmbSave"
-        Me.cmbSave.Size = New System.Drawing.Size(360, 167)
+        Me.cmbSave.Size = New System.Drawing.Size(180, 87)
         Me.cmbSave.TabIndex = 2
         Me.cmbSave.Text = "บันทึก/พิมพ์"
         Me.cmbSave.UseVisualStyleBackColor = False
@@ -1564,10 +1901,10 @@ Public Class frmSale
         Me.cmbCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbCancel.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbCancel.ForeColor = System.Drawing.Color.Black
-        Me.cmbCancel.Location = New System.Drawing.Point(26, 390)
-        Me.cmbCancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbCancel.Location = New System.Drawing.Point(13, 203)
+        Me.cmbCancel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbCancel.Name = "cmbCancel"
-        Me.cmbCancel.Size = New System.Drawing.Size(364, 73)
+        Me.cmbCancel.Size = New System.Drawing.Size(182, 38)
         Me.cmbCancel.TabIndex = 5
         Me.cmbCancel.Text = "ยกเลิกเอกสาร"
         Me.cmbCancel.UseVisualStyleBackColor = False
@@ -1579,10 +1916,10 @@ Public Class frmSale
         Me.cmbCutItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbCutItem.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbCutItem.ForeColor = System.Drawing.Color.White
-        Me.cmbCutItem.Location = New System.Drawing.Point(88, 837)
-        Me.cmbCutItem.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbCutItem.Location = New System.Drawing.Point(44, 435)
+        Me.cmbCutItem.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbCutItem.Name = "cmbCutItem"
-        Me.cmbCutItem.Size = New System.Drawing.Size(364, 73)
+        Me.cmbCutItem.Size = New System.Drawing.Size(182, 38)
         Me.cmbCutItem.TabIndex = 9
         Me.cmbCutItem.Text = "µÑ´ Order"
         Me.cmbCutItem.UseVisualStyleBackColor = False
@@ -1593,10 +1930,10 @@ Public Class frmSale
         Me.cmbExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbExit.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbExit.ForeColor = System.Drawing.Color.White
-        Me.cmbExit.Location = New System.Drawing.Point(48, 787)
-        Me.cmbExit.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbExit.Location = New System.Drawing.Point(24, 409)
+        Me.cmbExit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbExit.Name = "cmbExit"
-        Me.cmbExit.Size = New System.Drawing.Size(360, 129)
+        Me.cmbExit.Size = New System.Drawing.Size(180, 67)
         Me.cmbExit.TabIndex = 3
         Me.cmbExit.Text = "ออกจากโปรแกรม"
         Me.cmbExit.UseVisualStyleBackColor = False
@@ -1607,10 +1944,10 @@ Public Class frmSale
         Me.cmbPrint2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbPrint2.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbPrint2.ForeColor = System.Drawing.Color.White
-        Me.cmbPrint2.Location = New System.Drawing.Point(26, 212)
-        Me.cmbPrint2.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbPrint2.Location = New System.Drawing.Point(13, 110)
+        Me.cmbPrint2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbPrint2.Name = "cmbPrint2"
-        Me.cmbPrint2.Size = New System.Drawing.Size(364, 83)
+        Me.cmbPrint2.Size = New System.Drawing.Size(182, 43)
         Me.cmbPrint2.TabIndex = 10
         Me.cmbPrint2.Text = "พิมพ์ใบส่งของ A4"
         Me.cmbPrint2.UseVisualStyleBackColor = False
@@ -1621,18 +1958,18 @@ Public Class frmSale
         Me.lbCusID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lbCusID.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbCusID.ForeColor = System.Drawing.Color.Yellow
-        Me.lbCusID.Location = New System.Drawing.Point(326, 17)
-        Me.lbCusID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCusID.Location = New System.Drawing.Point(43, 12)
+        Me.lbCusID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbCusID.Name = "lbCusID"
-        Me.lbCusID.Size = New System.Drawing.Size(128, 48)
+        Me.lbCusID.Size = New System.Drawing.Size(64, 25)
         Me.lbCusID.TabIndex = 9
         Me.lbCusID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox5
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.PaleGoldenrod
+        Me.GroupBox5.Controls.Add(Me.txtCusName)
         Me.GroupBox5.Controls.Add(Me.cmbSearch)
-        Me.GroupBox5.Controls.Add(Me.lbCusName)
         Me.GroupBox5.Controls.Add(Me.lbSaleName)
         Me.GroupBox5.Controls.Add(Me.lbCreLimit)
         Me.GroupBox5.Controls.Add(Me.Label3)
@@ -1649,13 +1986,24 @@ Public Class frmSale
         Me.GroupBox5.Controls.Add(Me.lbSelSale)
         Me.GroupBox5.Controls.Add(Me.lbCusID)
         Me.GroupBox5.Controls.Add(Me.Label5)
-        Me.GroupBox5.Location = New System.Drawing.Point(12, 0)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 0)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox5.Size = New System.Drawing.Size(858, 242)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox5.Size = New System.Drawing.Size(509, 126)
         Me.GroupBox5.TabIndex = 8
         Me.GroupBox5.TabStop = False
+        '
+        'txtCusName
+        '
+        Me.txtCusName.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.txtCusName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCusName.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtCusName.ForeColor = System.Drawing.SystemColors.Info
+        Me.txtCusName.Location = New System.Drawing.Point(107, 12)
+        Me.txtCusName.Name = "txtCusName"
+        Me.txtCusName.Size = New System.Drawing.Size(345, 25)
+        Me.txtCusName.TabIndex = 85
         '
         'cmbSearch
         '
@@ -1663,27 +2011,14 @@ Public Class frmSale
         Me.cmbSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbSearch.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbSearch.ForeColor = System.Drawing.Color.White
-        Me.cmbSearch.Location = New System.Drawing.Point(776, 17)
-        Me.cmbSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbSearch.Location = New System.Drawing.Point(453, 8)
+        Me.cmbSearch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbSearch.Name = "cmbSearch"
-        Me.cmbSearch.Size = New System.Drawing.Size(62, 60)
+        Me.cmbSearch.Size = New System.Drawing.Size(31, 31)
         Me.cmbSearch.TabIndex = 11
         Me.cmbSearch.Text = "..."
         Me.cmbSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmbSearch.UseVisualStyleBackColor = False
-        '
-        'lbCusName
-        '
-        Me.lbCusName.BackColor = System.Drawing.Color.Blue
-        Me.lbCusName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbCusName.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lbCusName.ForeColor = System.Drawing.Color.White
-        Me.lbCusName.Location = New System.Drawing.Point(86, 17)
-        Me.lbCusName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbCusName.Name = "lbCusName"
-        Me.lbCusName.Size = New System.Drawing.Size(692, 60)
-        Me.lbCusName.TabIndex = 10
-        Me.lbCusName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lbCreLimit
         '
@@ -1691,10 +2026,10 @@ Public Class frmSale
         Me.lbCreLimit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbCreLimit.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbCreLimit.ForeColor = System.Drawing.Color.Yellow
-        Me.lbCreLimit.Location = New System.Drawing.Point(88, 192)
-        Me.lbCreLimit.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCreLimit.Location = New System.Drawing.Point(44, 100)
+        Me.lbCreLimit.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbCreLimit.Name = "lbCreLimit"
-        Me.lbCreLimit.Size = New System.Drawing.Size(260, 48)
+        Me.lbCreLimit.Size = New System.Drawing.Size(131, 26)
         Me.lbCreLimit.TabIndex = 78
         Me.lbCreLimit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1702,10 +2037,10 @@ Public Class frmSale
         '
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Blue
-        Me.Label3.Location = New System.Drawing.Point(14, 206)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(7, 107)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(96, 35)
+        Me.Label3.Size = New System.Drawing.Size(48, 18)
         Me.Label3.TabIndex = 79
         Me.Label3.Text = "Cr.lm"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1715,10 +2050,10 @@ Public Class frmSale
         Me.txtTermDtl.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.txtTermDtl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTermDtl.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtTermDtl.Location = New System.Drawing.Point(214, 140)
-        Me.txtTermDtl.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTermDtl.Location = New System.Drawing.Point(107, 73)
+        Me.txtTermDtl.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtTermDtl.Name = "txtTermDtl"
-        Me.txtTermDtl.Size = New System.Drawing.Size(620, 44)
+        Me.txtTermDtl.Size = New System.Drawing.Size(311, 26)
         Me.txtTermDtl.TabIndex = 84
         '
         'lbTaxID
@@ -1727,10 +2062,10 @@ Public Class frmSale
         Me.lbTaxID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbTaxID.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbTaxID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lbTaxID.Location = New System.Drawing.Point(444, 190)
-        Me.lbTaxID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbTaxID.Location = New System.Drawing.Point(241, 99)
+        Me.lbTaxID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbTaxID.Name = "lbTaxID"
-        Me.lbTaxID.Size = New System.Drawing.Size(390, 50)
+        Me.lbTaxID.Size = New System.Drawing.Size(247, 27)
         Me.lbTaxID.TabIndex = 82
         Me.lbTaxID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -1738,10 +2073,10 @@ Public Class frmSale
         '
         Me.Label22.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.Blue
-        Me.Label22.Location = New System.Drawing.Point(360, 208)
-        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label22.Location = New System.Drawing.Point(194, 106)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(94, 35)
+        Me.Label22.Size = New System.Drawing.Size(47, 18)
         Me.Label22.TabIndex = 83
         Me.Label22.Text = "TaxID"
         Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1752,11 +2087,11 @@ Public Class frmSale
         Me.txtCredit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCredit.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtCredit.ForeColor = System.Drawing.Color.Red
-        Me.txtCredit.Location = New System.Drawing.Point(88, 138)
-        Me.txtCredit.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCredit.Location = New System.Drawing.Point(44, 72)
+        Me.txtCredit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtCredit.Name = "txtCredit"
         Me.txtCredit.ReadOnly = True
-        Me.txtCredit.Size = New System.Drawing.Size(66, 44)
+        Me.txtCredit.Size = New System.Drawing.Size(34, 26)
         Me.txtCredit.TabIndex = 68
         Me.txtCredit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1764,10 +2099,10 @@ Public Class frmSale
         '
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Blue
-        Me.Label4.Location = New System.Drawing.Point(154, 152)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(77, 79)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 35)
+        Me.Label4.Size = New System.Drawing.Size(24, 18)
         Me.Label4.TabIndex = 81
         Me.Label4.Text = "วัน"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1776,10 +2111,10 @@ Public Class frmSale
         '
         Me.Label44.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label44.ForeColor = System.Drawing.Color.Blue
-        Me.Label44.Location = New System.Drawing.Point(32, 150)
-        Me.Label44.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label44.Location = New System.Drawing.Point(16, 78)
+        Me.Label44.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(50, 35)
+        Me.Label44.Size = New System.Drawing.Size(25, 18)
         Me.Label44.TabIndex = 67
         Me.Label44.Text = "Cr."
         Me.Label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1787,10 +2122,10 @@ Public Class frmSale
         'Label5
         '
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label5.Location = New System.Drawing.Point(8, 35)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(4, 18)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(74, 42)
+        Me.Label5.Size = New System.Drawing.Size(37, 22)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "ลูกค้า"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1800,11 +2135,11 @@ Public Class frmSale
         Me.GroupBox9.Controls.Add(Me.cboTypeDoc)
         Me.GroupBox9.Controls.Add(Me.txtNo)
         Me.GroupBox9.Controls.Add(Me.Label2)
-        Me.GroupBox9.Location = New System.Drawing.Point(2110, 10)
-        Me.GroupBox9.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox9.Location = New System.Drawing.Point(1055, 5)
+        Me.GroupBox9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox9.Size = New System.Drawing.Size(476, 144)
+        Me.GroupBox9.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox9.Size = New System.Drawing.Size(238, 75)
         Me.GroupBox9.TabIndex = 81
         Me.GroupBox9.TabStop = False
         '
@@ -1814,12 +2149,12 @@ Public Class frmSale
         Me.TabControl2.Controls.Add(Me.TabPage1)
         Me.TabControl2.Controls.Add(Me.TabPage3)
         Me.TabControl2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TabControl2.Location = New System.Drawing.Point(16, 13)
-        Me.TabControl2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControl2.Location = New System.Drawing.Point(8, 7)
+        Me.TabControl2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabControl2.Multiline = True
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1103, 263)
+        Me.TabControl2.Size = New System.Drawing.Size(552, 137)
         Me.TabControl2.TabIndex = 82
         '
         'TabPage1
@@ -1828,10 +2163,10 @@ Public Class frmSale
         Me.TabPage1.Controls.Add(Me.GroupBox5)
         Me.TabPage1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.TabPage1.Location = New System.Drawing.Point(4, 4)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Size = New System.Drawing.Size(1062, 255)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Size = New System.Drawing.Size(524, 129)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "ชื่อลูกค้า"
         '
@@ -1848,10 +2183,10 @@ Public Class frmSale
         Me.TabPage3.Controls.Add(Me.lbAddr1)
         Me.TabPage3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.TabPage3.Location = New System.Drawing.Point(4, 4)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage3.Size = New System.Drawing.Size(1062, 255)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage3.Size = New System.Drawing.Size(524, 129)
         Me.TabPage3.TabIndex = 1
         Me.TabPage3.Text = "ที่อยู่เปิดบิล"
         '
@@ -1860,10 +2195,10 @@ Public Class frmSale
         Me.lbMapName.BackColor = System.Drawing.Color.Blue
         Me.lbMapName.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbMapName.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lbMapName.Location = New System.Drawing.Point(866, 183)
-        Me.lbMapName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbMapName.Location = New System.Drawing.Point(433, 95)
+        Me.lbMapName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbMapName.Name = "lbMapName"
-        Me.lbMapName.Size = New System.Drawing.Size(220, 46)
+        Me.lbMapName.Size = New System.Drawing.Size(110, 24)
         Me.lbMapName.TabIndex = 9
         Me.lbMapName.Text = "Label15"
         Me.lbMapName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1873,10 +2208,10 @@ Public Class frmSale
         Me.lbMapCode.BackColor = System.Drawing.Color.Blue
         Me.lbMapCode.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbMapCode.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lbMapCode.Location = New System.Drawing.Point(866, 129)
-        Me.lbMapCode.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbMapCode.Location = New System.Drawing.Point(433, 67)
+        Me.lbMapCode.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbMapCode.Name = "lbMapCode"
-        Me.lbMapCode.Size = New System.Drawing.Size(220, 46)
+        Me.lbMapCode.Size = New System.Drawing.Size(110, 24)
         Me.lbMapCode.TabIndex = 8
         Me.lbMapCode.Text = "Label15"
         Me.lbMapCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1886,10 +2221,10 @@ Public Class frmSale
         Me.lbAddr3.BackColor = System.Drawing.Color.Blue
         Me.lbAddr3.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbAddr3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lbAddr3.Location = New System.Drawing.Point(82, 129)
-        Me.lbAddr3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbAddr3.Location = New System.Drawing.Point(41, 67)
+        Me.lbAddr3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbAddr3.Name = "lbAddr3"
-        Me.lbAddr3.Size = New System.Drawing.Size(766, 46)
+        Me.lbAddr3.Size = New System.Drawing.Size(383, 24)
         Me.lbAddr3.TabIndex = 7
         Me.lbAddr3.Text = "Label7"
         Me.lbAddr3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1899,10 +2234,10 @@ Public Class frmSale
         Me.lbAddr2.BackColor = System.Drawing.Color.Blue
         Me.lbAddr2.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbAddr2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lbAddr2.Location = New System.Drawing.Point(82, 73)
-        Me.lbAddr2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbAddr2.Location = New System.Drawing.Point(41, 38)
+        Me.lbAddr2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbAddr2.Name = "lbAddr2"
-        Me.lbAddr2.Size = New System.Drawing.Size(766, 46)
+        Me.lbAddr2.Size = New System.Drawing.Size(383, 24)
         Me.lbAddr2.TabIndex = 6
         Me.lbAddr2.Text = "Label7"
         Me.lbAddr2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1912,10 +2247,10 @@ Public Class frmSale
         Me.lbContact.BackColor = System.Drawing.Color.Blue
         Me.lbContact.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbContact.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lbContact.Location = New System.Drawing.Point(484, 183)
-        Me.lbContact.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbContact.Location = New System.Drawing.Point(242, 95)
+        Me.lbContact.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbContact.Name = "lbContact"
-        Me.lbContact.Size = New System.Drawing.Size(360, 46)
+        Me.lbContact.Size = New System.Drawing.Size(180, 24)
         Me.lbContact.TabIndex = 5
         Me.lbContact.Text = "Label15"
         Me.lbContact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1925,10 +2260,10 @@ Public Class frmSale
         Me.lbAddr4.BackColor = System.Drawing.Color.Blue
         Me.lbAddr4.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbAddr4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lbAddr4.Location = New System.Drawing.Point(80, 183)
-        Me.lbAddr4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbAddr4.Location = New System.Drawing.Point(40, 95)
+        Me.lbAddr4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbAddr4.Name = "lbAddr4"
-        Me.lbAddr4.Size = New System.Drawing.Size(396, 46)
+        Me.lbAddr4.Size = New System.Drawing.Size(198, 24)
         Me.lbAddr4.TabIndex = 4
         Me.lbAddr4.Text = "Label15"
         Me.lbAddr4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1937,10 +2272,10 @@ Public Class frmSale
         '
         Me.Label14.BackColor = System.Drawing.Color.White
         Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label14.Location = New System.Drawing.Point(18, 19)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label14.Location = New System.Drawing.Point(9, 10)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(62, 46)
+        Me.Label14.Size = New System.Drawing.Size(31, 24)
         Me.Label14.TabIndex = 3
         Me.Label14.Text = "·ÕèÍÂÙè"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1950,10 +2285,10 @@ Public Class frmSale
         Me.lbAddr1.BackColor = System.Drawing.Color.Blue
         Me.lbAddr1.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbAddr1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lbAddr1.Location = New System.Drawing.Point(82, 19)
-        Me.lbAddr1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbAddr1.Location = New System.Drawing.Point(41, 10)
+        Me.lbAddr1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbAddr1.Name = "lbAddr1"
-        Me.lbAddr1.Size = New System.Drawing.Size(766, 46)
+        Me.lbAddr1.Size = New System.Drawing.Size(383, 24)
         Me.lbAddr1.TabIndex = 0
         Me.lbAddr1.Text = "Label7"
         Me.lbAddr1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1963,10 +2298,10 @@ Public Class frmSale
         Me.txtShAddr4.BackColor = System.Drawing.Color.PaleGoldenrod
         Me.txtShAddr4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtShAddr4.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtShAddr4.Location = New System.Drawing.Point(22, 206)
-        Me.txtShAddr4.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtShAddr4.Location = New System.Drawing.Point(11, 107)
+        Me.txtShAddr4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtShAddr4.Name = "txtShAddr4"
-        Me.txtShAddr4.Size = New System.Drawing.Size(762, 44)
+        Me.txtShAddr4.Size = New System.Drawing.Size(382, 26)
         Me.txtShAddr4.TabIndex = 17
         '
         'txtShAddr3
@@ -1974,10 +2309,10 @@ Public Class frmSale
         Me.txtShAddr3.BackColor = System.Drawing.Color.PaleGoldenrod
         Me.txtShAddr3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtShAddr3.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtShAddr3.Location = New System.Drawing.Point(22, 150)
-        Me.txtShAddr3.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtShAddr3.Location = New System.Drawing.Point(11, 78)
+        Me.txtShAddr3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtShAddr3.Name = "txtShAddr3"
-        Me.txtShAddr3.Size = New System.Drawing.Size(762, 44)
+        Me.txtShAddr3.Size = New System.Drawing.Size(382, 26)
         Me.txtShAddr3.TabIndex = 16
         '
         'txtShAddr2
@@ -1985,10 +2320,10 @@ Public Class frmSale
         Me.txtShAddr2.BackColor = System.Drawing.Color.PaleGoldenrod
         Me.txtShAddr2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtShAddr2.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtShAddr2.Location = New System.Drawing.Point(22, 94)
-        Me.txtShAddr2.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtShAddr2.Location = New System.Drawing.Point(11, 49)
+        Me.txtShAddr2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtShAddr2.Name = "txtShAddr2"
-        Me.txtShAddr2.Size = New System.Drawing.Size(762, 44)
+        Me.txtShAddr2.Size = New System.Drawing.Size(382, 26)
         Me.txtShAddr2.TabIndex = 15
         '
         'txtShAddr1
@@ -1996,21 +2331,21 @@ Public Class frmSale
         Me.txtShAddr1.BackColor = System.Drawing.Color.PaleGoldenrod
         Me.txtShAddr1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtShAddr1.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtShAddr1.Location = New System.Drawing.Point(22, 40)
-        Me.txtShAddr1.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtShAddr1.Location = New System.Drawing.Point(11, 21)
+        Me.txtShAddr1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtShAddr1.Name = "txtShAddr1"
-        Me.txtShAddr1.Size = New System.Drawing.Size(762, 44)
+        Me.txtShAddr1.Size = New System.Drawing.Size(382, 26)
         Me.txtShAddr1.TabIndex = 14
         '
         'GroupBox8
         '
         Me.GroupBox8.Controls.Add(Me.lbCount)
         Me.GroupBox8.Controls.Add(Me.Label7)
-        Me.GroupBox8.Location = New System.Drawing.Point(22, 12)
-        Me.GroupBox8.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox8.Location = New System.Drawing.Point(11, 6)
+        Me.GroupBox8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox8.Size = New System.Drawing.Size(458, 177)
+        Me.GroupBox8.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox8.Size = New System.Drawing.Size(229, 92)
         Me.GroupBox8.TabIndex = 93
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "GroupBox8"
@@ -2025,11 +2360,11 @@ Public Class frmSale
         Me.GroupBox10.Controls.Add(Me.cmbOrder)
         Me.GroupBox10.Controls.Add(Me.cmbCancel)
         Me.GroupBox10.Controls.Add(Me.cmbPrint2)
-        Me.GroupBox10.Location = New System.Drawing.Point(18, 4)
-        Me.GroupBox10.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox10.Location = New System.Drawing.Point(9, 2)
+        Me.GroupBox10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox10.Size = New System.Drawing.Size(418, 775)
+        Me.GroupBox10.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox10.Size = New System.Drawing.Size(209, 403)
         Me.GroupBox10.TabIndex = 94
         Me.GroupBox10.TabStop = False
         '
@@ -2039,10 +2374,10 @@ Public Class frmSale
         Me.cmbPrint1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbPrint1.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbPrint1.ForeColor = System.Drawing.Color.White
-        Me.cmbPrint1.Location = New System.Drawing.Point(26, 302)
-        Me.cmbPrint1.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbPrint1.Location = New System.Drawing.Point(13, 157)
+        Me.cmbPrint1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbPrint1.Name = "cmbPrint1"
-        Me.cmbPrint1.Size = New System.Drawing.Size(364, 83)
+        Me.cmbPrint1.Size = New System.Drawing.Size(182, 43)
         Me.cmbPrint1.TabIndex = 95
         Me.cmbPrint1.Text = "พิมพ์ใบกำกับ"
         Me.cmbPrint1.UseVisualStyleBackColor = False
@@ -2054,10 +2389,10 @@ Public Class frmSale
         Me.cmbRecal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbRecal.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbRecal.ForeColor = System.Drawing.Color.White
-        Me.cmbRecal.Location = New System.Drawing.Point(26, 473)
-        Me.cmbRecal.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbRecal.Location = New System.Drawing.Point(13, 246)
+        Me.cmbRecal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbRecal.Name = "cmbRecal"
-        Me.cmbRecal.Size = New System.Drawing.Size(364, 73)
+        Me.cmbRecal.Size = New System.Drawing.Size(182, 38)
         Me.cmbRecal.TabIndex = 65
         Me.cmbRecal.Text = "คำนวณใหม่"
         Me.cmbRecal.UseVisualStyleBackColor = False
@@ -2067,10 +2402,10 @@ Public Class frmSale
         Me.chkLockTypeP.AutoSize = True
         Me.chkLockTypeP.Checked = True
         Me.chkLockTypeP.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkLockTypeP.Location = New System.Drawing.Point(116, 558)
-        Me.chkLockTypeP.Margin = New System.Windows.Forms.Padding(4)
+        Me.chkLockTypeP.Location = New System.Drawing.Point(58, 290)
+        Me.chkLockTypeP.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.chkLockTypeP.Name = "chkLockTypeP"
-        Me.chkLockTypeP.Size = New System.Drawing.Size(146, 29)
+        Me.chkLockTypeP.Size = New System.Drawing.Size(85, 17)
         Me.chkLockTypeP.TabIndex = 94
         Me.chkLockTypeP.Text = "Lock ใบเบิก"
         Me.chkLockTypeP.UseVisualStyleBackColor = True
@@ -2081,10 +2416,10 @@ Public Class frmSale
         Me.cmbSelRev.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbSelRev.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmbSelRev.ForeColor = System.Drawing.Color.White
-        Me.cmbSelRev.Location = New System.Drawing.Point(26, 117)
-        Me.cmbSelRev.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbSelRev.Location = New System.Drawing.Point(13, 61)
+        Me.cmbSelRev.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbSelRev.Name = "cmbSelRev"
-        Me.cmbSelRev.Size = New System.Drawing.Size(364, 90)
+        Me.cmbSelRev.Size = New System.Drawing.Size(182, 47)
         Me.cmbSelRev.TabIndex = 65
         Me.cmbSelRev.Text = "เลือกใบเบิก"
         Me.cmbSelRev.UseVisualStyleBackColor = False
@@ -2094,22 +2429,22 @@ Public Class frmSale
         Me.TabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage5)
-        Me.TabControl1.Location = New System.Drawing.Point(2110, 319)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControl1.Location = New System.Drawing.Point(1055, 166)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(480, 987)
+        Me.TabControl1.Size = New System.Drawing.Size(240, 513)
         Me.TabControl1.TabIndex = 95
         '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.GroupBox10)
         Me.TabPage2.Controls.Add(Me.cmbExit)
-        Me.TabPage2.Location = New System.Drawing.Point(8, 8)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 4)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage2.Size = New System.Drawing.Size(464, 940)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Size = New System.Drawing.Size(232, 487)
         Me.TabPage2.TabIndex = 0
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -2121,11 +2456,11 @@ Public Class frmSale
         Me.TabPage5.Controls.Add(Me.cmbCutItem)
         Me.TabPage5.Controls.Add(Me.lbArAcct)
         Me.TabPage5.Controls.Add(Me.GroupBox8)
-        Me.TabPage5.Location = New System.Drawing.Point(8, 8)
-        Me.TabPage5.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 4)
+        Me.TabPage5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage5.Size = New System.Drawing.Size(464, 940)
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage5.Size = New System.Drawing.Size(232, 487)
         Me.TabPage5.TabIndex = 1
         Me.TabPage5.Text = "TabPage5"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -2136,10 +2471,10 @@ Public Class frmSale
         Me.lbRevDocNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbRevDocNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbRevDocNo.ForeColor = System.Drawing.Color.White
-        Me.lbRevDocNo.Location = New System.Drawing.Point(88, 762)
-        Me.lbRevDocNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbRevDocNo.Location = New System.Drawing.Point(44, 396)
+        Me.lbRevDocNo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbRevDocNo.Name = "lbRevDocNo"
-        Me.lbRevDocNo.Size = New System.Drawing.Size(348, 42)
+        Me.lbRevDocNo.Size = New System.Drawing.Size(175, 23)
         Me.lbRevDocNo.TabIndex = 87
         Me.lbRevDocNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -2149,10 +2484,10 @@ Public Class frmSale
         Me.lbTypeP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbTypeP.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbTypeP.ForeColor = System.Drawing.Color.White
-        Me.lbTypeP.Location = New System.Drawing.Point(88, 694)
-        Me.lbTypeP.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbTypeP.Location = New System.Drawing.Point(44, 361)
+        Me.lbTypeP.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbTypeP.Name = "lbTypeP"
-        Me.lbTypeP.Size = New System.Drawing.Size(348, 42)
+        Me.lbTypeP.Size = New System.Drawing.Size(175, 23)
         Me.lbTypeP.TabIndex = 88
         Me.lbTypeP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -2161,10 +2496,10 @@ Public Class frmSale
         Me.lbArAcct.BackColor = System.Drawing.Color.Black
         Me.lbArAcct.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbArAcct.ForeColor = System.Drawing.Color.Yellow
-        Me.lbArAcct.Location = New System.Drawing.Point(18, 613)
-        Me.lbArAcct.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbArAcct.Location = New System.Drawing.Point(9, 319)
+        Me.lbArAcct.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbArAcct.Name = "lbArAcct"
-        Me.lbArAcct.Size = New System.Drawing.Size(418, 58)
+        Me.lbArAcct.Size = New System.Drawing.Size(209, 30)
         Me.lbArAcct.TabIndex = 94
         Me.lbArAcct.Text = "LB"
         '
@@ -2178,11 +2513,11 @@ Public Class frmSale
         Me.GroupBox6.Controls.Add(Me.txtShAddr3)
         Me.GroupBox6.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.Maroon
-        Me.GroupBox6.Location = New System.Drawing.Point(1196, 2)
-        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox6.Location = New System.Drawing.Point(598, 1)
+        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox6.Size = New System.Drawing.Size(896, 275)
+        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox6.Size = New System.Drawing.Size(448, 143)
         Me.GroupBox6.TabIndex = 100
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "ที่จัดส่ง"
@@ -2193,22 +2528,37 @@ Public Class frmSale
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(784, 38)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Location = New System.Drawing.Point(392, 20)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(62, 50)
+        Me.Button1.Size = New System.Drawing.Size(31, 26)
         Me.Button1.TabIndex = 85
         Me.Button1.Text = "..."
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'txtTotalBath
+        '
+        Me.txtTotalBath.BackColor = System.Drawing.Color.Black
+        Me.txtTotalBath.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTotalBath.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtTotalBath.ForeColor = System.Drawing.Color.Cyan
+        Me.txtTotalBath.Location = New System.Drawing.Point(370, 695)
+        Me.txtTotalBath.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtTotalBath.Name = "txtTotalBath"
+        Me.txtTotalBath.Size = New System.Drawing.Size(435, 23)
+        Me.txtTotalBath.TabIndex = 103
+        Me.txtTotalBath.Text = "0"
+        Me.txtTotalBath.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'frmSale
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(2612, 1388)
+        Me.ClientSize = New System.Drawing.Size(1283, 682)
+        Me.Controls.Add(Me.txtTotalBath)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox9)
@@ -2216,43 +2566,49 @@ Public Class frmSale
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.lbOldCode)
         Me.Controls.Add(Me.lbStkCode)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmSale"
-        Me.Text = "โปรแกรมการขาย  [Update 23-01-63]"
+        Me.Text = "โปรแกรมการขาย  : 24-05-65"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.GroupBox3.PerformLayout
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.GroupBox2.PerformLayout
+        Me.TabControl3.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout
+        Me.GroupBox11.ResumeLayout(False)
+        Me.GroupBox11.PerformLayout
         Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
+        Me.GroupBox7.PerformLayout
         Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        Me.GroupBox4.PerformLayout
         Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
+        Me.GroupBox5.PerformLayout
         Me.GroupBox9.ResumeLayout(False)
-        Me.GroupBox9.PerformLayout()
+        Me.GroupBox9.PerformLayout
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
-        Me.GroupBox10.PerformLayout()
+        Me.GroupBox10.PerformLayout
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage5.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox6.PerformLayout()
+        Me.GroupBox6.PerformLayout
         Me.ResumeLayout(False)
+        Me.PerformLayout
 
     End Sub
 
 #End Region
-
+    Dim chkBill As Boolean = False
     Dim frmPost As New frmRevOnline
     Dim frmCustomer As searchCus = New searchCus
 
@@ -2272,6 +2628,7 @@ Public Class frmSale
     Dim DA1 As SqlClient.SqlDataAdapter
     Dim DS As DataSet = New DataSet
     Dim DA As SqlClient.SqlDataAdapter
+    Dim chkds2 As Boolean
     Dim Drow As DataRow
     Dim dTB As New DataTable
     Dim txtSQLd As String
@@ -2417,7 +2774,7 @@ Public Class frmSale
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        Call setHeadListDep()
         'selCusiD = ""
         'selCountry = ""
         'selAmphoe = ""
@@ -2452,7 +2809,7 @@ Public Class frmSale
         lbWhName.Text = DBtools.getWhName(selWH)
 
 
-        lbStatus.Text = "¾ÃéÍÁ"
+        lbStatus.Text = "พร้อม"
         'Call comboSale()
         'Call comboFactor()
         dtp01.Value = Today.ToShortDateString
@@ -2565,10 +2922,10 @@ Public Class frmSale
         ListEdit.Columns.Add("Stk_Code", 1, HorizontalAlignment.Left) '4
         ListEdit.Columns.Add("ชื่อสินค้า", 300, HorizontalAlignment.Left) '5
 
-        ListEdit.Columns.Add("จำนวน", 80, HorizontalAlignment.Right) '6
-        ListEdit.Columns.Add("ราคา", 100, HorizontalAlignment.Right) '7
-        ListEdit.Columns.Add("ส่วนลด", 80, HorizontalAlignment.Right) 'ÊèÇ¹Å´/ÃÒÂ¡ÒÃ á¡éä¢ 08-04-59
-        ListEdit.Columns.Add("หลักลด", 120, HorizontalAlignment.Right) '8
+        ListEdit.Columns.Add("จำนวน", 60, HorizontalAlignment.Right) '6
+        ListEdit.Columns.Add("ราคา", 90, HorizontalAlignment.Right) '7
+        ListEdit.Columns.Add("ส่วนลด", 70, HorizontalAlignment.Right) 'ÊèÇ¹Å´/ÃÒÂ¡ÒÃ á¡éä¢ 08-04-59
+        ListEdit.Columns.Add("หลักลด", 90, HorizontalAlignment.Right) '8
 
         ListEdit.Columns.Add("จำนวนเงินรวม", 130, HorizontalAlignment.Right) '9
         ' ÇÔà¤ÃÒÐËì
@@ -2597,11 +2954,48 @@ Public Class frmSale
     End Sub
 
     Sub SearchData(ByVal ENo As String)
+        Dim i0, i1, i2, i3, i4, i5 As String
+        Dim anydata() As String
+        Dim txtsqlRemain As String = ""
+        Dim DepDocNo As String = ""
+        Dim DS1 As DataSet = New DataSet
+        Dim DA1 As SqlClient.SqlDataAdapter
 
         ListEdit.Items.Clear()
         DS.Clear()
+        DS1.Clear()
+        '*******************ของจอย*****************************
+        txtSQL = SqlDep(ENo) 'query for Deposit Data
+        DA = New SqlClient.SqlDataAdapter(txtSQL, Conn)
+        DA.Fill(DS, "DataTran")
+        If DS.Tables("DataTran").Rows.Count > 0 Then
+
+            For i = 0 To DS.Tables("DataTran").Rows.Count - 1
+                DepDocNo = DS.Tables("Datatran").Rows(i).Item("dtl_no")
+                i0 = i + 1
+                i1 = Format(DS.Tables("DataTran").Rows(i).Item("dtl_Date"), "MM/dd/yyyy")
+                i2 = DS.Tables("Datatran").Rows(i).Item("dtl_no")
+                i3 = Format(DS.Tables("Datatran").Rows(i).Item("dtl_sum"), "#,###.00")
+                i5 = Format(DS.Tables("Datatran").Rows(i).Item("dtl_sum_2"), "#,###.00")
+
+                txtsqlRemain = "select trh_d_amt from trandatah where trh_no ='" & DepDocNo & "' "
+                DA1 = New SqlClient.SqlDataAdapter(txtsqlRemain, Conn)
+                DA1.Fill(DS1, "DepRemain")
+                i4 = DS1.Tables("DepRemain").Rows(0).Item("trh_d_amt")
+
+                anydata = New String() {i0, i1, i2, i3, i4, i5}
+
+
+                LOrder = New ListViewItem(anydata)
+                ListDep.Items.Add(LOrder)
+
+            Next i
+            Call SumDepTotal()
+
+        End If
+        '*****************************************************************
         txtSQL1 = " SELECT    TranDataH.Trh_Type,TranDataH.Trh_noType, TranDataH.Trh_No, TranDataH.Trh_Date,"
-        txtSQL1 = txtSQL1 & " TranDataH.Trh_cus, TranDataH.Trh_Amt, TranDataH.Trh_D_Amt, TranDataH.Trh_V_Amt, "
+        txtSQL1 = txtSQL1 & " TranDataH.Trh_cus,TranDataH.Trh_Cus_Name, TranDataH.Trh_Amt, TranDataH.Trh_D_Amt, TranDataH.Trh_V_Amt, "
         txtSQL1 = txtSQL1 & " TranDataH.Trh_Disc, TranDataH.Trh_Full_Amt, TranDataH.Trh_Detail, TranDataH.Trh_Sale,"
         txtSQL1 = txtSQL1 & " TranDataH.Trh_Term, TranDataH.Trh_Cre_Lim,TranDataH.Trh_print, "
 
@@ -2676,7 +3070,7 @@ Public Class frmSale
             If DS.Tables("Detail").Rows(0).Item("trh_print") = "1" Then 'àªç¤ÇèÒâ´¹Â×¹ÂÑ¹áÅéÇËÃ×ÍÂÑ§
 
                 MsgBox("เอกสารนี้ได้ยืนยันส่งบัญชีแล้ว โปรดตรวจสอบ ", MsgBoxStyle.OkOnly, "แจ้งเตือน")
-                ' lbStatus.Text = "¾ÃéÍÁ"
+                ' lbStatus.Text = "พร้อม"
 
                 cmbSave.Visible = False
                 cmbDel.Visible = False
@@ -2717,13 +3111,52 @@ Public Class frmSale
             '  ¡ÅÑºä» ·Õè from   frmBegin
 
         End If
+
     End Sub
+    Function SqlDep(ByVal depositno1 As String) As String  'query for Deposit data
+
+        txtSQL = " Select  Dtl_type, Dtl_date, Dtl_no, Dtl_idcus, Dtl_sum, Dtl_sum_2, Dtl_con_id,dtl_sum-dtl_sum_2 As DepRemain "
+        txtSQL = txtSQL & "From TranDataD"
+        txtSQL = txtSQL & " Where (Dtl_type = '8') and dtl_con_id='" & depositno1 & "'"
+
+
+        Return txtSQL
+    End Function
     Sub showData()
 
-        Dim i0, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i19, i18, i20, i21, i22 As String
+        Dim i0, i1, i2, i3, i4, i5, i10, i11, i12, i13, i14, i15, i16, i19, i18, i20, i21, i22 As String
+        '======  เพิ่ม 18-08-2565 ====== Ktp 
+        Dim setDigiD As Integer = 2
+        Dim setFrmD As String = "#,##0.00"
+        Dim setFrmI As String = "#,##0"
 
+        If lbMapCode.Text = "I01" Then
+            setDigiD = 4
+        Else
+            setDigiD = 2
+        End If
+
+        Dim dblPrice As Double
+        Dim strPrice As String
+
+        Dim dblQty As Double
+        Dim strQty As String
+
+        Dim dblPriceTotal As Double  'i8  ราคาหลังลด
+        Dim strPriceTotal As String
+
+        Dim dblAmtTotal As Double ' i9  มูลค่าสินค้ารวมต่อ Item 
+        Dim strAmtTotal As String
+
+        '======  เพิ่ม 18-08-2565 ====== Ktp 
 
         Dim setDigiCAL As String = "#,##0.00"
+        If lbMapCode.Text = "I01" Then
+            setDigiCAL = "#,##0.00"
+        Else
+            setDigiCAL = "#,##0.00"
+        End If
+
         'Dim DS As DataSet = New DataSet
         'Dim DA As SqlClient.SqlDataAdapter
 
@@ -2775,7 +3208,12 @@ Public Class frmSale
         End If
 
         lbMapCode.Text = DS.Tables("ArDetail").Rows(0).Item("Ar_Map_Code")
-        lbMapName.Text = DS.Tables("ArDetail").Rows(0).Item("Map_S_Line_Name")
+        If IsDBNull(DS.Tables("ArDetail").Rows(0).Item("Map_S_Line_Name")) Then
+            lbMapName.Text = ""
+        Else
+            lbMapName.Text = DS.Tables("ArDetail").Rows(0).Item("Map_S_Line_Name")
+        End If
+
 
 
         '=============  à¾ÔèÁ·ÕèÍÂØèã¹¡ÒÃà»Ô´ºÔÅ ====================
@@ -2783,7 +3221,13 @@ Public Class frmSale
         dtp01.Value = Format(DS.Tables("Detail").Rows(0).Item("trh_date"), "dd/MM/yyyy")
         lbCusID.Text = DS.Tables("Detail").Rows(0).Item("trh_cus")
         PId = DS.Tables("Detail").Rows(0).Item("trh_cus")
-        lbCusName.Text = DS.Tables("Detail").Rows(0).Item("ar_name")
+        If PId = "116014" Then
+            txtCusName.Text = DS.Tables("Detail").Rows(0).Item("trh_Cus_Name")
+        Else
+            txtCusName.Text = DS.Tables("Detail").Rows(0).Item("ar_name")
+        End If
+
+
         If IsDBNull(DS.Tables("Detail").Rows(0).Item("Ar_Tax_Code")) Then
             MsgBox("ไม่พบข้อมูลรหัสภาษี")
             lbTaxID.Text = "ไม่พบข้อมูล"
@@ -2796,6 +3240,7 @@ Public Class frmSale
         txtCusDisc.Text = DS.Tables("Detail").Rows(0).Item("trh_disc")
         txtCusVat.Text = DS.Tables("Detail").Rows(0).Item("trh_bill")
         txtSaleMan.Text = DS.Tables("Detail").Rows(0).Item("trh_sale")
+
         If IsDBNull(DS.Tables("Detail").Rows(0).Item("sl_name")) Then
             lbSaleName.Text = ""
         Else
@@ -2861,30 +3306,29 @@ Public Class frmSale
 
                     Pr_Cost = getCostByStk(stkCode, dtp01.Value, "", 0)
                     i5 = .Item("stk_name_1")
-                    If lbMapCode.Text = "I01" Then
-                        setDigiCAL = "#,##0.0000"
-                    Else
-                        setDigiCAL = "#,##0.00"
 
-                    End If
+
+
                     '==========================================================
-                    i6 = Format(.Item("dtl_num"), setDigiCAL)  '  ¨Ó¹Ç¹ÊÔ¹¤éÒ
-                    i7 = Format(.Item("dtl_price"), setDigiCAL)  '  ÃÒ¤ÒµèÍË¹èÇÂ
+                    dblQty = Math.Round(.Item("dtl_num"), setDigiD)  '  จำนวน
+                    strQty = dblQty.ToString(setFrmI)
+
+                    dblPrice = Math.Round(.Item("dtl_price"), setDigiD)  ' ราคา
+                    strPrice = dblPrice.ToString(setFrmD)
+
 
                     If Microsoft.VisualBasic.Right(.Item("dtl_t_disc"), 1) = "b" Or Microsoft.VisualBasic.Right(.Item("dtl_t_disc"), 1) = "B" Then
 
-                        prDisc = Format(CDbl(Microsoft.VisualBasic.Left(.Item("dtl_t_disc"), Len(.Item("dtl_t_disc")) - 1)), setDigiCAL)
+                        prDisc = Math.Round(CDbl(Microsoft.VisualBasic.Left(.Item("dtl_t_disc"), Len(.Item("dtl_t_disc")) - 1)), setDigiD)
 
 
                     ElseIf Microsoft.VisualBasic.Right(.Item("dtl_t_disc"), 1) = "%" Then
 
-                        prDisc = Format(CDbl(Microsoft.VisualBasic.Left(.Item("dtl_t_disc"), Len(.Item("dtl_t_disc")) - 1)), setDigiCAL)
-                        prDisc = ((.Item("dtl_price") * prDisc) / 100)
+                        prDisc = Math.Round(CDbl(Microsoft.VisualBasic.Left(.Item("dtl_t_disc"), Len(.Item("dtl_t_disc")) - 1)), setDigiD)
+                        prDisc = ((dblPrice * prDisc) / 100)
 
                     ElseIf .Item("dtl_t_disc") = 0 Or .Item("dtl_t_disc") = "" Then
                         prDisc = 0
-
-
                     ElseIf IsNumeric(txtDisc.Text) Then
 
                         prDisc = .Item("dtl_t_disc")
@@ -2892,10 +3336,13 @@ Public Class frmSale
 
                     End If
 
-
-                    i8 = Format((.Item("dtl_price") - prDisc), setDigiCAL)  ' Format(.Item("dtl_price") - ((.Item("dtl_price") * prDisc) / 100), setDigiCAL)
                     '==========================================================
-                    i9 = Format(.Item("dtl_num") * (.Item("dtl_price") - prDisc), setDigiCAL)   '  Total                        
+
+                    dblPriceTotal = Math.Round((dblPrice - prDisc), setDigiD)  ' Format(.Item("dtl_price") - ((.Item("dtl_price") * prDisc) / 100), setDigiCAL)
+                    strPriceTotal = dblPriceTotal.ToString(setFrmD)
+
+                    dblAmtTotal = Math.Round(dblQty * strPriceTotal, setDigiD)   '  Total
+                    strAmtTotal = dblAmtTotal.ToString(setFrmD)
                     '==========================================================
 
                     '
@@ -2913,26 +3360,25 @@ Public Class frmSale
                     'End If
 
                     ' ÇÔà¤ÃÒÐËìì                              
-                    i12 = Format(.Item("stk_factor") * .Item("dtl_num"), setDigiCAL)   '  ¹éÓË¹Ñ¡
-
-                    stkQty = .Item("dtl_num")
-                    stkWeight = .Item("stk_factor") * .Item("dtl_num")
+                    i12 = Format(.Item("stk_factor") * dblQty, setDigiCAL)   '  ¹éÓË¹Ñ¡
+                    ' stkQty = .Item("dtl_num")
+                    stkWeight = .Item("stk_factor") * dblQty
 
                     If DBtools.getCostType(stkCode) = 0 Then
 
                         i10 = Format(stkWeight * Pr_Cost, setDigiCAL)    ' µé¹·Ø¹
-                        i11 = Format(i9 - i10, setDigiCAL)     ' ¡ÓäÃ
+                        i11 = Format(dblAmtTotal - i10, setDigiCAL)     ' ¡ÓäÃ
 
                     ElseIf DBtools.getCostType(stkCode) = 1 Then
 
-                        i10 = Format(stkQty * Pr_Cost, setDigiCAL)    ' µé¹·Ø¹
-                        i11 = Format(i9 - i10, setDigiCAL)     ' ¡ÓäÃ
+                        i10 = Format(dblQty * Pr_Cost, setDigiCAL)    ' µé¹·Ø¹
+                        i11 = Format(dblAmtTotal - i10, setDigiCAL)     ' ¡ÓäÃ
 
                     Else
 
 
                         i10 = Format(stkWeight * Pr_Cost, setDigiCAL)    ' µé¹·Ø¹
-                        i11 = Format(i9 - i10, setDigiCAL)     ' ¡ÓäÃ
+                        i11 = Format(dblAmtTotal - i10, setDigiCAL)     ' ¡ÓäÃ
 
                     End If
                     '==========================================================
@@ -2950,10 +3396,10 @@ Public Class frmSale
                     '            i18 = .Item("dtl_cuta_code")
                     i18 = .Item("dtl_same_code")
                     i19 = "0"
-                    i20 = Format(.Item("dtl_num"), setDigiCAL)
-                    i21 = Format(.Item("stk_factor") * .Item("dtl_num"), setDigiCAL)
+                    i20 = strQty 'Format(dblQty, setDigiCAL)
+                    i21 = Math.Round(.Item("stk_factor") * dblQty, setDigiD)
 
-                    anydata = New String() {i0, i1, i2, i3, i4, i5, i6, i7, strDisc, i8, i9, i10, i11, i12, i13, i14, i15, i16, i18, i19, i20, i21, "", strTypeT, strTypeP, strCondition}
+                    anydata = New String() {i0, i1, i2, i3, i4, i5, strQty, strPrice, strDisc, strPriceTotal, strAmtTotal, i10, i11, i12, i13, i14, i15, i16, i18, i19, i20, i21, "", strTypeT, strTypeP, strCondition}
                     'lvi = New ListViewItem(anydata)
                     'ListEdit.Items.Add(lvi)
 
@@ -2983,15 +3429,15 @@ Public Class frmSale
         'End If
 
         lbCount.Text = DS.Tables("Detail").Rows.Count
-
-        lbSumary.Text = Format(DS.Tables("DataH").Rows(0).Item("Trh_Amt"), setDigiCAL)
+        lbSumary.Text = Format(DS.Tables("DataH").Rows(0).Item("Trh_Amt"), setFrmD)
 
         'If ((DS.Tables("DataH").Rows(0).Item("Trh_noType") = "V" Or DS.Tables("DataH").Rows(0).Item("Trh_noType") = "P") And (DS.Tables("DataH").Rows(0).Item("Trh_Bill") = "0")) Then
         If ((DS.Tables("DataH").Rows(0).Item("Trh_noType") = "V" Or DS.Tables("DataH").Rows(0).Item("Trh_noType") = "P")) Then
 
-            lbVat.Text = Format((DS.Tables("DataH").Rows(0).Item("Trh_Amt") * DS.Tables("DataH").Rows(0).Item("Trh_Bill")) / 100, setDigiCAL)
-            lbTotal2.Text = Format(CDbl(lbSumary.Text) + CDbl(lbVat.Text), setDigiCAL)
-
+            lbVat.Text = Format(((DS.Tables("DataH").Rows(0).Item("Trh_Amt") - DS.Tables("DataH").Rows(0).Item("Trh_Deposit")) * DS.Tables("DataH").Rows(0).Item("Trh_Bill")) / 100, setDigiCAL)
+            'lbTotal2.Text = Format(CDbl(lbSumary.Text) + CDbl(lbVat.Text), setDigiCAL)
+            lbTotal2.Text = Format(CDbl(lbSumary.Text) - CDbl(lbDeposit.Text) + CDbl(lbVat.Text), setDigiCAL)
+            'แก้จากของเดิมของพี่กวาง
             'ElseIf ((DS.Tables("DataH").Rows(0).Item("Trh_noType") = "V" Or DS.Tables("DataH").Rows(0).Item("Trh_noType") = "P") And (DS.Tables("DataH").Rows(0).Item("Trh_Bill") > "0")) Then
 
             '    lbVat.Text = Format(DS.Tables("DataH").Rows(0).Item("Trh_V_Amt"), "#,##0.00")
@@ -3000,14 +3446,14 @@ Public Class frmSale
         Else
 
             lbVat.Text = 0
-            lbTotal2.Text = Format(DS.Tables("DataH").Rows(0).Item("Trh_Amt"), setDigiCAL)
+            lbTotal2.Text = Format(DS.Tables("DataH").Rows(0).Item("Trh_Amt") - CDbl(lbDeposit.Text), setDigiCAL)
 
         End If
 
 
         Call sumTotal()
 
-        lbStatus.Text = "¡ÓÅÑ§á¡éä¢"
+        lbStatus.Text = "กำลังแก้ไขเอกสาร"
 
     End Sub
     Sub lockEdit()
@@ -3163,7 +3609,7 @@ Public Class frmSale
 
         showArData(selCusiD)
         lbCusID.Text = selCusiD
-        lbCusName.Text = PName
+        txtCusName.Text = PName
         If selCusiD = "" Then
 
         Else
@@ -3340,7 +3786,7 @@ Public Class frmSale
 
                 If Trim(txtTypeP.Text) = "" Then
 
-                    MsgBox("àÅ¢·ÕèãºàºÔ¡äÁè¶Ù¡µéÍ§ µÃÇ¨ÊÍºÍÕ¡¤ÃÑé§ ")
+                    MsgBox("ไม่พบข้อมูลใบเบิก โปรดตรวจสอบข้อมูลใบเบิกอีกครั้ง ")
                     txtTypeP.Focus()
                     txtTypeP.SelectAll()
                     Exit Sub
@@ -3351,7 +3797,7 @@ Public Class frmSale
 
         If IsNumeric(txtSaleQty.Text) = False Then
 
-            MsgBox("¢éÍÁÙÅ¨Ó¹Ç¹ÊÔ¹¤éÒäÁè¶Ù¡µéÍ§ µÃÇ¨ÊÍºÍÕ¡¤ÃÑé§ ")
+            MsgBox("ตรวจสอบข้อมูลจำนวนอีกครั้ง ")
             txtSaleQty.Focus()
             txtSaleQty.SelectAll()
             Exit Sub
@@ -3359,7 +3805,7 @@ Public Class frmSale
 
         If IsNumeric(txtPrice.Text) = False Then
 
-            MsgBox("¢éÍÁÙÅÃÒ¤ÒäÁè¶Ù¡µéÍ§ µÃÇ¨ÊÍºÍÕ¡¤ÃÑé§ ")
+            MsgBox("ตรวจสอบข้อมูลจำนวนอีกครั้ง ")
             txtPrice.Focus()
             txtPrice.SelectAll()
             Exit Sub
@@ -3376,14 +3822,16 @@ Public Class frmSale
         'End If
 
 
-        If lbProductName.Text = "" Or txtSaleQty.Text = "" Or txtPrice.Text = "" Or lbCusID.Text = "" _
-        Or lbCusID.Text = "ÃËÑÊÅÙ¡¤éÒ" Then
+        If lbProductName.Text = "" Or txtSaleQty.Text = "" Or txtPrice.Text = "" Or lbCusID.Text = "" Or lbCusID.Text = "" Then
 
-            MsgBox("¡ÃØ³ÒµÃÇ¨ÊÍº¢éÍÁÙÅÍÕ¡¤ÃÑé§¡èÍ¹·Ó¡ÒÃà¾ÔèÁÃÒÂ¡ÒÃ", MsgBoxStyle.Critical = MsgBoxStyle.OkOnly, "á¨é§àµ×Í¹")
+            MsgBox("ข้อมูลไม่ครบถ้วน ตรวจสอบอีกครั้ง", MsgBoxStyle.Critical = MsgBoxStyle.OkOnly, "แจ้งเตือน")
             Exit Sub
 
         End If
-
+        Dim dblPrice As Double = Double.Parse(txtPrice.Text)
+        Dim dblPriceDisc As Double
+        Dim dblAmtTotal As Double
+        stkQty = Double.Parse(txtSaleQty.Text)
         'If  then
 
         'End If
@@ -3393,19 +3841,19 @@ Public Class frmSale
 
         If (getProDCode(stkCode) <> "04") And Not (Dvat = "P" Or Dvat = "B" Or Dvat = "M") Then   '  µÃÇ¨ÊÍºÇèÒà»ç¹ GMB(04)ËÃ×ÍäÁè ¶éÒà»ç¹äÁè¤Ô´ÊµêÍ¡
 
-            If (txtSaleQty.Text > DBtools.getStock(stkCode, "110098", lbWHcode.Text)) Then
+            If (stkQty > DBtools.getStock(stkCode, "110098", lbWHcode.Text)) Then
                 'If (Dvat = "P" Or Dvat = "B") Then
 
                 'Else
 
-                MsgBox("StockäÁèà¾ÕÂ§¾Íã¹¡ÒÃ¢ÒÂ ·èÒ¹µéÍ§·Ó¡ÒÃâÍ¹ÊÔ¹¤éÒ¨Ò¡¤ÅÑ§Í×è¹ â´Â¡ÒÃ¡´ F2", MsgBoxStyle.OkOnly, "á¨é§àµ×Í¹")
+                MsgBox("StocK ไม่พอในการทำรายการ  F2", MsgBoxStyle.OkOnly, "แจ้งเตือน")
                 lbStock.Text = DBtools.getStock(stkCode, "110098", lbWHcode.Text)
                 Exit Sub
                 'End If
 
             Else
 
-                tempSum = CInt(txtSaleQty.Text) * CDbl(txtPrice.Text) '¤Ó¹Ç³ÃÒ¤Ò¨ÃÔ§
+                tempSum = stkQty * dblPrice '¤Ó¹Ç³ÃÒ¤Ò¨ÃÔ§
                 'tempweight = CInt(txtSaleQty.Text) * CDbl(lbWeight.Text) '¤Ó¹Ç³¹éÓË¹Ñ¡
                 'tempDisTotal = tempSum - Format((tempSum * (CDbl(txtDiscount.Text) / 100)), "0.00") '¤Ó¹Ç³ÃÒ¤Ò·ÕèËÑ¡ÊèÇ¹Å´
 
@@ -3420,29 +3868,29 @@ Public Class frmSale
                 strRevNo = lbRevDocNo.Text                      '  àÅ¢·Õèãº¨Í§
                 strTypeP = txtTypeP.Text
 
-                i3 = lbCusName.Text                             '  ª×èÍÅÙ¡¤éÒ
+                i3 = txtCusName.Text                             '  ª×èÍÅÙ¡¤éÒ
                 i4 = stkCode                              '  ÃËÑÊÊÔ¹¤éÒ
                 i5 = lbProductName.Text                         '  ª×èÍÊÔ¹¤éÒ  
                 '=================================================
 
-                i6 = txtSaleQty.Text                            '  ¨Ó¹Ç¹¢ÒÂ                  
+                'i6 = txtSaleQty.Text                            '  จำนวน
+                'stkQty = Double.Parse(txtSaleQty.Text)  ' จำนวน
 
-                stkQty = CDbl(txtSaleQty.Text)
                 If lbArAcct.Text = "112010" Then
                     setDigiCAL = "#,##0.00"
                 Else
-                    setDigiCAL = "#,##0.0000"
+                    setDigiCAL = "#,##0.00"
                 End If
-                i7 = Format(CDbl(txtPrice.Text), setDigiCAL)    '  ÃÒ¤Ò¢ÒÂ/ unit
+                ' i7 = Math.Round(dblPrice, 2)    '  ÃÒ¤Ò¢ÒÂ/ unit
 
                 If Microsoft.VisualBasic.Right(txtDisc.Text, 1) = "%" Then
 
-                    tempDisc = CDbl(Microsoft.VisualBasic.Left(txtDisc.Text, Len(txtDisc.Text) - 1))
-                    tempDisc = (CDbl(txtPrice.Text) * CDbl(tempDisc)) / 100
+                    tempDisc = Double.Parse(Microsoft.VisualBasic.Left(txtDisc.Text, Len(txtDisc.Text) - 1))
+                    tempDisc = (dblPrice * tempDisc) / 100
 
                 ElseIf Microsoft.VisualBasic.Right(txtDisc.Text, 1) = "b" Or Microsoft.VisualBasic.Right(txtDisc.Text, 1) = "B" Then
 
-                    tempDisc = CDbl(Microsoft.VisualBasic.Left(txtDisc.Text, Len(txtDisc.Text) - 1))
+                    tempDisc = Double.Parse(Microsoft.VisualBasic.Left(txtDisc.Text, Len(txtDisc.Text) - 1))
 
                 ElseIf IsNumeric(txtDisc.Text) Then
 
@@ -3453,14 +3901,14 @@ Public Class frmSale
                     tempDisc = 0
 
                 End If
-
-                i8 = Format(txtPrice.Text - tempDisc, setDigiCAL)   ' ÃÒ¤ÒËÅÑ§Å´
+                dblPriceDisc = Math.Round(dblPrice - tempDisc, 2)
+                ' i8 = Math.Round((dblPrice - tempDisc), 2)   ' ÃÒ¤ÒËÅÑ§Å´
 
 
                 '=================================================
 
-                i9 = Format(CDbl(txtSaleQty.Text) * CDbl(i8), "#,##0.0000")   '   Total
-                dblDiscItem = i9
+                dblAmtTotal = Math.Round(stkQty * dblPriceDisc, 2)   '   Total
+                'dblDiscItem = dblAmtTotal
                 '=================================================
 
                 'ÇÔà¤ÃÒÐËì 
@@ -3475,9 +3923,8 @@ Public Class frmSale
                 End If
                 tempweight = (stkQty * stkFactor)
 
-                i10 = Format(CDbl(stkAmt), setDigiCAL)    '  µé¹·Ø¹
-
-                i11 = Format((i8 * stkQty) - stkAmt, "#,##0.00") ' profit ¡ÓäÃ
+                i10 = Math.Round(stkAmt, 2).ToString   '  µé¹·Ø¹
+                i11 = Math.Round((dblAmtTotal * stkQty) - stkAmt, 2).ToString ' profit ¡ÓäÃ
 
                 '=================================================
                 i12 = Format(tempweight, setDigiCAL)                   '  ¹éÓË¹Ñ¡ÃÇÁ
@@ -3495,15 +3942,15 @@ Public Class frmSale
                 End If
 
                 i19 = "0"
-                i20 = txtSaleQty.Text
+                i20 = stkQty
                 i21 = Format(tempweight, setDigiCAL)
                 i22 = "A"
 
                 ' If oldCode <> "" Then
                 listData = New String() {i0, strDocPO, i2, i3, i4, i5,
-                                         i6, i7, i17, i8,
-                                         i9, i10, i11, i12, i13,
-                                         i14, i15, i16, i18, i19, i20, i21, i22, strRevNo, strTypeP, strCondition}
+                                         stkQty.ToString("#,##0"), dblPrice.ToString("#,##0.00"), i17, dblPriceDisc.ToString("#,##0.00"),
+                                         dblAmtTotal.ToString("#,##0.00"), i10, i11, i12, i13,
+                                         i14, i15, i16, i18, i19, stkQty.ToString("#,##0.00"), i21, i22, strRevNo, strTypeP, strCondition}
 
 
                 LOrder = New ListViewItem(listData)
@@ -3526,7 +3973,7 @@ Public Class frmSale
 
             '    ¢ÒÂÊÔ¹¤éÒ·ÕèäÁèãªè  GMB 
 
-            If (stkCode = oldCode) And (CDbl(txtSaleQty.Text) <= (editQty + DBtools.getStock(stkCode, "110098", lbWHcode.Text))) Then
+            If (stkCode = oldCode) And (stkQty <= (editQty + DBtools.getStock(stkCode, "110098", lbWHcode.Text))) Then
 
             Else
                 'If (txtSaleQty.Text > DBtools.getStock(lbCode.Text, "110098", lbWHcode.Text)) And Not ((Dvat = "P") Or (Dvat = "B")) Then
@@ -3538,7 +3985,7 @@ Public Class frmSale
 
             End If
 
-            tempSum = CInt(txtSaleQty.Text) * CDbl(txtPrice.Text) '¤Ó¹Ç³ÃÒ¤Ò¨ÃÔ§
+            tempSum = stkQty * (dblPrice) '¤Ó¹Ç³ÃÒ¤Ò¨ÃÔ§
             'tempweight = CInt(txtSaleQty.Text) * CDbl(lbWeight.Text) '¤Ó¹Ç³¹éÓË¹Ñ¡
             'tempDisTotal = tempSum - Format((tempSum * (CDbl(txtDiscount.Text) / 100)), "0.00") '¤Ó¹Ç³ÃÒ¤Ò·ÕèËÑ¡ÊèÇ¹Å´
 
@@ -3549,19 +3996,20 @@ Public Class frmSale
             i0 = iNo + 1                                    '  ÅÓ´Ñº
             strDocPO = lbPONo.Text                                 '  àÅ¢·Õè PO
             i2 = lbOrder.Text                               '  àÅ¢·Õè  Order  
-            i3 = lbCusName.Text                             '  ª×èÍÅÙ¡¤éÒ
+            i3 = txtCusName.Text                             '  ª×èÍÅÙ¡¤éÒ
             i4 = lbStkCode.Text                                '  ÃËÑÊÊÔ¹¤éÒ
             i5 = lbProductName.Text                         '  ª×èÍÊÔ¹¤éÒ  
             '=================================================
 
-            i6 = txtSaleQty.Text                            '  ¨Ó¹Ç¹¢ÒÂ                  
-            stkQty = CDbl(txtSaleQty.Text)
-            i7 = Format(CDbl(txtPrice.Text), "#,##0.0000")    '  ÃÒ¤Ò¢ÒÂ/ unit
+            'i6 = stkQty
+            ' stkQty = Double.Parse(txtSaleQty.Text)         ' จำนวน                
+
+            ' i7 = Format(txtPrice.Text, "#,##0.00")    '  ÃÒ¤Ò¢ÒÂ/ unit
 
             If Microsoft.VisualBasic.Right(txtDisc.Text, 1) = "%" Then
 
                 tempDisc = CDbl(Microsoft.VisualBasic.Left(txtDisc.Text, Len(txtDisc.Text) - 1))
-                tempDisc = (CDbl(txtPrice.Text) * CDbl(tempDisc)) / 100
+                tempDisc = (dblPrice * tempDisc) / 100
 
             ElseIf Microsoft.VisualBasic.Right(txtDisc.Text, 1) = "b" Or Microsoft.VisualBasic.Right(txtDisc.Text, 1) = "B" Then
 
@@ -3574,12 +4022,14 @@ Public Class frmSale
             ElseIf txtDisc.Text = 0 Or txtDisc.Text = "" Then
                 tempDisc = 0
             End If
+            dblPriceDisc = Math.Round(dblPrice - tempDisc, 2)
 
-            i8 = Format(txtPrice.Text - tempDisc, "#,##0.0000")   ' ÃÒ¤ÒËÅÑ§Å´
-
+            'i8 = Format(dblPrice - tempDisc, "#,##0.00")   ' ÃÒ¤ÒËÅÑ§Å´
+            ' dblPriceDisc = Format(dblPrice - tempDisc, "#,##0.00") 'แก้ไข แทน i8 ด้วย dblPriceDisc
             '=================================================
 
-            i9 = Format(CDbl(txtSaleQty.Text) * CDbl(i8), "#,##0.0000")   '   Total
+            ' i9 = Format(CDbl(txtSaleQty.Text) * CDbl(i8), "#,##0.00")   '   Total
+            dblAmtTotal = (stkQty * dblPriceDisc) ' แก้ไข แทน i8 ด้วย dblPriceDisc
 
             '=================================================
 
@@ -3595,12 +4045,12 @@ Public Class frmSale
             End If
             tempweight = (stkQty * stkFactor)
 
-            i10 = Format(CDbl(stkAmt), "#,##0.00")    '  µé¹·Ø¹
+            i10 = Math.Round(stkAmt, 2).ToString  '  µé¹·Ø¹
 
-            i11 = Format((i8 * stkQty) - stkAmt, "#,##0.00") ' profit ¡ÓäÃ
+            i11 = Math.Round((dblPriceDisc * stkQty) - stkAmt, 2).ToString ' profit ¡ÓäÃ
 
             '=================================================
-            i12 = Format(tempweight, "#,##0.000")                   '  ¹éÓË¹Ñ¡ÃÇÁ
+            i12 = Format(tempweight, "#,##0.00")                   '  ¹éÓË¹Ñ¡ÃÇÁ
             i13 = txtDetail2.Text                                   '  ËÁÒÂàËµØ  ã¹ÃÒÂ¡ÒÃÊÔ¹¤éÒ
             i14 = lbCusID.Text                                      '  ÃËÑÊ ÅÙ¡¤éÒ
             i15 = txtNo.Text                                        '  àÅ¢·Õè ºÔÅ 
@@ -3614,15 +4064,15 @@ Public Class frmSale
             End If
 
             i19 = "0"
-            i20 = txtSaleQty.Text
-            i21 = Format(tempweight, "#,##0.000")
+            ' i20 = txtSaleQty.Text
+            i21 = Format(tempweight, "#,##0.00")
             i22 = "A"
 
             ' If oldCode <> "" Then
             listData = New String() {i0, strDocPO, i2, i3, i4, i5,
-                                     i6, i7, i17, i8,
-                                     i9, i10, i11, i12, i13,
-                                     i14, i15, i16, i18, i19, i20, i21, i22, strRevNo, strTypeP, strCondition}
+                                     stkQty.ToString("#,##0"), dblPrice.ToString("#,##0.00"), i17, dblPriceDisc.ToString("#,##0.00"),
+                                     dblAmtTotal.ToString("#,##0.00"), i10, i11, i12, i13,
+                                     i14, i15, i16, i18, i19, stkQty.ToString("#,##0.00"), i21, i22, strRevNo, strTypeP, strCondition}
 
 
             'listData = New String() {i0, strDocPO, i2, i3, i4, i5, _
@@ -3706,9 +4156,9 @@ Public Class frmSale
                 tempDisc = CDbl(strDisc)
 
             End If
-            tmpPrice = tmpPrice - tempDisc
+            tmpPrice = Math.Round(tmpPrice - tempDisc, 2)
 
-            total = Format(tmpPrice * dblQty, "#,##0.0000") '3
+            total = Format(tmpPrice * dblQty, "#,##0.00") '3
 
             tmpTotaliTemDisc = (tempDisc * dblQty) + tmpTotaliTemDisc
             tmpTotaliTemAmt = (total) + tmpTotaliTemAmt
@@ -3725,32 +4175,100 @@ Public Class frmSale
         '====================================  àÃÔèÁ¤Ó¹Ç¹  =======================
         If chkVATtype(lbCusID.Text) = 0 Then
             If lbMapCode.Text = "I01" Then
-                If Microsoft.VisualBasic.Right(txtDepoSit.Text, 1) = "b" Then
-                    TrhDePosit = Microsoft.VisualBasic.Left(txtDepoSit.Text, Len(txtDepoSit.Text) - 1)
-                ElseIf Microsoft.VisualBasic.Right(txtDepoSit.Text, 1) = "%" Then
-                    TrhDePosit = (Microsoft.VisualBasic.Left(txtDepoSit.Text, Len(txtDepoSit.Text) - 1))
-                    TrhDePosit = (tmpSummary * TrhDePosit) / 100
-                ElseIf IsNumeric(Microsoft.VisualBasic.Right(txtDepoSit.Text, 1)) Then
-                    TrhDePosit = txtDepoSit.Text
-                Else
-                    TrhDePosit = 0
+                'จอยcommentของพี่กวางไว้
+
+                'If Microsoft.VisualBasic.Right(txtDepoSit.Text, 1) = "b" Then
+                '    TrhDePosit = Microsoft.VisualBasic.Left(txtDepoSit.Text, Len(txtDepoSit.Text) - 1)
+                'ElseIf Microsoft.VisualBasic.Right(txtDepoSit.Text, 1) = "%" Then
+                '    TrhDePosit = (Microsoft.VisualBasic.Left(txtDepoSit.Text, Len(txtDepoSit.Text) - 1))
+                '    TrhDePosit = (tmpSummary * TrhDePosit) / 100
+                'ElseIf IsNumeric(Microsoft.VisualBasic.Right(txtDepoSit.Text, 1)) Then
+                '    TrhDePosit = txtDepoSit.Text
+                'Else
+                '    TrhDePosit = 0
+                'End If
+                If Microsoft.VisualBasic.Right(txtCusDisc.Text, 1) = "b" Then  '  ¶éÒªèÍ§ÊèÇ¹Å´ÁÕ  "b" µèÍ·éÒÂËÁÒÂ¶Ö§Å´à»ç¹ºÒ·
+
+                    trhDisc = CDbl(Microsoft.VisualBasic.Left(txtCusDisc.Text, Len(txtCusDisc.Text) - 1))
+                ElseIf Microsoft.VisualBasic.Right(txtCusDisc.Text, 1) = "%" Then
+
+                    trhDisc = CDbl(Microsoft.VisualBasic.Left(txtCusDisc.Text, Len(txtCusDisc.Text) - 1))
+                    trhDisc = (TrhAmt * trhDisc) / 100
+
+                ElseIf IsNumeric(Microsoft.VisualBasic.Right(txtCusDisc.Text, 1)) Then
+                    trhDisc = txtCusDisc.Text
                 End If
 
                 'tmpSummary = (tmpSummary - TrhDePosit)
+                TrhDePosit = lbDeposit.Text 'ที่จอยเพิ่มไว้
+                lbSumary.Text = Format(tempTotal, "#,##0.00").ToString  '3
+                lbDisc.Text = Format(trhDisc, "#,##0.00").ToString  '3
+                lbDeposit.Text = Format(TrhDePosit, "#,##0.00").ToString '3
 
-                lbSumary.Text = Format(tempTotal, "#,##0.0000").ToString  '3
-                lbDisc.Text = Format(trhDisc, "#,##0.0000").ToString  '3
-                lbDeposit.Text = Format(TrhDePosit, "#,##0.0000").ToString '3
-
-                TrhTotal = (tempTotal - trhDisc - TrhDePosit)
+                TrhTotal = (tempTotal - trhDisc - lbDeposit.Text)
                 'lbSumary.Text = tempTotal.ToString("#,##0.0000")  '3
                 lbVat.Text = "0.00"
-                lbTotal2.Text = tempTotal.ToString("#,##0.0000")
+                'lbTotal2.Text = tempTotal.ToString("#,##0.00") 'จอยcomment ของพี่กวางไว้
+                lbTotal2.Text = TrhTotal.ToString("#,##0.00") 'ที่จอยเพิ่มไว้
+
             Else
 
-                lbSumary.Text = tempTotal.ToString("#,##0.0000")  '3
-            TrhAmt = CDbl(lbSumary.Text)
-            '   ÊèÇ¹Å´ 
+                lbSumary.Text = tempTotal.ToString("#,##0.00")  '3
+                TrhAmt = CDbl(lbSumary.Text)
+                '   ÊèÇ¹Å´ 
+                If Microsoft.VisualBasic.Right(txtCusDisc.Text, 1) = "b" Then  '  ¶éÒªèÍ§ÊèÇ¹Å´ÁÕ  "b" µèÍ·éÒÂËÁÒÂ¶Ö§Å´à»ç¹ºÒ·
+
+                    trhDisc = CDbl(Microsoft.VisualBasic.Left(txtCusDisc.Text, Len(txtCusDisc.Text) - 1))
+                ElseIf Microsoft.VisualBasic.Right(txtCusDisc.Text, 1) = "%" Then
+
+                    trhDisc = CDbl(Microsoft.VisualBasic.Left(txtCusDisc.Text, Len(txtCusDisc.Text) - 1))
+                    trhDisc = (TrhAmt * trhDisc) / 100
+
+                ElseIf IsNumeric(Microsoft.VisualBasic.Right(txtCusDisc.Text, 1)) Then
+                    trhDisc = txtCusDisc.Text
+                End If
+                tmpSummary = CDbl(TrhAmt - trhDisc)
+
+                '  à§Ô¹ÁÑ´¨Ó
+                'If Microsoft.VisualBasic.Right(txtDepoSit.Text, 1) = "b" Then
+                '    TrhDePosit = Microsoft.VisualBasic.Left(txtDepoSit.Text, Len(txtDepoSit.Text) - 1)
+                'ElseIf Microsoft.VisualBasic.Right(txtDepoSit.Text, 1) = "%" Then
+                '    TrhDePosit = (Microsoft.VisualBasic.Left(txtDepoSit.Text, Len(txtDepoSit.Text) - 1))
+                '    TrhDePosit = (tmpSummary * TrhDePosit) / 100
+                'ElseIf IsNumeric(Microsoft.VisualBasic.Right(txtDepoSit.Text, 1)) Then
+                '    TrhDePosit = txtDepoSit.Text
+                'Else
+                '    TrhDePosit = 0
+                'End If
+                TrhDePosit = lbDeposit.Text 'ที่จอยเพิ่มไว้
+                tmpSummary = (tmpSummary - TrhDePosit)
+
+
+                lbSumary.Text = Format(TrhAmt, "#,##0.00").ToString  '3
+                lbDisc.Text = Format(trhDisc, "#,##0.00").ToString  '3
+                lbDeposit.Text = Format(TrhDePosit, "#,##0.00").ToString '3
+                TrhTotal = (TrhAmt - trhDisc - TrhDePosit)
+
+                'If chkVAT = "V" Or chkVAT = "v" Then
+                '    TrhVat = (TrhTotal * calVAT) / 100
+                '    lbVat.Text = Format((TrhTotal * calVAT) / 100, "#,##0.00")  '3
+                'Else
+                '    TrhVat = 0
+                '    lbVat.Text = Format(0, "#,##0.00") '3
+                'End If 'จอยcomment ของพี่กวางไว้ 
+                If cboTypeDoc.SelectedValue = "V" Or cboTypeDoc.SelectedValue = "Y" Or cboTypeDoc.SelectedValue = "P" Or cboTypeDoc.SelectedValue = "B" Then
+                    TrhVat = (TrhTotal * calVAT) / 100
+                    lbVat.Text = Format((TrhTotal * calVAT) / 100, "#,##0.00")
+                Else
+                    TrhVat = 0
+                    lbVat.Text = Format(0, "#,##0.00")
+                End If
+
+                lbTotal2.Text = Format(TrhTotal + TrhVat, "#,##0.00")
+            End If
+
+        ElseIf chkVATtype(lbCusID.Text) = 1 Then 'Vat รวมใน @29-4-65 JOY
+
             If Microsoft.VisualBasic.Right(txtCusDisc.Text, 1) = "b" Then  '  ¶éÒªèÍ§ÊèÇ¹Å´ÁÕ  "b" µèÍ·éÒÂËÁÒÂ¶Ö§Å´à»ç¹ºÒ·
 
                 trhDisc = CDbl(Microsoft.VisualBasic.Left(txtCusDisc.Text, Len(txtCusDisc.Text) - 1))
@@ -3762,52 +4280,26 @@ Public Class frmSale
             ElseIf IsNumeric(Microsoft.VisualBasic.Right(txtCusDisc.Text, 1)) Then
                 trhDisc = txtCusDisc.Text
             End If
-            tmpSummary = CDbl(TrhAmt - trhDisc)
 
-            '  à§Ô¹ÁÑ´¨Ó
-            If Microsoft.VisualBasic.Right(txtDepoSit.Text, 1) = "b" Then
-                TrhDePosit = Microsoft.VisualBasic.Left(txtDepoSit.Text, Len(txtDepoSit.Text) - 1)
-            ElseIf Microsoft.VisualBasic.Right(txtDepoSit.Text, 1) = "%" Then
-                TrhDePosit = (Microsoft.VisualBasic.Left(txtDepoSit.Text, Len(txtDepoSit.Text) - 1))
-                TrhDePosit = (tmpSummary * TrhDePosit) / 100
-            ElseIf IsNumeric(Microsoft.VisualBasic.Right(txtDepoSit.Text, 1)) Then
-                TrhDePosit = txtDepoSit.Text
-            Else
-                TrhDePosit = 0
-            End If
+            'lbTotal2.Text = tempTotal.ToString("#,##0.00")  '3 'จอยcommentไว้
+            'lbSumary.Text = Format(tempTotal, "#,##0.00").ToString
+            lbSumary.Text = ((tempTotal * 100) / 107).ToString("#,##0.00")
+            lbDisc.Text = Format(trhDisc, "#,##0.00").ToString  '3
 
-            tmpSummary = (tmpSummary - TrhDePosit)
+            lbVat.Text = (((lbSumary.Text - trhDisc) * calVAT) / 100).ToString("#,##0.00")
+            lbTotal2.Text = ((CDbl(lbSumary.Text - trhDisc) + CDbl(lbVat.Text)).ToString("#,##0.00")) '3 'จอยเพิ่ม
 
 
-            lbSumary.Text = Format(TrhAmt, "#,##0.0000").ToString  '3
-            lbDisc.Text = Format(trhDisc, "#,##0.0000").ToString  '3
-            lbDeposit.Text = Format(TrhDePosit, "#,##0.0000").ToString '3
-            TrhTotal = (TrhAmt - trhDisc - TrhDePosit)
-
-            If chkVAT = "V" Or chkVAT = "v" Then
-                TrhVat = (TrhTotal * calVAT) / 100
-                lbVat.Text = Format((TrhTotal * calVAT) / 100, "#,##0.0000")  '3
-            Else
-                TrhVat = 0
-                lbVat.Text = Format(0, "#,##0.0000") '3
-            End If
-
-            End If
-
-        ElseIf chkVATtype(lbCusID.Text) = 1 Then
-
-            lbTotal2.Text = tempTotal.ToString("#,##0.0000")  '3
-            lbVat.Text = (lbTotal2.Text - lbSumary.Text).ToString("#,##0.00")
-            lbSumary.Text = ((tempTotal * 100) / 107).ToString("#,##0.000")
             'TrhAmt = CDbl(lbSumary.Text)
 
         End If
 
 
         '===================================================================
-        lbTotal2.Text = Format(TrhTotal + TrhVat, "#,##0.0000") '3
+        'lbTotal2.Text = Format(TrhTotal + TrhVat, "#,##0.00") '3
+        txtTotalBath.Text = DBtools.ThaiBaht(lbTotal2.Text)
 
-        lbTotalWeight.Text = tempWeight.ToString("#,##0.0000") '3        '
+        lbTotalWeight.Text = tempWeight.ToString("#,##0.00") '3        '
         lbTotaliTemAmt.Text = Format(tmpTotaliTemAmt + tmpTotaliTemDisc, "#,##0.00")
         lbTotaliTemDisc.Text = Format(tmpTotaliTemDisc, "#,##0.00")
         lbTotalHDisc.Text = Format(trhDisc, "#,##0.00")
@@ -3901,7 +4393,7 @@ Public Class frmSale
             MsgBox("ÂÑ§äÁèä´éàÅ×Í¡¢éÍÁÙÅ VAT ¡èÍ¹¡ÒÃºÑ¹·Ö¡", MsgBoxStyle.Critical, "á¨é§àµ×Í¹")
             Return False
         End If
-        If lbCusID.Text = "" Or lbCusName.Text = "" Or txtCredit.Text = "" Or lbCreLimit.Text = "" _
+        If lbCusID.Text = "" Or txtCusName.Text = "" Or txtCredit.Text = "" Or lbCreLimit.Text = "" _
         Or txtCusDisc.Text = "" Or txtCusVat.Text = "" Or txtSaleMan.Text = "" Then
 
             MsgBox("¡ÃØ³ÒµÃÇ¨ÊÍº¢éÍÁÙÅÍÕ¡¤ÃÑé§¡èÍ¹ºÑ¹·Ö¡", MsgBoxStyle.Critical = MsgBoxStyle.OkOnly, "á¨é§àµ×Í¹")
@@ -3972,7 +4464,7 @@ Public Class frmSale
             sb.Append("Trh_term,Trh_disc,Trh_sale,")  '  V4        
             sb.Append("trh_detail,trh_print,Trh_chk_print,trh_bill,trh_tran,trh_web,trh_cre_lim,")
             sb.Append("trh_runid,trh_update,Trh_wh,trh_DePosit,trh_strDePosit,")
-            sb.Append("Trh_Depo_Ref,Trh_Term_Dtl,Trh_user,Trh_Disc_Amt,Trh_BillNote,Trh_Chk_Post) ")  ' V5
+            sb.Append("Trh_Depo_Ref,Trh_Term_Dtl,Trh_user,Trh_Disc_Amt,Trh_BillNote,Trh_Chk_Post,Trh_Cus_Name ) ")  ' V5
 
             sb.Append(" Values (@Trh_Type,@Trh_NoType,@Trh_No,")  '  V1
             sb.Append("@Trh_cus,@Trh_date,@Trh_Time,")   'V2
@@ -3982,7 +4474,7 @@ Public Class frmSale
             sb.Append("@Trh_term,@Trh_disc,@Trh_sale,")  '  V4        
             sb.Append("@Trh_detail,@Trh_print,@Trh_chk_print,@Trh_bill,@Trh_tran,@Trh_web,@Th_cre_lim,")
             sb.Append("@Trh_runid,@Trh_update,@Trh_wh,@Trh_DePosit,@Trh_strDePosit,@Trh_DePoRef,")
-            sb.Append("@Trh_Term_Dtl,@Trh_user,@Trh_Disc_Amt,@Trh_BillNote,@Trh_Chk_Post)")  ' V5            
+            sb.Append("@Trh_Term_Dtl,@Trh_user,@Trh_Disc_Amt,@Trh_BillNote,@Trh_Chk_Post,@Trh_Cus_Name )")  ' V5            
 
         Else
 
@@ -3994,6 +4486,7 @@ Public Class frmSale
             'sb.Append("Trh_date=@Trh_date,")   'V2"
 
             sb.Append("Trh_cus=@Trh_cus,")
+            sb.Append("Trh_Cus_Name=@Trh_Cus_Name,")
             sb.Append("Trh_term=@Trh_term,")
             sb.Append("trh_cre_lim=@Th_cre_lim,")
             sb.Append("Trh_disc=@Trh_disc,")
@@ -4047,6 +4540,7 @@ Public Class frmSale
             .Parameters.Add("@Trh_No", SqlDbType.NVarChar).Value = Trim(txtNo.Text)
 
             .Parameters.Add("@Trh_Cus", SqlDbType.NVarChar).Value = Trim(lbCusID.Text)  '  =======V2
+            .Parameters.Add("@Trh_Cus_Name", SqlDbType.NVarChar).Value = Trim(txtCusName.Text)
             .Parameters.Add("@Trh_Date", SqlDbType.SmallDateTime).Value = Format(dtp01.Value, "dd/MM/yyyy")
             .Parameters.Add("@Trh_Time", SqlDbType.Time).Value = Format(Now, "HH:mm:ss")
 
@@ -4083,7 +4577,7 @@ Public Class frmSale
                 TrhDisc = 0
             End If
 
-            TrhAmt = TrhAmt - TrhDisc
+
             .Parameters.Add("@Trh_Disc_Amt", SqlDbType.Float).Value = CDbl(TrhDisc)   ' à¡çºÊèÇ¹Å´ËÑÇºÔÅ Trh_Disc_Amt   V3
 
             '=================================================
@@ -4118,10 +4612,12 @@ Public Class frmSale
             'Else
             '    .Parameters.Add("@Trh_V_Amt", SqlDbType.Float).Value = 0
             'End If   '    ============================== V3
-            TrhAmt = TrhAmt
+            TrhAmt = TrhAmt - TrhDisc
+
+
             TrhVat = (TrhAmt) * CInt(txtCusVat.Text) / 100
             .Parameters.Add("@Trh_V_Amt", SqlDbType.Float).Value = TrhVat
-
+            '==========================================================================
             If lbSumary.Text = "" Or txtCusDisc.Text = "" Then
                 .Parameters.Add("@Trh_D_Amt", SqlDbType.Float).Value = TrhAmt 'lbSumary.Text
             Else
@@ -5006,8 +5502,8 @@ Public Class frmSale
         'Call ClearAll()
         'Call runGetUserSave()  ' Â¡àÅÔ¡ä»ãªéã¹ dbTools á·¹á¡éä¢ 27-10-2559
         chkSave = True
-        lbStatus.Text = "ºÑ¹·Ö¡¢éÍÁÙÅàÃÕÂºÃéÍÂáÅéÇ"
-        MessageBox.Show("ºÑ¹·Ö¡¢éÍÁÙÅàÃÕÂºÃéÍÂáÅéÇ", "á¨é§¼Å¡ÒÃ·Ó§Ò¹")
+        lbStatus.Text = "บันทึกข้อมูลเรียบร้อย"
+        MessageBox.Show("บันทึกข้อมูลเรียบร้อยแล้ว", "แจ้งผลการทำงาน")
         Call EnableF()
     End Sub
 
@@ -5233,15 +5729,14 @@ Public Class frmSale
 
         ' Call runGetUserSave()
         chkSave = True
-        lbStatus.Text = "ºÑ¹·Ö¡¢éÍÁÙÅàÃÕÂºÃéÍÂáÅéÇ"
-        MessageBox.Show("ºÑ¹·Ö¡¢éÍÁÙÅàÃÕÂºÃéÍÂáÅéÇ", "á¨é§¼Å¡ÒÃ·Ó§Ò¹")
+        lbStatus.Text = "บันทึกข้อมูลเรียบร้อยแล้ว"
+        MessageBox.Show("บันทึกข้อมูลเรียบร้อยแล้ว", "แจ้งผลการทำงาน")
         Call EnableF()
 
     End Sub
 
     Private Sub cmbSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbSave.Click
-
-
+        selCusName = txtCusName.Text
         selCusiD = ""
         selCusiD = lbCusID.Text
         Dim frmEditNo As New frmEditNo
@@ -5287,7 +5782,7 @@ Public Class frmSale
                 Dim chkPrint As Boolean = False
 
                 chkPrint = getChkPrint(txtNo.Text)
-                If chkPrint = True Then
+                If chkPrint = True Then 'เคยสั่งprint ไปแล้ว
 
                     Dim frmAnswers As New frmAnswers
                     frmAnswers.ShowDialog()
@@ -5355,7 +5850,7 @@ Public Class frmSale
     End Sub
     Sub runPrint()
 
-        If MsgBox("µéÍ§¡ÒÃ¾ÔÁ¾ìàÍ¡ÊÒÃËÃ×ÍäÁè ", MsgBoxStyle.YesNo, "á¨é§àµ×Í¹") = MsgBoxResult.Yes Then
+        If MsgBox("ต้องการพิมพ์เอกสารใช่หรือไม่ ", MsgBoxStyle.YesNo, "แจ้งเตือน") = MsgBoxResult.Yes Then
 
             Call Print()
             Call Setting_Print()
@@ -5383,13 +5878,32 @@ Public Class frmSale
             Try
                 '    ÇÑ¹·Õè  2-12-56 
                 saveTranDataD()
+
+                If EditStatus = False Then 'ถ้าเป็นการสร้างเอกสารใหม่ 
+                    If ListDep.Items.Count > 0 Then 'มีการตัดเงินมัดจำ
+                        SaveTrandataDep()
+
+                    End If
+                Else 'ถ้าเป็นการแก้ไขเอกสาร 
+                    If ListDep.Items.Count > 0 Then 'มีการตัดเงินมัดจำ
+                        CancelTrandataDep()
+                        SaveTrandataDep()
+                    Else 'ไม่มีการตัดเงินมัดจำ หรือ เคยตัดเงินมัดจำ แต่เปลี่ยนใจไม่ตัดแล้ว 
+                        txtSQL = "select dtl_no,dtl_sum_2  from trandatad where dtl_type='8' and dtl_con_id= '" & txtNo.Text & "'"
+                        DA = New SqlClient.SqlDataAdapter(txtSQL, Conn)
+                        DA.Fill(DS, "chkDtlDep")
+                        If DS.Tables("chkDtlDep").Rows.Count > 0 Then 'ถ้ายังมีข้อมูลของบิลขายที่ตัดกับเงินมัดจำอยู่ให้ทำ  cancel 24-5-65
+                            CancelTrandataDep()
+                        End If
+                    End If
+                End If
                 chkSaveOK = True
                 'runGetUserSave()
                 'MsgBox("¢éÍÁÙÅ¶Ù¡ºÑ¹·Ö¡àÃÕÂºÃéÍÂáÅéÇ", MsgBoxStyle.OkOnly, "á¨é§¼Å¡ÒÃ·Ó§Ò¹")
 
             Catch ex As Exception
 
-                MsgBox("à¡Ô´¢éÍ¼Ô´¾ÅÒ´ã¹ÊèÇ¹¢éÍÁÙÅ-ÃÒÂÅÐàÍÕÂ´ã¹ºÔÅ " & txtNo.Text & "â»Ã´á¨é§ ICT ! ", MsgBoxStyle.Critical, "á¨é§àµ×Í¹")
+                MsgBox("พบข้อผิดพลาด เอกสาร" & txtNo.Text & "ถ่ายรูปข้อความส่งให้ ICT ! ", MsgBoxStyle.Critical, "แจ้งเตือน")
                 chkSaveOK = False
                 Exit Sub
 
@@ -5397,7 +5911,7 @@ Public Class frmSale
 
         Catch ex As Exception
 
-            MsgBox("à¡Ô´¢éÍ¼Ô´¾ÅÒ´ã¹ÊèÇ¹¢éÍÁÙÅ-ËÑÇºÔÅ " & txtNo.Text & "â»Ã´á¨é§ ICT ! ", MsgBoxStyle.Critical, "á¨é§àµ×Í¹")
+            MsgBox("พบข้อผิดพลาด เอกสาร" & txtNo.Text & "ถ่ายรูปข้อความส่งให้ ICT ! ", MsgBoxStyle.Critical, "แจ้งเตือน")
             chkSaveOK = False
             Exit Sub
 
@@ -5858,7 +6372,7 @@ Public Class frmSale
                 chkLockTypeP.Checked = False
                 Call delTranDataH()
                 Call delTranDataD("S", EditNo, lbWHcode.Text)
-
+                Call CancelTrandataDep()
                 Call runGetUserCancel()
 
                 MsgBox("Â¡àÅÔ¡àÍ¡ÊÒÃ # " & txtNo.Text & " àÃÕÂºÃéÍÂáÅéÇ¤ÃêÒº ", MsgBoxStyle.Information)
@@ -5874,7 +6388,47 @@ Public Class frmSale
         End Try
 
     End Sub
+    Sub CancelTrandataDep() 'ยกเลิกเอกสารแล้วให้คืนเงินมัดจำกลับ
+        Dim ref_amt As Double = 0.0
+        Dim ref_no As String
+        Dim ReturnDepAmt As Double = 0.0 'เก็บยอดเงินมัดจำทั้งหมดที่ถูกตัดไปแล้วเตรียมเอาไปลบออกกับยอดเงินมัดจำในเอกสารขายที่จะยกเลิก
+        Dim DepBalance As Double = 0.0 'เก็บยอดรวมเงินมัดจำที่ถูกปรับใหม่หลังจากลบเอกสารขาย
+        Dim txtSQLdatah As String = ""
+        Dim txtsqlD_amt As String = ""
+        Dim txtsqlDeldataD As String = ""
 
+        If txtNo.Text <> "" Then
+            txtSQL = " select dtl_no,dtl_sum_2  from trandatad where dtl_type='8' and dtl_con_id='" & txtNo.Text & "'"
+            DA = New SqlClient.SqlDataAdapter(txtSQL, Conn)
+            DA.Fill(DS, "chkDtlDepAmount")
+            If DS.Tables("chkDtlDepAmount").Rows.Count > 0 Then 'มีข้อมูลของบิลขายที่ตัดกับเงินมัดจำ
+                For i = 0 To DS.Tables("chkDtlDepAmount").Rows.Count - 1  'ใน 1 บิลขายอาจมีการตัดเงินมัดจำหลายใบเลยใช้ for วน
+                    ref_no = DS.Tables("chkDtlDepAmount").Rows(i).Item("dtl_no") 'เก็บเลขที่เอกสารเงินมัดจำ
+                    ref_amt = DS.Tables("chkDtlDepAmount").Rows(i).Item("dtl_sum_2") 'ยอดเงินมัดจำที่ถูกตัดไว้
+                    txtSQLdatah = "Select * From trandatah Where trh_type = '8' And trh_no = '" & ref_no & "' "
+                    DA = New SqlClient.SqlDataAdapter(txtSQLdatah, Conn)
+                    'DS.Tables("ReturnDepAmount").Clear()
+                    DA.Fill(DS, "ReturnDepAmount")
+                    If DS.Tables("ReturnDepAmount").Rows.Count > 0 Then
+                        ReturnDepAmt = DS.Tables("ReturnDepAmount").Rows(0).Item("trh_d_amt")
+                    End If
+                    DepBalance = ReturnDepAmt + ref_amt
+
+                    txtsqlD_amt = "update trandatah  set trh_d_amt='" & DepBalance & "' where trh_type='8' and trh_no='" & ref_no & "'"
+
+                    DBtools.dbSaveSQLsrv(txtsqlD_amt, "")
+
+
+                Next i
+
+                txtsqlDeldataD = "delete  from trandatad where dtl_type='8' and dtl_con_id='" & txtNo.Text & "'"
+
+                DBtools.dbDelDATA(txtsqlDeldataD, "")
+            End If
+
+        End If
+
+    End Sub
     Sub cancelDocument()
 
         Dim DS As DataSet = New DataSet
@@ -6109,8 +6663,8 @@ Public Class frmSale
 
         txtNo.Text = ""
         lbCusID.Text = ""
-        lbCusName.Text = ""
-        lbOrder.Text = "äÁèÁÕOrder"
+        txtCusName.Text = ""
+        lbOrder.Text = "ไม่พบ Order"
         lbProductName.Text = ""
         txtSaleQty.Text = ""
         'txtDiscount.Text = ""
@@ -6124,12 +6678,12 @@ Public Class frmSale
         txtCusDisc.Text = ""
         txtCusVat.Text = 7
         lbCount.Text = ""
-        lbPONo.Text = "äÁèÁÕ PO"
+        lbPONo.Text = "ไม่พบ PO"
         lbCreLimit.Text = ""
         'llbClear.Enabled = True
         'llbDel.Enabled = False
         'Call comboFactor()
-        lbStatus.Text = "¾ÃéÍÁ"
+        lbStatus.Text = "พร้อม"
         txtSaleMan.Text = ""
         lbSaleName.Text = ""
         lbVat.Text = "0.00"
@@ -6138,14 +6692,16 @@ Public Class frmSale
         txtCondition.Text = ""
         lbRevDocNo.Text = ""
         chkLockTypeP.Checked = True
-
+        txtShAddr1.Text = ""
+        lbTaxID.Text = ""
+        ListDep.Items.Clear()
         selCusiD = ""
     End Sub
 
     Sub txtCLS()
 
         SelectCode = ""
-        lbOrder.Text = "äÁèÁÕOrder"
+        lbOrder.Text = "ไม่พบ Order"
         lbProductName.Text = ""
         lbStkCode.Text = ""
         lbOldCode.Text = ""
@@ -6157,7 +6713,7 @@ Public Class frmSale
         txtDisc.Text = 0.0
         txtTotal.Text = 0.0
         txtTermDtl.Text = ""
-        lbPONo.Text = "äÁèÁÕ PO"
+        lbPONo.Text = "ไม่พบ PO"
 
         lbRevDocNo.Text = ""
         lbTypeP.Text = ""
@@ -6355,7 +6911,7 @@ Public Class frmSale
 
     Private Sub cmbOrder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbOrder.Click
 
-        If lbCusName.Text = "" Then
+        If txtCusName.Text = "" Then
 
             MsgBox("â»Ã´àÅ×Í¡àÅ×Í¡ ÅÙ¡¤éÒ¡èÍ¹àÅ×Í¡ÃÒÂ¡ÒÃÊÔ¹¤éÒ ")
         Else
@@ -6382,7 +6938,7 @@ Public Class frmSale
         If SelectNo2 <> "" Then
             lbOrder.Text = SelectNo2
         Else
-            lbOrder.Text = "äÁèÁÕOrder"
+            lbOrder.Text = "ไม่พบ Order"
         End If
 
         lbStkCode.Text = SelectCode2
@@ -7304,6 +7860,7 @@ Public Class frmSale
         strTrhDate = CStr(Format(((DateAndTime.Day(DS.Tables("prnTrh").Rows(c).Item("trh_date")) & "/" & Month(DS.Tables("prnTrh").Rows(c).Item("trh_date")) & "/" & Year(DS.Tables("prnTrh").Rows(c).Item("trh_date")) - 543)))) 'ÇÑ¹·ÕèºÔÅ
 
         strTrhCus = CStr(DS.Tables("prnTrh").Rows(c).Item("trh_cus")) 'ÃËÑÊÅÙ¡¤éÒ
+
         strArName = CStr(DS.Tables("prnTrh").Rows(c).Item("Ar_Name")) 'ª×èÍÃéÒ¹
         strArAddr = CStr(DS.Tables("prnTrh").Rows(c).Item("ar_addr")) '·ÕèÍÂÙè
         strArAddr1 = CStr(DS.Tables("prnTrh").Rows(c).Item("ar_addr_1")) '·ÕèÍÂÙè
@@ -7316,7 +7873,7 @@ Public Class frmSale
             FMsetDigiCal = "#,##0.00"
         Else
             setDigiCal = 4
-            FMsetDigiCal = "#,##0.0000"
+            FMsetDigiCal = "#,##0.00"
         End If
 
         If Dvat = "N" Or Dvat = "n" Or Dvat = "M" Then
@@ -8096,13 +8653,17 @@ Public Class frmSale
         'Call AutoGenerateID()
         If chkfrmLoad = True Then
             Dvat = cboTypeDoc.SelectedValue
-            If Dvat = "P" Then
-                MsgBox("àÅ×Í¡¾¹Ñ¡§Ò¹¢ÒÂ--> ¤Ø³¾ÔÁ¾ì ", MsgBoxStyle.Critical, "á¨é§àµ×Í¹")
+            If Dvat = "P" And chkEditDoc = False Then
+                MsgBox("เอกสารการขายเพื่อ--> Sales Office ", MsgBoxStyle.Critical, "แจ้งเตือน")
                 txtSaleMan.Text = "SL03" '.Rows(0).Item("Ar_Sales") 'DBtools.getSalesCode(CusCode)
                 lbSaleName.Text = DBtools.getSaleName(txtSaleMan.Text)
                 txtCredit.Text = "0"
-
-
+                txtCredit.ReadOnly = False
+            ElseIf Dvat = "P" And chkEditDoc = True Then
+                MsgBox("เอกสารการขายเพื่อ--> Sales Office ", MsgBoxStyle.Critical, "แจ้งเตือน")
+                txtSaleMan.Text = "SL03" '.Rows(0).Item("Ar_Sales") 'DBtools.getSalesCode(CusCode)
+                lbSaleName.Text = DBtools.getSaleName(txtSaleMan.Text)
+                txtCredit.ReadOnly = False
             End If
 
             'Call findStkBase()
@@ -8333,7 +8894,7 @@ Public Class frmSale
             MsgBox("ÂÑ§äÁèä´éàÅ×Í¡¢éÍÁÙÅ VAT â»Ã´µÃÇ¨ÊÍº¡èÍ¹¡ÒÃ´Óà¹Ô¹¡ÒÃã´æ ", MsgBoxStyle.Critical, "á¨é§àµ×Í¹")
             Exit Sub
         Else
-            If lbCusName.Text = "" Then
+            If txtCusName.Text = "" Then
 
                 MsgBox("äÁè¾º¡ÒÃàÅ×Í¡ÅÙ¡¤éÒ â»Ã´µÃÇ¨ÊÍº¢éÍÁÙÅÅÙ¡¤éÒ")
                 Exit Sub
@@ -9245,7 +9806,7 @@ Public Class frmSale
                 Else
                     lbTaxID.Text = .Rows(0).Item("Ar_Tax_Code") 'DBtools.getCusTaxCode(selCusiD)
                 End If
-                lbCusName.Text = .Rows(0).Item("Ar_Name")
+                txtCusName.Text = .Rows(0).Item("Ar_Name")
                 If Trim(txtSaleMan.Text) = "" Or (cusCode0 <> CusCode) Then
 
                     txtSaleMan.Text = .Rows(0).Item("Ar_Sales") 'DBtools.getSalesCode(CusCode)
@@ -9291,7 +9852,7 @@ Public Class frmSale
 
             Else
                 lbCusID.Text = selCusiD
-                lbCusName.Text = selCusName
+                txtCusName.Text = selCusName
                 Call showArData(selCusiD)
             End If
 
@@ -9403,13 +9964,11 @@ Public Class frmSale
     End Sub
 
 
-    Private Sub lbCusName_Click(sender As Object, e As EventArgs) Handles lbCusName.Click
+    Private Sub lbCusName_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub txtCredit_TextChanged(sender As Object, e As EventArgs) Handles txtCredit.TextChanged
 
-    End Sub
 
     Private Sub ListEdit_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListEdit.SelectedIndexChanged
 
@@ -9458,4 +10017,293 @@ Public Class frmSale
 
     End Sub
 
+    Private Sub btnSelDep_Click(sender As Object, e As EventArgs) Handles btnSelDep.Click
+        If chkBill = True Then
+
+            DS.Tables("Datatrh").Clear()
+            chkBill = False
+        End If
+        DBtools.DepCus = lbCusID.Text
+        frmSelectDep.ShowDialog()
+        txtSQL1 = "Select  TranDataH.Trh_Type, TranDataH.Trh_NoType, "
+        txtSQL1 = txtSQL1 & " TranDataH.Trh_No, TranDataH.Trh_Cus, "
+        txtSQL1 = txtSQL1 & " TranDataH.Trh_Date, TranDataH.Trh_Amt,"
+        txtSQL1 = txtSQL1 & " TranDataH.Trh_D_Amt, TranDataH.Trh_V_Amt,"
+        txtSQL1 = txtSQL1 & " TranDataH.Trh_Full_Amt, TranDataH.Trh_Detail,"
+        txtSQL1 = txtSQL1 & " TranDataH.Trh_Sale, TranDataH.Trh_Deposit, "
+        txtSQL1 = txtSQL1 & " TranDataH.Trh_Tran, TranDataH.Trh_User, "
+        txtSQL1 = txtSQL1 & " TranDataH.Trh_RunID, TranDataH.Trh_CS, "
+        txtSQL1 = txtSQL1 & " TranDataH.Trh_Cus_Name, ArFile.Ar_Name "
+        txtSQL1 = txtSQL1 & " From ArFile RIGHT OUTER Join "
+        txtSQL1 = txtSQL1 & " TranDataH On ArFile.AR_CUS_ID = TranDataH.Trh_Cus "
+        txtSQL1 = txtSQL1 & " Where (TranDataH.Trh_Type = '8') and TranDataH.Trh_no='" & EditDocNo & "'"
+        DA = New SqlClient.SqlDataAdapter(txtSQL1, Conn)
+        DA.Fill(DS, "Datatrh")
+        chkbill = True
+        If DS.Tables("Datatrh").Rows.Count > 0 Then
+
+            dtpDocDate.Value = Format(DS.Tables("Datatrh").Rows(0).Item("trh_date"), "dd/MM/yyyy")
+            lbDocDepno.Text = DS.Tables("Datatrh").Rows(0).Item("trh_no")
+            lbDepAmt.Text = DS.Tables("Datatrh").Rows(0).Item("trh_amt")
+            lbDepBalance.Text = DS.Tables("Datatrh").Rows(0).Item("trh_d_amt")
+        End If
+        txtPercentDep.Focus()
+        txtPercentDep.Text = "0"
+        txtUseDep.Text = "0"
+        EditDocNo = ""
+    End Sub
+
+    Private Sub btnDepOK_Click(sender As Object, e As EventArgs) Handles btnDepOK.Click
+        Dim i0, i1, i2, i3, i4, i5 As String
+        Dim i As Integer = 0
+        Dim iNo As Integer = 0
+        Dim tempCode As String = ""
+        Dim listData() As String
+
+        If IsNumeric(txtUseDep.Text) = False Then
+            MsgBox("ข้อมูลจำนวนเงินไม่ถูกต้องกรุณาตรวจสอบ ")
+            txtUseDep.Focus()
+            txtUseDep.SelectAll()
+            Exit Sub
+        Else
+
+            If txtUseDep.Text <= 0 Then
+                MsgBox("ข้อมูลจำนวนเงินไม่ถูกต้องกรุณาตรวจสอบ ")
+                txtUseDep.Focus()
+                txtUseDep.SelectAll()
+                Exit Sub
+            End If
+
+            If CDbl(txtUseDep.Text) + CDbl(lbSumDep.Text) > lbSumary.Text Then
+                MsgBox("จำนวนเงินที่หักมัดจำต้องไม่เกินยอดเงินรวมในบิล ")
+                txtUseDep.Focus()
+                txtUseDep.SelectAll()
+                Exit Sub
+            End If
+
+            If CDbl(txtUseDep.Text) > lbDepBalance.Text Then
+                MsgBox("จำนวนเงินที่หักมัดจำต้องไม่เกินยอดเงินคงเหลือในเอกสารมัดจำ ")
+                txtUseDep.Focus()
+                txtUseDep.SelectAll()
+                Exit Sub
+            End If
+
+        End If
+
+        For i = 0 To ListDep.Items.Count
+
+            iNo = i
+
+        Next
+        i0 = iNo + 1
+        i1 = Format(dtpDocDate.Value, "dd/MM/yy") 'วันที่
+        i2 = lbDocDepno.Text 'เลขที่
+        i3 = lbDepAmt.Text 'จำนวนเงินมัดจำ
+
+        i4 = lbDepBalance.Text 'ยอดมัดจำคงเหลือ
+        i5 = txtUseDep.Text 'ยอดหักมัดจำ
+
+        listData = New String() {i0, i1, i2, i3, i4, i5
+                            }
+
+
+        LOrder = New ListViewItem(listData)
+        ListDep.Items.Add(LOrder)
+        SumDepTotal()
+        sumTotal()
+        CleartxtList()
+    End Sub
+    Sub CleartxtList()
+        dtpDocDate.Value = Now
+        lbDocDepno.Text = ""
+        lbDepAmt.Text = "0.00"
+        txtUseDep.Text = "0.00"
+        txtPercentDep.Text = "0"
+        lbDepBalance.Text = "0.00"
+    End Sub
+    Sub SumDepTotal()
+        Dim tempTotal As Double
+        Dim total As Double = 0.0
+        For i = 0 To ListDep.Items.Count - 1
+            total = Format(CDbl(ListDep.Items(i).SubItems(5).Text), "#,##0.00")
+            tempTotal += total
+
+        Next
+        lbSumDep.Text = tempTotal.ToString("#,##0.00")
+        lbDeposit.Text = lbSumDep.Text
+    End Sub
+    Sub setHeadListDep()
+
+        ListDep.Columns.Add("No.", 50, HorizontalAlignment.Center) '0
+        ListDep.Columns.Add("วันที่", 100, HorizontalAlignment.Center) '1 
+        ListDep.Columns.Add("เลขที่", 150, HorizontalAlignment.Center) '2
+        ListDep.Columns.Add("จำนวนเงินมัดจำ", 200, HorizontalAlignment.Right) '3
+        ListDep.Columns.Add("เงินมัดจำคงเหลือ", 200, HorizontalAlignment.Right) '4
+        ListDep.Columns.Add("ยอดหักมัดจำ", 200, HorizontalAlignment.Right) '5
+
+
+        ListDep.View = View.Details
+        ListDep.GridLines = True
+
+    End Sub
+    Sub SaveTrandataDep()
+        Dim DepNo As String
+        Dim DepType As String
+        Dim DepCus As String
+        Dim DepDate As Date
+        Dim DepAmt As Double
+        Dim DepRef As String
+        Dim DepRefAmt As Double
+        Dim DepIdtrade As String
+
+
+        Dim txtSqlDep As String
+
+        Dim Comm As New SqlClient.SqlCommand
+        Dim chkDs As Boolean = False
+        ' Dim sqlSave As String = ""
+        DBtools.openDB()
+        'tr = Conn.BeginTransaction
+        'sb.Remove(0, sb.Length())
+        'บันทึกลง trandatad เมื่อมีอ้างอิงตัดกับใบมัดจำ
+        For i = 0 To ListDep.Items.Count - 1 'รอแก้ เมื่อมีการบันทึกตัดมัดจำบิลขายเลขที่เดิม โดยตัดมัดจำเลขที่เดิม 2 ครั้ง เคสตัวอย่างRDV650418/0001 220465
+            If chkDs = True Then
+                DS.Tables("TrdDep").Clear()
+                chkDs = False
+            End If
+            DepNo = ListDep.Items(i).SubItems(2).Text '
+            DepRefAmt = ListDep.Items(i).SubItems(5).Text
+            DepRef = txtNo.Text
+            txtSQL = "select * from trandatah where trh_type='8' and trh_no='" & DepNo & "'  "
+            DA = New SqlClient.SqlDataAdapter(txtSQL, Conn) 'select ข้อมูลมาบันทึกในtrandatad type8 เก็บเป็นTransactionการเคลื่อนไหวของเงินมัดจำ
+            DA.Fill(DS, "TrdDep")
+            chkDs = True
+            If DS.Tables("TrdDep").Rows.Count > 0 Then
+                DepType = DS.Tables("TrdDep").Rows(0).Item("trh_type")
+                DepCus = DS.Tables("TrdDep").Rows(0).Item("trh_cus")
+                DepDate = DS.Tables("TrdDep").Rows(0).Item("trh_date")
+                DepAmt = DS.Tables("TrdDep").Rows(0).Item("trh_amt")
+                DepIdtrade = DS.Tables("TrdDep").Rows(0).Item("trh_Depo_ref")
+
+                txtSqlDep = "insert into trandatad(dtl_type,dtl_no,dtl_idcus,dtl_date,dtl_sum,dtl_con_id,dtl_sum_2,dtl_idtrade)"
+                txtSqlDep = txtSqlDep & "values ('" & DepType & "','" & DepNo & "','" & DepCus & "','" & (Format(DateAdd(DateInterval.Year, -543, DepDate), "MM/dd/yyyy")) & "',"
+                txtSqlDep = txtSqlDep & "'" & CDbl(DepAmt) & "','" & DepRef & "','" & DepRefAmt & "','" & DepIdtrade & "' )"
+                DBtools.dbSaveSQLsrv(txtSqlDep, "")
+
+                'DepRemain = DepAmt - DepRefAmt
+
+            End If
+
+            Call updateType8(DepNo)
+        Next
+    End Sub
+
+    Sub updateType8(strDoc_NO As String) 'update จำนวนเงินมัดจำคงเหลือในfeild trh_d_amt 
+        Dim AllSumDepAmt As Double = 0.0
+        Dim DepRemain As Double = 0.0
+        Dim DepAmt As Double = 0.0
+        Dim DepTotal As Double = 0.0
+        Dim txtsqlDep2 As String
+        Dim n As Integer
+
+
+        If chkds2 = True Then 'ติดตรงนี้อยู่ มันไม่เคลียร์dataset ยังเอาค่าเก่ามาคิด
+            DS.Tables("dtlTable").Clear()
+            chkds2 = False
+        End If
+        txtSQL = " SELECT   * from trandatad "
+        txtSQL = txtSQL & " WHERE     TranDatad.dtl_no='" & strDoc_NO & "'  and dtl_type ='8' "
+        DA = New SqlClient.SqlDataAdapter(txtSQL, Conn)
+        DA.Fill(DS, "dtlTable")
+        chkds2 = True
+        If DS.Tables("dtlTable").Rows.Count > 0 Then
+            For n = 0 To DS.Tables("dtlTable").Rows.Count - 1
+                DepTotal = DS.Tables("dtlTable").Rows(n).Item("dtl_sum_2")
+                AllSumDepAmt += DepTotal
+            Next
+            DepAmt = DS.Tables("dtlTable").Rows(0).Item("dtl_sum")
+            DepRemain = DepAmt - AllSumDepAmt
+
+
+        End If
+
+        'Update trh_d_amt ให้เป็นยอดเงินมัดจำคงเหลือตามปัจจุบัน
+        If DepRemain > 0 Then 'ยังมีเงินมัดจำเหลืออยู่
+            txtsqlDep2 = "update trandatah set"
+            txtsqlDep2 = txtsqlDep2 & " trh_d_amt ='" & DepRemain & "'"
+            txtsqlDep2 = txtsqlDep2 & " where trh_type='8' and trh_no='" & strDoc_NO & "'"
+            DBtools.dbSaveSQLsrv(txtsqlDep2, "")
+        Else
+            txtsqlDep2 = "update trandatah set"
+            txtsqlDep2 = txtsqlDep2 & " trh_d_amt ='" & DepRemain & "'"
+            txtsqlDep2 = txtsqlDep2 & " ,trh_tran ='" & 0 & "'" 'เงินมัดจำไม่สามารถนำไปใช้งานได้แล้วเพราะถูกตัดหมดแล้ว
+            txtsqlDep2 = txtsqlDep2 & " where trh_type='8' and trh_no='" & strDoc_NO & "'"
+            DBtools.dbSaveSQLsrv(txtsqlDep2, "")
+        End If
+        DepTotal = 0
+        DepRemain = 0
+        DepAmt = 0
+        AllSumDepAmt = 0
+    End Sub
+
+    Private Sub ListDep_DoubleClick(sender As Object, e As EventArgs) Handles ListDep.DoubleClick
+        Dim i As Integer
+        Dim iNo As Integer = 0
+        Dim DepNo As String
+        Dim DepAmt As Double
+        Dim DepBalance As Double
+        For i = 0 To ListDep.SelectedItems.Count - 1
+            LEdit = ListDep.SelectedItems(i)
+            DepNo = ListDep.Items(LEdit.Index).SubItems(2).Text 'เลขที่
+            DepAmt = ListDep.Items(LEdit.Index).SubItems(3).Text 'ยอดเงินมัดจำ
+            DepBalance = ListDep.Items(LEdit.Index).SubItems(4).Text 'ยอดตัดมัดจำ
+            LOrder = ListDep.SelectedItems(i)
+            ListDep.Items.Remove(LOrder)
+            lbDocDepno.Text = DepNo
+            lbDepAmt.Text = DepAmt
+            lbDepBalance.Text = DepBalance
+
+        Next
+        SumDepTotal()
+        sumTotal()
+    End Sub
+
+
+
+
+
+    Private Sub lbDepBalance_TextChanged(sender As Object, e As EventArgs) Handles lbDepBalance.TextChanged
+
+        txtPercentDep.Focus()
+
+    End Sub
+
+    Private Sub txtPercentDep_TextChanged(sender As Object, e As EventArgs) Handles txtPercentDep.TextChanged
+
+    End Sub
+
+    Private Sub txtPercentDep_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPercentDep.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtUseDep.Text = (CDbl(lbDepBalance.Text) * CDbl(txtPercentDep.Text)) / 100
+            txtUseDep.Focus()
+        End If
+
+    End Sub
+
+    Private Sub btnCleartxt_Click(sender As Object, e As EventArgs) Handles btnCleartxt.Click
+        txtPercentDep.Text = "0"
+        txtUseDep.Text = "0"
+    End Sub
+
+    Private Sub txtCredit_TextChanged(sender As Object, e As EventArgs) Handles txtCredit.TextChanged
+
+    End Sub
+
+    Private Sub txtCredit_DoubleClick(sender As Object, e As EventArgs) Handles txtCredit.DoubleClick
+
+    End Sub
+
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
+
+    End Sub
 End Class

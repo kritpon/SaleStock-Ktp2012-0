@@ -4,8 +4,8 @@
 Module DBtools
     'Public Declare Function ActivateKeyboardLayout Lib "user32" (ByVal HKL As Long, ByVal flags As Long) As Long
     Public chkUserUpdate As Boolean
-
-
+    Public DepCus As String 'เก็บรหัสลูกค้า ไว้ส่งข้ามไปฟอร์มSelectDep
+    Public EditDocNo As String 'ส่งเลขที่เอกสารใบมัดจำข้ามจากformselectdep ไป frmSale ใบขาย
 
     '=========   µÑÇá»ÃàÃ×èÍ§¡ÒÃ ºÑ¹·Ö¡¢éÍÁØÅ
     Public chkSaveOK As Boolean = False
@@ -100,6 +100,7 @@ Module DBtools
 
     Public Ddate As String = ""
     Public Dno As String = ""
+    Public Dtype As String = ""
     Public orderNum As String = ""
     Public Dvat As String = ""
     Public DPNo As String = ""
@@ -135,6 +136,7 @@ Module DBtools
     Public chkItem As Boolean = False
     Public chkLoad As Boolean = False
     Public chkSelStk As Boolean = False
+    Public EditStatus As Boolean = False 'checkว่าเป็นการดับเบิ้ลคลิกเข้ามาดูเอกสารหรือไม่
 
     Declare Function GetUserName Lib "advapi32.dll" Alias _
                   "GetUserNameA" (ByVal lpBuffer As String, _
@@ -206,7 +208,7 @@ Module DBtools
                 .Open()
             End With
         Catch ex As Exception
-            MsgBox("äÁèÊÒÁÒÃ¶µÔ´µèÍ°Ò¹¢éÍÁÙÅä´é")
+            MsgBox("ไม่สามารถติดต่อฐานข้อมูลได้")
         End Try
 
 
@@ -233,7 +235,9 @@ Module DBtools
         Return Ans
 
     End Function
+
     'Sub DBConnection()
+
     '    'pathDB = "i:\center\PC50.mdb"
     '    'pathDB = "i:\center\PC50.mdb"
     '    'pathDB = "i:\test49\db\test49.mdb"
@@ -270,7 +274,7 @@ Module DBtools
             End With
             'End If
         Catch errprocess As Exception
-            MessageBox.Show("äÁèÊÒÁÒÃ¶Åº¢éÍÁÙÅä´éà¹×èÍ§¨Ò¡ " & errprocess.Message, "¢éÍ¼Ô´¾ÅÒ´", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("พบข้อผิดพลาด " & errprocess.Message, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
     End Sub
@@ -278,7 +282,7 @@ Module DBtools
     Sub dbDelSQLsrv(ByVal txtSQL As String, ByVal txtDisy As String)
 
         Try
-            If MessageBox.Show("µéÍ§¡ÒÃÅº¢éÍÁÙÅ ' " & txtDisy & " ' ·ÕèÃÐºØËÃ×ÍäÁè", "¤ÓÂ×¹ÂÑ¹", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            If MessageBox.Show("ต้องการลบข้อมูล ' " & txtDisy & " ' ใช่หรือไม่", "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 'DB01.Execute(txtSQL) ' ºÑ¹·Ö¡¢éÍÁÙÅÅ§ Business sc50
                 'DB02.Execute(txtSQL) ' ºÑ¹·Ö¡¢éÍÁÙÅÅ§ Business acct50
                 If Conn.State = ConnectionState.Closed Then
@@ -292,7 +296,7 @@ Module DBtools
                 End With
             End If
         Catch errprocess As Exception
-            MessageBox.Show("äÁèÊÒÁÒÃ¶Åº¢éÍÁÙÅä´éà¹×èÍ§¨Ò¡ " & errprocess.Message, "¢éÍ¼Ô´¾ÅÒ´", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("พบข้อผิดพลาด " & errprocess.Message, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
     End Sub
@@ -318,7 +322,7 @@ Module DBtools
             'DB02.Execute(txtSQL) ' ºÑ¹·Ö¡¢éÍÁÙÅÅ§ Business acct50
             'End If
         Catch errprocess As Exception
-            MessageBox.Show("äÁèÊÒÁÒÃ¶à¾ÔèÁ¢éÍÁÙÅä´éà¹×èÍ§¨Ò¡ " & errprocess.Message, "¢éÍ¼Ô´¾ÅÒ´", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("พบข้อผิดพลาด " & errprocess.Message, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
     End Sub
@@ -397,7 +401,6 @@ Module DBtools
     'End Sub
     Sub dbSaveUser(ByVal txtSQL As String, ByVal txtDisy As String)
 
-
         Try
 
             If Conn.State = ConnectionState.Closed Then
@@ -410,10 +413,8 @@ Module DBtools
                 .ExecuteNonQuery()
             End With
 
-
-
         Catch errprocess As Exception
-            MessageBox.Show("äÁèÊÒÁÒÃ¶à¾ÔèÁ¢éÍÁÙÅä´éà¹×èÍ§¨Ò¡ " & errprocess.Message, "¢éÍ¼Ô´¾ÅÒ´", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("พบข้อผิดพลาด " & errprocess.Message, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
     End Sub
@@ -632,111 +633,6 @@ Module DBtools
         End Select
 
         PositionToText = _nPos
-    End Function
-
-    Public Function ThaiBaht(ByVal pamt As Double) As String
-        Dim i As Integer, j As Integer
-        'Dim v As Integer
-        Dim Valstr As String, Vlen As String, Vno As String
-        'Dim syslge As String
-        Dim wnumber(10) As String, wdigit(10) As String, spcdg(5) As String
-        Dim vword(20) As String
-        If pamt <= 0 Then
-            ThaiBaht = ""
-            Exit Function
-        End If
-        Valstr = Trim(Format$(pamt, "##########0.00"))
-        Vlen = Len(Valstr) - 3
-        For i = 1 To 20
-            vword(i) = ""
-        Next i
-        wnumber(1) = "หนึ่ง" : wnumber(2) = "สอง" : wnumber(3) = "ÊÒÁ" : wnumber(4) = "ÊÕè" : wnumber(5) = "ËéÒ"
-        wnumber(6) = "Ë¡" : wnumber(7) = "à¨ç´" : wnumber(8) = "á»´" : wnumber(9) = "à¡éÒ" : wdigit(1) = "ºÒ·"
-        wdigit(2) = "ÊÔº" : wdigit(3) = "ÃéÍÂ" : wdigit(4) = "¾Ñ¹" : wdigit(5) = "ËÁ×è¹" : wdigit(6) = "áÊ¹"
-        wdigit(7) = "ÅéÒ¹"
-        spcdg(1) = "ÊµÒ§¤ì" : spcdg(2) = "àÍç´" : spcdg(3) = "ÂÕè" : spcdg(4) = "¶éÇ¹"
-        For i = 1 To Vlen
-            Vno = Int(Val(Mid$(Valstr, i, 1)))
-            If Vno = 0 Then
-                vword(i) = ""
-
-                If (Vlen - i + 1) = 7 Then
-                    vword(i) = wdigit(7) 'ÅéÒ¹
-                End If
-            Else
-                If (Vlen - i + 1) > 7 Then
-                    j = Vlen - i - 5 ' à¡Ô¹ËÅÑ¡ÅéÒ¹
-                Else
-                    j = Vlen - i + 1 'ËÅÑ¡áÊ¹
-                End If
-                vword(i) = wnumber(Vno) + wdigit(j)  '30-90
-            End If
-
-            If Vno = 1 And j = 2 Then
-                vword(i) = wdigit(2) 'ÊÔº
-            End If
-            If Vno = 2 And j = 2 Then
-                vword(i) = spcdg(3) + wdigit(j) 'ÂÕèÊÔº
-            End If
-            If j = 1 Then
-                vword(i) = wnumber(Vno)
-                If Vno = 1 And Vlen > 1 Then
-                    If Mid$(Valstr, i - 1, 1) <> "0" Then
-                        vword(i) = spcdg(2)
-                    End If
-                End If
-            End If
-            If j = 7 Then
-                vword(i) = wnumber(Vno) + wdigit(j) 'ÅéÒ¹
-                If Vno = 1 And Vlen > 7 Then
-                    If Mid$(Valstr, i - 1, 1) <> "0" Then
-                        vword(i) = spcdg(2) + wdigit(j)
-                    End If
-                End If
-            End If
-        Next i
-        If Int(pamt) > 0 Then
-            vword(Vlen) = vword(Vlen) + wdigit(1)
-        End If
-
-
-        Valstr = Mid$(Valstr, Vlen + 2, 2) '·È¹ÔÂÁ
-        Vlen = Len(Valstr)
-        For i = 1 To Vlen
-            Vno = Int(Val(Mid$(Valstr, i, 1)))
-            If Vno = 0 Then
-                vword(i + 10) = ""
-            Else
-                j = Vlen - i + 1
-                vword(i + 10) = wnumber(Vno) + wdigit(j)
-                If Vno = 1 And j = 2 Then
-                    vword(i + 10) = wdigit(2)
-                End If
-                If Vno = 2 And j = 2 Then
-                    vword(i + 10) = spcdg(3) + wdigit(j)
-                End If
-                If j = 1 Then
-                    If Vno = 1 And Int(Val(Mid$(Valstr, i - 1, 1))) <> 0 Then
-                        vword(i + 10) = spcdg(2)
-                    Else
-                        vword(i + 10) = wnumber(Vno)
-                    End If
-                End If
-            End If
-
-        Next i
-        If pamt <> 0 Then
-            If Val(Valstr) = 0 Then
-                vword(13) = spcdg(4)
-            Else
-                vword(13) = spcdg(1)
-            End If
-        End If
-        Valstr = ""
-        For i = 1 To 20
-            Valstr = Valstr + vword(i)
-        Next i
-        ThaiBaht = (Valstr)
     End Function
 
     '=====================   Function  àÊÃÔÁ ãªéÊÍº¶ÒÁ¤èÒµèÒ§æ ã¹ DataBase ============================
@@ -1074,6 +970,29 @@ Module DBtools
         Return ans
 
     End Function
+
+    Function getCSName(ByVal cusId As String) As String
+
+        Dim ans As String
+        Dim subDA As SqlClient.SqlDataAdapter
+        Dim subDS As New DataSet
+
+        txtSQL = "Select Ar_Cus_ID,Ar_Name,Ar_C_Term,Ar_Target,Ar_Cre_Lim,Ar_CS,CS_Name "
+        txtSQL = txtSQL & "From ArFile Left Join CSmast "
+        txtSQL = txtSQL & "On ARFile.Ar_CS=CSmast.CS_Code "
+
+        txtSQL = txtSQL & "WHERE (((ArFile.AR_Cus_ID) Like '%" & cusId & "%'))"
+        txtSQL = txtSQL & "And (Ar_Type='AR') "
+
+        subDA = New SqlClient.SqlDataAdapter(txtSQL, Conn)
+        subDA.Fill(subDS, "ARList")
+
+        ans = subDS.Tables("ARList").Rows(0).Item("CS_Name")
+        subDS = Nothing
+        subDA = Nothing
+        Return ans
+
+    End Function
     Function getSalesCode(ByVal cusId As String) As String
 
         Dim ans As String
@@ -1352,7 +1271,7 @@ Module DBtools
             strDatePr = Microsoft.VisualBasic.Right(Year(CSDate) - 543, 2) & "/" & Format(Month(CSDate), "00")
             txtSQL = txtSQL & "And CS_Date='" & strDatePr & "' "
             ramDateCost = strDatePr  ' à¡çº¤èÒ Date ¢Í§µé¹·Ø¹ à»ç¹ public à¾×èÍ¹Óä»ãÊèã¹ÃÒÂ§Ò¹ãËéÃÙéÇèÒ´Ö§µé¹·Ø¹¨Ò¡ÇÑ¹äË¹
-        ElseIf chkRun = 24 Then
+        ElseIf chkRun = 100 Then
 
             Ans = 0
             Return Ans
@@ -2223,4 +2142,127 @@ Module DBtools
     '    Math.Ceiling(strvat)
     '    Return strvat
     'End Function
+
+    Public Function ThaiBaht(ByVal pamt As Double) As String
+        Dim i As Integer, j As Integer, v As Integer
+        Dim Valstr As String, Vlen As String, Vno As String, syslge As String
+        Dim wnumber(10) As String, wdigit(10) As String, spcdg(5) As String
+        Dim vword(20) As String
+        If pamt <= 0 Then
+            ThaiBaht = ""
+            Exit Function
+        End If
+        Valstr = Trim(Format$(pamt, "##########0.00"))
+        Vlen = Len(Valstr) - 3
+        For i = 1 To 20
+            vword(i) = ""
+        Next i
+        wnumber(1) = "หนึ่ง" : wnumber(2) = "สอง" : wnumber(3) = "สาม" : wnumber(4) = "สี่" : wnumber(5) = "ห้า"
+        wnumber(6) = "หก" : wnumber(7) = "เจ็ด" : wnumber(8) = "แปด" : wnumber(9) = "เก้า" : wdigit(1) = "บาท"
+        wdigit(2) = "สิบ" : wdigit(3) = "ร้อย" : wdigit(4) = "พัน" : wdigit(5) = "หมื่น" : wdigit(6) = "แสน" : wdigit(7) = "ล้าน"
+        spcdg(1) = "สตางค์" : spcdg(2) = "เอ็ด" : spcdg(3) = "ยี่" : spcdg(4) = "ถ้วน"
+        For i = 1 To Vlen
+            Vno = Int(Val(Mid$(Valstr, i, 1)))
+            If Vno = 0 Then
+                vword(i) = ""
+
+                If (Vlen - i + 1) = 7 Then
+                    vword(i) = wdigit(7) 'ล้าน
+                End If
+            Else
+                If (Vlen - i + 1) > 7 Then
+                    j = Vlen - i - 5 ' เกินหลักล้าน
+                Else
+                    j = Vlen - i + 1 'หลักแสน
+                End If
+                vword(i) = wnumber(Vno) + wdigit(j)  '30-90
+            End If
+
+            If Vno = 1 And j = 2 Then
+                vword(i) = wdigit(2) 'สิบ
+            End If
+            If Vno = 2 And j = 2 Then
+                vword(i) = spcdg(3) + wdigit(j) 'ยี่สิบ
+            End If
+            If j = 1 Then
+                vword(i) = wnumber(Vno)
+                If Vno = 1 And Vlen > 1 Then
+                    If Mid$(Valstr, i - 1, 1) <> "0" Then
+                        vword(i) = spcdg(2)
+                    End If
+                End If
+            End If
+            If j = 7 Then
+                vword(i) = wnumber(Vno) + wdigit(j) 'ล้าน
+                If Vno = 1 And Vlen > 7 Then
+                    If Mid$(Valstr, i - 1, 1) <> "0" Then
+                        vword(i) = spcdg(2) + wdigit(j)
+                    End If
+                End If
+            End If
+        Next i
+        If Int(pamt) > 0 Then
+            vword(Vlen) = vword(Vlen) + wdigit(1)
+        End If
+
+
+        Valstr = Mid$(Valstr, Vlen + 2, 2) 'ทศนิยม
+        Vlen = Len(Valstr)
+        For i = 1 To Vlen
+            Vno = Int(Val(Mid$(Valstr, i, 1)))
+            If Vno = 0 Then
+                vword(i + 10) = ""
+            Else
+                j = Vlen - i + 1
+                vword(i + 10) = wnumber(Vno) + wdigit(j)
+                If Vno = 1 And j = 2 Then
+                    vword(i + 10) = wdigit(2)
+                End If
+                If Vno = 2 And j = 2 Then
+                    vword(i + 10) = spcdg(3) + wdigit(j)
+                End If
+                If j = 1 Then
+                    If Vno = 1 And Int(Val(Mid$(Valstr, i - 1, 1))) <> 0 Then
+                        vword(i + 10) = spcdg(2)
+                    Else
+                        vword(i + 10) = wnumber(Vno)
+                    End If
+                End If
+            End If
+
+        Next i
+        If pamt <> 0 Then
+            If Val(Valstr) = 0 Then
+                vword(13) = spcdg(4)
+            Else
+                vword(13) = spcdg(1)
+            End If
+        End If
+        Valstr = ""
+        For i = 1 To 20
+            Valstr = Valstr + vword(i)
+        Next i
+        ThaiBaht = (Valstr)
+    End Function
+    Sub dbSaveSQLsrv(ByVal txtSQL As String, ByVal txtDisy As String)
+
+        Try
+            'If MessageBox.Show("µéÍ§¡ÒÃºÑ¹·Ö¡¢éÍÁÙÅ ' " & txtDisy & " ' ·ÕèÃÐºØËÃ×ÍäÁè", "¤ÓÂ×¹ÂÑ¹", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+
+
+
+            With subCom
+                .CommandType = CommandType.Text
+                .CommandText = txtSQL
+                .Connection = Conn
+                .ExecuteNonQuery()
+            End With
+            'DB01.Execute(txtSQL) ' ºÑ¹·Ö¡¢éÍÁÙÅÅ§ Business 
+            'DB02.Execute(txtSQL) ' ºÑ¹·Ö¡¢éÍÁÙÅÅ§ Business acct50
+            'End If
+        Catch errprocess As Exception
+            MessageBox.Show("äÁèÊÒÁÒÃ¶à¾ÔèÁ¢éÍÁÙÅä´éà¹×èÍ§¨Ò¡ " & errprocess.Message, "¢éÍ¼Ô´¾ÅÒ´", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End Try
+    End Sub
 End Module

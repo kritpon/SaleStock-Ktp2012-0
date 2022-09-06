@@ -465,7 +465,7 @@
         Me.cmbSearchCus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbSearchCus.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.cmbSearchCus.ForeColor = System.Drawing.Color.White
-        Me.cmbSearchCus.Location = New System.Drawing.Point(528, 66)
+        Me.cmbSearchCus.Location = New System.Drawing.Point(528, 67)
         Me.cmbSearchCus.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbSearchCus.Name = "cmbSearchCus"
         Me.cmbSearchCus.Size = New System.Drawing.Size(45, 32)
@@ -538,7 +538,7 @@
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 641)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 8, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1327, 24)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1283, 24)
         Me.StatusStrip1.TabIndex = 8
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -556,7 +556,7 @@
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1327, 665)
+        Me.ClientSize = New System.Drawing.Size(1283, 665)
         Me.ControlBox = False
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.cboDClist)
@@ -571,7 +571,7 @@
         Me.Name = "frmBegin"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = " update :  06-08-59"
+        Me.Text = "โปรแกรมเปิดบิลขาย :  24-05-65"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -725,6 +725,7 @@
 
         Dim frm1 As frmSale
         frm1 = New frmSale
+        EditStatus = False 'ไม่ได้เป็นการแก้ไขเอกสาร แต่เป็นการสร้างเอกสารใหม่
         selCusiD = ""  ' ÃËÑÊÅÙ¡¤éÒ
         selCusName = "" ' ª×èÍÅÙ¡¤éÒ
         chkLoad = False
@@ -785,7 +786,6 @@
     Private Sub frmBegin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Call setYear()
 
-
         'DBtools.openDB()
         lbDBName.Text = DBtools.strConn
         'MsgBox("time=" & getTimeSer())
@@ -836,16 +836,16 @@
 
 
     Private Sub cmbSearchCus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbSearchCus.Click
-        Dim frmCustomer As searchCusNotLock = New searchCusNotLock
+        Dim frmCustomer As searchCus = New searchCus
         'Dim frmCustomer As searchCus = New searchCus
         frmCustomer.ShowDialog()
 
         lbCusID.Text = selCusiD
         lbCusName.Text = selCusName
 
-
         selCusiD = ""
         selCusName = ""
+
     End Sub
     Sub reLoad()
         Call HeadList()
@@ -1258,6 +1258,7 @@
         Dim i As Integer
         Dim frm1 As frmSale
         Dim chkPrint As Boolean = 0
+        EditStatus = True 'เป็นการเข้ามาดูเอกสารเก่าหรือแก้ไขเอกสาร
 
         'Try
 
@@ -1309,9 +1310,7 @@
     End Sub
 
 
-    Private Sub lsvShowBill_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvShowBill.SelectedIndexChanged
 
-    End Sub
 
 
 
@@ -1325,5 +1324,10 @@
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
+    End Sub
+
+    Private Sub Date01_ValueChanged(sender As Object, e As EventArgs) Handles Date01.ValueChanged
+        Date02.Value = Date01.Value
+        Call reLoad()
     End Sub
 End Class
