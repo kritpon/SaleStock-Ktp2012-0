@@ -1323,9 +1323,6 @@
 
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
 
     Private Sub Date01_ValueChanged(sender As Object, e As EventArgs) Handles Date01.ValueChanged
         Date02.Value = Date01.Value
