@@ -375,12 +375,12 @@
 
         dRow = dTB.NewRow
         dRow(0) = "AP"
-        dRow(1) = "à¨éÒË¹Õé"
+        dRow(1) = "เจ้าหนี้"
         dTB.Rows.Add(dRow)
 
         dRow = dTB.NewRow
         dRow(0) = "AR"
-        dRow(1) = "ÅÙ¡Ë¹Õé"
+        dRow(1) = "ลูกหนี้"
         dTB.Rows.Add(dRow)
 
 
@@ -472,35 +472,35 @@
         End With
 
         With cusID
-            .HeaderText = "ÃËÑÊ à¨éÒË¹Õé/ÅÙ¡Ë¹Õé"
+            .HeaderText = "รหัสลูกค้า"
             .MappingName = "Ar_Cus_ID"
-            .NullText = "äÁèä´éÃÐºØäÇé"
+            .NullText = "ไม่พบข้อมูล"
             .ReadOnly = True
             .Width = 70
             .Alignment = HorizontalAlignment.Center
         End With
 
         With cusName
-            .HeaderText = "ª×èÍà¨éÒË¹Õé/ÅÙ¡Ë¹Õé"
+            .HeaderText = "ชื่อลูกค้า"
             .MappingName = "Ar_Name"
-            .NullText = "äÁèä´éÃÐºØäÇé"
+            .NullText = "ไม่พบข้อมูล"
             .ReadOnly = True
             .Width = 200
             .Alignment = HorizontalAlignment.Left
         End With
 
         With cusContact
-            .HeaderText = "ª×èÍ¼ÙéµÔ´µèÍ"
+            .HeaderText = "ชื่อลูกค้าติดต่อ"
             .MappingName = "Ar_Contact"
-            .NullText = "äÁèä´éÃÐºØäÇé"
+            .NullText = "ไม่พบข้อมูล"
             .ReadOnly = True
             .Width = 100
             .Alignment = HorizontalAlignment.Left
         End With
         With cusAddr
-            .HeaderText = "·ÕèÍÂÙè"
+            .HeaderText = "ที่อยู่"
             .MappingName = "Ar_Addr0"
-            .NullText = "äÁèä´éÃÐºØäÇé"
+            .NullText = "ไม่พบข้อมูล"
             .ReadOnly = True
             .Width = 250
             .Alignment = HorizontalAlignment.Left
@@ -508,18 +508,18 @@
 
 
         With cusTerm
-            .HeaderText = "à¤Ã´Ôµà·ÍÁ"
+            .HeaderText = "เครดิต"
             .MappingName = "Ar_Term"
-            .NullText = "äÁèä´éÃÐºØäÇé"
+            .NullText = "ไม่พบข้อมูล"
             .ReadOnly = True
             .Width = 50
             .Alignment = HorizontalAlignment.Left
         End With
 
         With cusCreLim
-            .HeaderText = "à¤Ã´ÔµÅÔÁÔµ"
+            .HeaderText = "วันเครดิต"
             .MappingName = "Ar_cre_lim"
-            .NullText = "äÁèä´éÃÐºØäÇé"
+            .NullText = "ไม่พบข้อมูล"
             .ReadOnly = True
             .Width = 70
             .Alignment = HorizontalAlignment.Left
@@ -528,25 +528,26 @@
         With cusSale
             .HeaderText = "Sale"
             .MappingName = "sl_name"
-            .NullText = "äÁèä´éÃÐºØäÇé"
+            .NullText = "ไม่พบข้อมูล"
             .ReadOnly = True
             .Width = 120
             .Alignment = HorizontalAlignment.Left
         End With
 
         With cusDisc
-            .HeaderText = "ÊèÇ¹Å´ÅÙ¡¤éÒ"
+            .HeaderText = "ส่วนลด"
+            .HeaderText = "ส่วนลด"
             .MappingName = "Ar_Disc"
-            .NullText = "äÁèä´éÃÐºØäÇé"
+            .NullText = "ไม่พบข้อมูล"
             .ReadOnly = True
             .Width = 50
             .Alignment = HorizontalAlignment.Left
         End With
 
         With cusSaleID
-            .HeaderText = "" 'ÃËÑÊsale
+            .HeaderText = "รหัส Sales" 'ÃËÑÊsale
             .MappingName = "SL_ID"
-            .NullText = "äÁèä´éÃÐºØäÇé"
+            .NullText = "ไม่พบข้อมูล"
             .ReadOnly = True
             .Width = 50
             .Alignment = HorizontalAlignment.Left
@@ -564,7 +565,7 @@
 
         With dbCusGrid
             .TableStyles.Clear()
-            .CaptionText = "¤é¹ËÒ ÅÙ¡Ë¹Õé-à¨éÒË¹Õé "
+            .CaptionText = "ค้นหาลูกค้า "
             .FlatMode = True
             .TableStyles.Add(grdTS)
         End With
@@ -659,7 +660,7 @@
 
         ElseIf Lock01 = 1 Then ' lock 
 
-            MsgBox("ÅÙ¡¤éÒÃÒÂ¹ÕéäÁèÊÒÁÒÃ¶à»Ô´ºÔÅä´é ! ", MsgBoxStyle.Critical, "á¨é§ãËé·ÃÒº")
+            MsgBox("ลูกค้าถูก Lock การขาย โปรดตรวจสอบอีกครั้ง ", MsgBoxStyle.Critical, "แจ้งเตือน")
             PId = ""
             PName = ""
             CusId = ""
@@ -676,7 +677,7 @@
             Disc = 0.0
             Limit = 0.0
             'ElseIf amt1 < amt2 And Lock01 = 1 Then 'Ë¹ÕéÁÒ¡¡¡ÇèÒà¤Ã´Ôµ áÅÐâ´¹ lock
-            '    MsgBox("äÁèÊÒÁÒÃ¶à»Ô´ºÔÅãËéÅÙ¡¤éÒÃÒÂ¹Õéä´é à¹×èÍ§¨Ò¡ÁÕÂÍ´Ë¹Õéà¡Ô¹Ç§à§Ô¹à¤Ã´Ôµ ¡ÃØ³ÒµÔ´µèÍá¼¹¡ºÑ­ªÕ", MsgBoxStyle.OkOnly, "á¨é§ãËé·ÃÒº")
+            '    MsgBox("äÁèÊÒÁÒÃ¶à»Ô´ºÔÅãËéÅÙ¡¤éÒÃÒÂ¹Õéä´é à¹×èÍ§¨Ò¡ÁÕÂÍ´Ë¹Õéà¡Ô¹Ç§à§Ô¹à¤Ã´Ôµ ¡ÃØ³ÒµÔ´µèÍá¼¹¡ºÑ­ªÕ", MsgBoxStyle.OkOnly, "แจ้งเตือน")
             '    PId = ""
             '    PName = ""
             '    CusId = ""
@@ -761,7 +762,7 @@
 
         'Term = (dbCusGrid.Item(rowSel, 3))
         'If Term = 0 Then
-        '    MsgBox("à¤Ã´Ôµà»ç¹ 0 ¡ÃØ³ÒµÃÇ¨ÊÍº´éÇÂ", MsgBoxStyle.OKOnly, "á¨é§ãËé·ÃÒº")
+        '    MsgBox("à¤Ã´Ôµà»ç¹ 0 ¡ÃØ³ÒµÃÇ¨ÊÍº´éÇÂ", MsgBoxStyle.OKOnly, "แจ้งเตือน")
         'Else
         'End If
         Sale = Convert.ToString(dbCusGrid.Item(rowSel, 6))

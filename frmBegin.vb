@@ -838,11 +838,12 @@
     Private Sub cmbSearchCus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbSearchCus.Click
         Dim frmCustomer As searchCus = New searchCus
         'Dim frmCustomer As searchCus = New searchCus
+        chkCus.Checked = True
         frmCustomer.ShowDialog()
 
         lbCusID.Text = selCusiD
-        lbCusName.Text = selCusName
-
+        lbCusName.Text = DBtools.getCusName(selCusiD)
+        Call reLoad()
         selCusiD = ""
         selCusName = ""
 
@@ -1309,16 +1310,16 @@
         Call Search2()
     End Sub
 
-
-
-
-
-
     Private Sub frmBegin_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         'Call reLoad()
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+        If chkCus.Checked = True Then
+            chkCus.Checked = False
+        Else
+            chkCus.Checked = True
+        End If
 
     End Sub
 
@@ -1328,6 +1329,10 @@
 
     Private Sub Date01_ValueChanged(sender As Object, e As EventArgs) Handles Date01.ValueChanged
         Date02.Value = Date01.Value
+        Call reLoad()
+    End Sub
+
+    Private Sub chkCus_CheckedChanged(sender As Object, e As EventArgs) Handles chkCus.CheckedChanged
         Call reLoad()
     End Sub
 End Class
